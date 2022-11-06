@@ -17,6 +17,10 @@ module.exports = {
         test: /\.twig$/,
         loader: 'twig-loader',
       },
+      {
+        test: /\.ya?ml$/,
+        use: 'yaml-loader'
+      },
     );
 
     // Return the altered config
