@@ -22,6 +22,7 @@ module:
   help: 0
   history: 0
   image: 0
+  layout_builder: 0
   layout_discovery: 0
   link: 0
   menu_link_content: 0
@@ -40,6 +41,7 @@ module:
   toolbar: 0
   tour: 0
   ui_patterns: 0
+  ui_patterns_layout_builder: 0
   ui_patterns_layouts: 0
   ui_patterns_library: 0
   update: 0

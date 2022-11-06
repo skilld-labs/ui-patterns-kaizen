@@ -1,6 +1,7 @@
 # UI Suite Initiative + Skilld Kaizen
 
-Testing:
+## Testing:
 
-On drupal side after installation got on:
-`/patterns`
+### Drupal
+- On drupal side after installation got on: `/patterns`
+- Create few articles. Visit homepage.
