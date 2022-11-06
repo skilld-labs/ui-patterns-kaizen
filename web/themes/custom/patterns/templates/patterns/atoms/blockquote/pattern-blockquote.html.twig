@@ -1,0 +1,12 @@
+{% set attributes = attributes.addClass('a-blockquote') %}
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('a-blockquote--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<blockquote{{attributes}}>
+  <p>{{ quote }}</p>
+  <footer>{{ attribution }}</footer>
+</blockquote>

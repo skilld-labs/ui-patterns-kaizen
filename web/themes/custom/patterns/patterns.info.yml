@@ -5,6 +5,7 @@ core_version_requirement: ^9 || ^10
 base theme: false
 dependencies:
   - ui_patterns:ui_patterns
+  - ui_patterns_library:ui_patterns_library
 regions:
   header: 'Header'
   content: 'Content'
