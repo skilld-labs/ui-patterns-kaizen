@@ -1,0 +1,23 @@
+uuid: f58bf43d-b4c5-41b2-8b50-03449ddde308
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - patterns
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: patterns_syndicate
+theme: patterns
+region: header
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

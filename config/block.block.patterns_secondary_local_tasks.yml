@@ -1,0 +1,22 @@
+uuid: 31620526-b8db-423e-a853-a87ecd78c136
+langcode: en
+status: true
+dependencies:
+  theme:
+    - patterns
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: patterns_secondary_local_tasks
+theme: patterns
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

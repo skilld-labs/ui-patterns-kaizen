@@ -1,0 +1,22 @@
+uuid: 786b0f72-5a25-4566-917b-a1ba9c1232ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - patterns
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: patterns_powered
+theme: patterns
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

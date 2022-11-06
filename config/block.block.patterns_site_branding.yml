@@ -1,0 +1,25 @@
+uuid: 8f25ee82-0ac7-4735-9c4f-fdd9e25215ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - patterns
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: patterns_site_branding
+theme: patterns
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

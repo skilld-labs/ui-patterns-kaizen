@@ -1,0 +1,22 @@
+uuid: 9a78ba03-3443-4c68-b995-a52bed9c8896
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - patterns
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: patterns_help
+theme: patterns
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
