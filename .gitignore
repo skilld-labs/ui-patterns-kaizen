@@ -3,7 +3,13 @@
 /web/modules/README.txt
 /web/modules/contrib
 /web/profiles/README.txt
-/web/sites/
+/web/sites/default/files
+/web/sites/default/default.services.yml
+/web/sites/default/default.settings.php
+/web/sites/development.services.yml
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/README.txt
 /web/themes/README.txt
 /web/.csslintrc
 /web/.eslintignore
