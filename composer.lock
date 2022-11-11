@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e88b51f5b205632a0d02f6f9ecd1279d",
+    "content-hash": "c2287122afc5703e6ae3d6244ccb4ce8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1544,6 +1544,75 @@
             "time": "2022-10-06T15:57:08+00:00"
         },
         {
+            "name": "drupal/token",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/token.git",
+                "reference": "8.x-1.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "da264b36d1f88eb0c74bf84e18e8789854f98400"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.11",
+                    "datestamp": "1659471813",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "eaton",
+                    "homepage": "https://www.drupal.org/user/16496"
+                },
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Provides a user interface for the Token API, some missing core tokens.",
+            "homepage": "https://www.drupal.org/project/token",
+            "support": {
+                "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
             "name": "drupal/ui_patterns",
             "version": "dev-1.x",
             "source": {
@@ -1713,6 +1782,119 @@
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ui_patterns_layout_builder"
+            }
+        },
+        {
+            "name": "drupal/ui_patterns_settings",
+            "version": "2.0.0-beta16",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ui_patterns_settings.git",
+                "reference": "8.x-2.0-beta16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns_settings-8.x-2.0-beta16.zip",
+                "reference": "8.x-2.0-beta16",
+                "shasum": "13452494a456be2d4b00f051d38b8a3c52419bf3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/token": "*",
+                "drupal/ui_patterns": "*"
+            },
+            "require-dev": {
+                "composer/installers": "^1.2",
+                "cweagans/composer-patches": "~1.4",
+                "drupal/colorwidget": "1.0.x-dev",
+                "drupal/config_devel": "~1",
+                "drupal/core-composer-scaffold": "^8.0",
+                "drupal/core-dev": "^8.0",
+                "drupal/core-recommended": "~9.0",
+                "drupal/ds": "~3",
+                "drupal/field_group": "3.x-dev@dev",
+                "drupal/media_library_form_element": "~2.0.3",
+                "drupal/page_manager": "*",
+                "drupal/panels": "~4",
+                "drupal/paragraphs": "~1",
+                "drupal/token": "~1",
+                "drupal/ui_patterns": "~1.2",
+                "drupal/ui_patterns_field_formatters": "^1.6",
+                "drupal/ui_patterns_layout_builder": "~1",
+                "drush/drush": "~10",
+                "openeuropa/task-runner": "~1.0-beta3",
+                "phpro/grumphp": "~0.14"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta16",
+                    "datestamp": "1664462563",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "build/"
+                    }
+                },
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\ui_patterns_settings_settings\\": "./src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\ui_patterns_settings_settings\\": "./tests/src"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "post-install-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ],
+                "post-update-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ]
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Wiedemann",
+                    "homepage": "https://www.drupal.org/user/861002",
+                    "email": "christian.wiedemann@key-tec.de"
+                }
+            ],
+            "description": "UI Patterns Settings.",
+            "homepage": "https://www.drupal.org/project/ui_patterns_settings",
+            "keywords": [
+                "drupal",
+                "ui",
+                "web"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ui_patterns_settings"
             }
         },
         {
@@ -6447,7 +6629,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/ui_patterns": 20
+        "drupal/ui_patterns": 20,
+        "drupal/ui_patterns_settings": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -1,0 +1,23 @@
+text:
+  sb:
+    level: atoms
+  label: Text
+  description: Display text variants.
+  variants:
+    default:
+      label: Body
+      description: Simple text.
+    h1:
+      label: h1
+      description: H1 style.
+  fields:
+    content:
+      type: text
+      label: Content
+      description: Content.
+      preview: Lorem Ipsum.
+  libraries:
+    - text_library:
+       css:
+         component:
+           ./text.css: {}

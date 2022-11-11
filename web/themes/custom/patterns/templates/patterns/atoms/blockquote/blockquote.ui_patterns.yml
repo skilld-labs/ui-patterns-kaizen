@@ -1,4 +1,6 @@
 blockquote:
+  sb:
+    level: atoms
   label: Blockquote
   description: Display a quote with attribution information.
   variants:
@@ -20,7 +22,7 @@ blockquote:
       description: Quote attribution.
       preview: Albert Einstein
   libraries:
-    - pattern_library_one:
+    - bloquote_pattern:
        css:
          component:
            ./blockquote.css: {}

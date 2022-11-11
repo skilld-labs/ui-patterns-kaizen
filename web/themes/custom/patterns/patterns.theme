@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Returns path to svg sprite.
+ */
+function _patterns_get_svg_sprite_path() {
+  return base_path() . \Drupal::theme()->getActiveTheme()->getPath() . '/images/sprite.svg';
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Prepares patterns_svg_sprite_path variable to get
+ * full path to svg sprite from js.
+ */
+function patterns_page_attachments_alter(array &$attachments) {
+  $attachments['#attached']['drupalSettings']['svgSpritePath'] = _patterns_get_svg_sprite_path();
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Prepares patterns_svg_sprite_path variable to get
+ * full path to svg sprite from twig.
+ */
+function patterns_preprocess(&$variables, $hook) {
+  $variables['patterns_sprite_path'] = _patterns_get_svg_sprite_path();
+  $variables['svgSpritePath'] = _patterns_get_svg_sprite_path();
+}

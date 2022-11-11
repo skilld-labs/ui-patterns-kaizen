@@ -21,6 +21,7 @@
         "drupal/core-recommended": "^9.0",
         "drupal/ui_patterns": "1.x-dev@dev",
         "drupal/ui_patterns_layout_builder": "^1.1",
+        "drupal/ui_patterns_settings": "^2.0@beta",
         "drush/drush": "^11.3"
     },
     "conflict": {

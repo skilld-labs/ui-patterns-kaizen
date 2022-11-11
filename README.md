@@ -15,11 +15,13 @@
 ### Backend
 
 - [ ] Convert this repo to real project. (Docker/deploys/All that magics)
-- [ ] Prepare specs for https://www.figma.com/file/NBO1bkcuyyWEgfAjT6BMWP/Whitepace---SaaS-Landing-Page-(Community)?node-id=9%3A100 as it was our regular project. (Content types / fields)
+- [ ] Prepare specs for https://www.figma.com/file/MmteI2ZZUPLW63yidyzl9A/Portfolio-Template-(Community)?node-id=101%3A412 as it was our regular project. (Content types / fields)
 - [ ] Review adaptations technics https://www.drupal.org/project/ui_suite
 
 ### Frontend
 
 - [ ] Update theme build with current logic + js/sprites/etc
-- [ ] Create components for https://www.figma.com/file/NBO1bkcuyyWEgfAjT6BMWP/Whitepace---SaaS-Landing-Page-(Community)?node-id=9%3A100
+- [ ] Create components for https://www.figma.com/file/MmteI2ZZUPLW63yidyzl9A/Portfolio-Template-(Community)?node-id=101%3A412
 - [ ] Research https://www.drupal.org/project/ui_suite extra pattern settings which can be usable in components.
+- [ ] Setup relation between https://www.drupal.org/project/ui_patterns_settings and https://storybook.js.org/docs/react/api/argtypes
+- [ ] Create Generator for components (update kaizen-sg-ui)

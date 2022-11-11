@@ -7,6 +7,9 @@
 {% endif %}
 
 <blockquote{{attributes}}>
-  <p>{{ quote }}</p>
+  <div>{{ quote }}</div>
   <footer>{{ attribution }}</footer>
+    <svg class="a-button__icon">
+      <use xlink:href="{{ svgSpritePath }}#svg-arrow"></use>
+    </svg>
 </blockquote>
