@@ -15,6 +15,7 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
     "drupal-attribute": "^1.0.2",
+    "loader-utils": "^3.2.1",
     "twig-loader": "^0.5.5",
     "yaml-loader": "^0.8.0"
   },

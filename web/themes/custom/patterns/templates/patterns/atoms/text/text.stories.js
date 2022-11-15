@@ -9,6 +9,8 @@ for (const [key, value] of Object.entries(patterns.text.fields)) {
   data[key] = value["preview"];
 }
 
+console.log(Object.values({ ...patterns.text.settings.modifier.options }))
+
 export default {
   title: `${patterns.text.sb.level ?? "atoms"}/text`,
   // See here what is argTypes https://storybook.js.org/docs/react/essentials/controls,
@@ -18,6 +20,10 @@ export default {
       options: Object.keys({ ...patterns.text.variants }),
       control: { type: "radio" },
     },
+    modifier: {
+      options: Object.values({ ...patterns.text.settings.modifier.options }),
+      control: "check",
+    }
   },
 };
 

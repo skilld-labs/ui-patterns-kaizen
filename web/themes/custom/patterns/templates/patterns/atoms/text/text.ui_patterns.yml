@@ -21,3 +21,11 @@ text:
        css:
          component:
            ./text.css: {}
+  settings:
+    modifier:
+      type: checkbox
+      label: Modifier
+      allow_expose: true
+      options:
+          a-text--h1: Heading 1
+          a-text--h2: Heading 2
