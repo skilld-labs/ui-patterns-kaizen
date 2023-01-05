@@ -27,3 +27,4 @@
 /web/web.config
 .editorconfig
 .gitattributes
+.DS_Store

@@ -1,0 +1,24 @@
+{
+  "name": "caesar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.0-beta.19",
+    "@storybook/addon-interactions": "^7.0.0-beta.19",
+    "@storybook/addon-links": "^7.0.0-beta.19",
+    "@storybook/blocks": "^7.0.0-beta.19",
+    "@storybook/html": "^7.0.0-beta.19",
+    "@storybook/html-vite": "^7.0.0-beta.19",
+    "@storybook/testing-library": "^0.0.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.19",
+    "vite": "^4.0.4"
+  },
+  "dependencies": {},
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}
