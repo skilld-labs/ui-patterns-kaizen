@@ -1,0 +1,31 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/<%= h.changeCase.lower(name) %>.libraries.yml
+---
+base:
+  css:
+    theme:
+      color/colors.css: {}
+    base:
+      dist/css/drupal/styles.css: {}
+  js:
+    dist/js/drupal/init.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+color.preview:
+  css:
+    theme:
+      color/preview.css: {}
+  js:
+    color/preview.js: {}
+  dependencies:
+    - color/drupal.color
+
+# Uncomment next library if you need entity-fake-link functionality
+#h-entity-fake-link:
+#  css:
+#    component:
+#      dist/css/storybook/h-entity-fake-link.css: {}
+#  js:
+#    dist/js/storybook/h-entity-fake-link.js: {}

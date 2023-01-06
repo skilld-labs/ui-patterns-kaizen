@@ -1,0 +1,31 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/patterns/_root.css
+---
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow: visible;
+}
+
+html {
+  font-size: var(--root-font-size);
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-size: var(--base-font-size);
+}

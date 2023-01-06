@@ -1,0 +1,4 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/patterns/_utility.css
+---
+/* Store here utility css */

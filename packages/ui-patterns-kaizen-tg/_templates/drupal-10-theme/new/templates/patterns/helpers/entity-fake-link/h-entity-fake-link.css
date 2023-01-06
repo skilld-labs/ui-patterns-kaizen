@@ -1,0 +1,6 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/patterns/helpers/entity-fake-link/h-entity-fake-link.css
+---
+[data-h-entity-fake-link-built] {
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@skilld/ui-patterns-kaizen-cg",
+  "version": "1.0.0-alpha.0",
+  "description": "UI Patterns Kaizen component generator",
+  "bin": "index.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen.git",
+    "directory": "packages/ui-patterns-kaizen-cg"
+  },
+  "author": "Skilld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen/issues"
+  },
+  "homepage": "https://github.com/skilld-labs/ui-patterns-kaizen#readme",
+  "dependencies": {
+    "hygen": "^6.2.11"
+  }
+}

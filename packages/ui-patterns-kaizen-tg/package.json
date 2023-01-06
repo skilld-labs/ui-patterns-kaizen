@@ -1,0 +1,20 @@
+{
+  "name": "@skilld/ui-patterns-kaizen-tg",
+  "version": "1.0.0-alpha.0",
+  "description": "UI Patterns Kaizen drupal theme generator",
+  "bin": "index.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen",
+    "directory": "packages/ui-patterns-kaizen-tg"
+  },
+  "author": "Skilld",
+  "bugs": {
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen/issues"
+  },
+  "homepage": "https://github.com/skilld-labs/ui-patterns-kaizen#readme",
+  "dependencies": {
+    "hygen": "^6.2.0"
+  }
+}

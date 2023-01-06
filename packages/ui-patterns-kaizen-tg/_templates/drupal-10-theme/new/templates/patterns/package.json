@@ -1,0 +1,12 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/patterns/package.json
+---
+{
+  "name": "@<%= h.changeCase.lower(name) %>/components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@drupal/once": "^1.0.1"
+  }
+}

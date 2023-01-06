@@ -1,0 +1,18 @@
+---
+to: <% if (is_pattern === 'yes') { %><%= h.src() %>/templates/patterns/<%= h.changeCase.lower(h.inflection.pluralize(component_type)) %>/<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>_<%= h.changeCase.snakeCase(h.inflection.dasherize(name)) %>.ui_patterns.yml<% } else { %><%= h.src() %>/templates/patterns/<%= h.changeCase.lower(h.inflection.pluralize(component_type)) %>/<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>_<%= h.changeCase.snakeCase(h.inflection.dasherize(name)) %>.yml<% } %>
+---
+<%= h.changeCase.lower(component_type).charAt(0) %>_<%= h.changeCase.snakeCase(h.inflection.dasherize(name)) %>:
+  sb:
+    category: '<%= component_type %>s'
+    name: '<%= h.changeCase.sentenceCase(h.inflection.underscore(name, true)) %>'
+  use: '@<%= h.changeCase.snakeCase(h.themeName) %>/patterns/<%= h.changeCase.lower(h.inflection.pluralize(component_type)) %>/<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.html.twig'
+  label: '<%= h.inflection.capitalize(component_type) %> <%= h.inflection.humanize(h.changeCase.snakeCase(h.inflection.dasherize(name)), true) %>'
+  fields:
+    content:
+      type: render
+      label: 'Content'
+      preview: 'Lorem ipsum'
+  settings:
+    <%= h.changeCase.lower(component_type).charAt(0) %>_<%= h.changeCase.snakeCase(h.inflection.dasherize(name)) %>_custom_classes:
+      type: textfield
+      label: Set a custom classnames for <%= h.changeCase.lower(component_type) %> <%= h.inflection.humanize(h.changeCase.snakeCase(h.inflection.dasherize(name)), true) %>. Split classnames with single space

@@ -1,0 +1,12 @@
+---
+to: <%= h.src() %>/templates/patterns/<%= h.changeCase.lower(h.inflection.pluralize(component_type)) %>/<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.html.twig
+---
+{{ attach_library('<%= h.changeCase.snakeCase(h.themeName) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>') }}
+{% set attributes = attributes.addClass('<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>') %}
+<div {{ attributes }}>
+  {% if content %}
+    <div class="<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>__content">
+      {{ content }}
+    </div>
+  {% endif %}
+</div>
