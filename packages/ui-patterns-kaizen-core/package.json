@@ -1,0 +1,20 @@
+{
+  "name": "@skilld/ui-patterns-kaizen-core",
+  "version": "1.0.0-alpha.0",
+  "description": "UI Patterns Kaizen core styles",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen.git",
+    "directory": "packages/ui-patterns-kaizen-core"
+  },
+  "bugs": {
+    "url": "https://github.com/skilld-labs/ui-patterns-kaizen/issues"
+  },
+  "homepage": "https://github.com/skilld-labs/ui-patterns-kaizen#readme",
+  "author": "Skilld",
+  "license": "MIT",
+  "dependencies": {
+    "focus-visible": "^5.2.0"
+  }
+}

@@ -1,0 +1,4 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/src/css/h-entity-fake-link.css
+---
+@import "@skilld/ui-patterns-kaizen-core/helpers/entity-fake-link/h-entity-fake-link";

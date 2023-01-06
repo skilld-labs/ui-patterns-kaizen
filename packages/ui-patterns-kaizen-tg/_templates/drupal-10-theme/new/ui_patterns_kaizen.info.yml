@@ -1,0 +1,25 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/<%= h.changeCase.lower(name) %>.info.yml
+---
+name: <%= h.changeCase.sentenceCase(name) %>
+type: theme
+base theme: false
+description: <%= description %>
+core_version_requirement: ^8.7.7 || ^9 || ^10
+libraries:
+  - <%= h.changeCase.lower(name) %>/base
+dependencies:
+  - ui_patterns:ui_patterns
+  - ui_patterns_library:ui_patterns_library
+  - ui_patterns_settings:ui_patterns_settings
+  - ui_patterns_extends:ui_patterns_extends
+# Uncomment lines if you are using the following modules in drupal.
+#  - ui_patterns_field_formatters:ui_patterns_field_formatters
+#  - ui_patterns_views:ui_patterns_views
+#  - ui_patterns_views_style:ui_patterns_views_style
+regions:
+  header: Header
+  system: System
+  breadcrumbs: Breadcrumbs
+  main_content: Main content
+  footer: Footer
