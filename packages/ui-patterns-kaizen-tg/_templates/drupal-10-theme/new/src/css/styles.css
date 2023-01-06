@@ -1,0 +1,11 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/src/css/styles.css
+---
+@import "@skilld/ui-patterns-kaizen-core/_border-box";
+@import "@skilld/ui-patterns-kaizen-core/_normalize";
+@import "@skilld/ui-patterns-kaizen-core/_variables";
+@import "@skilld/ui-patterns-kaizen-core/helpers/focus-visible/h-focus-visible";
+@import "@<%= h.changeCase.lower(name) %>/components/_typography";
+@import "@<%= h.changeCase.lower(name) %>/components/_variables";
+@import "@<%= h.changeCase.lower(name) %>/components/_root";
+@import "@<%= h.changeCase.lower(name) %>/components/_utility";

@@ -1,0 +1,51 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/<%= h.changeCase.lower(name) %>.breakpoints.yml
+---
+<%= h.changeCase.lower(name) %>.xs:
+  label: xs
+  mediaQuery: 'all and (min-width: 320px)'
+  weight: 0
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
+<%= h.changeCase.lower(name) %>.s:
+  label: s
+  mediaQuery: 'all and (min-width: 481px)'
+  weight: 10
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
+<%= h.changeCase.lower(name) %>.m:
+  label: m
+  mediaQuery: 'all and (min-width: 769px)'
+  weight: 20
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
+<%= h.changeCase.lower(name) %>.l:
+  label: l
+  mediaQuery: 'all and (min-width: 1025px)'
+  weight: 30
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
+<%= h.changeCase.lower(name) %>.xl:
+  label: xl
+  mediaQuery: 'all and (min-width: 1441px)'
+  weight: 40
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
+<%= h.changeCase.lower(name) %>.xxl:
+  label: xxl
+  mediaQuery: 'all and (min-width: 1921px)'
+  weight: 50
+  group: <%= h.changeCase.lower(name) %>
+  multipliers:
+    - 1x
+    - 2x
