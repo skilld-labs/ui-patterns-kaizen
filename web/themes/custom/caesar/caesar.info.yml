@@ -1,0 +1,18 @@
+name: Caesar
+type: theme
+description: 'UI patterns with Kaizen'
+core_version_requirement: ^9 || ^10
+base theme: false
+dependencies:
+  - ui_patterns:ui_patterns
+  - ui_patterns_library:ui_patterns_library
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer: 'Footer'
+libraries:
+  - patterns/styles
+components:
+  namespaces:
+    atoms:
+      - templates/patterns/atoms

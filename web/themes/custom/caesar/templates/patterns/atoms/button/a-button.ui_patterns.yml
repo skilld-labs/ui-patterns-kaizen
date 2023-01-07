@@ -1,0 +1,13 @@
+a_button:
+  label: Atom Button
+  description: Button Component
+  fields:
+    content:
+      type: text
+      label: Content
+      description: Button text
+      preview:
+        type: processed_text
+    href:
+      type: string
+      label: Link href
