@@ -1,11 +1,5 @@
 import { within, userEvent } from "@storybook/testing-library";
 import { createPage } from "./Page";
-import twigSource from "./test.html.twig?raw";
-import yamlSource from "./test.yml?raw"
-import { twigLoader, yamlLoader } from "../.storybook/plugins/caesar";
-
-const loadedTwig = twigLoader(twigSource);
-const loadedYaml = yamlLoader(yamlSource);
 
 export default {
   title: "Example/Page",

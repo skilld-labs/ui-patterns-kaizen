@@ -1,13 +1,22 @@
 a_button:
-  label: Atom Button
+  use: "@atoms/button/a-button.html.twig"
+  label: Atoms/Button
   description: Button Component
   fields:
     content:
       type: text
       label: Content
       description: Button text
-      preview:
-        type: processed_text
+      # TODO: Reaserch usage of type: processed_text or media:image
+      # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
+      preview: 'Button Text'
     href:
       type: string
       label: Link href
+      description: Optional Link
+      preview: '#'
+  settings:
+    type: textfield
+    label: Modifier
+    description: Add modifier here
+    allow_token: true

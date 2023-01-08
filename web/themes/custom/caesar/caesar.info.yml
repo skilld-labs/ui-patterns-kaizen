@@ -16,3 +16,5 @@ components:
   namespaces:
     atoms:
       - templates/patterns/atoms
+    molecules:
+      - templates/patterns/molecules
