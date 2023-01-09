@@ -16,7 +16,31 @@ a_button:
       description: Optional Link
       preview: '#'
   settings:
-    type: textfield
-    label: Modifier
-    description: Add modifier here
-    allow_token: true
+    type:
+      type: radios
+      label: Choose a modifier
+      default_value: default
+      options:
+        default: Default
+        a-button--second: Second
+        a-button--third: Third
+        a-button--fourth: Fourth
+        a-button--fifth: Fifth
+    icon:
+      type: select
+      label: Icon
+      default_value: default
+      options:
+        default: No icon
+        close: Close
+        add: Add
+    iconSize:
+      type: select
+      label: Icon size
+      default_value: default
+      options:
+        default: Default
+        a-button--icon-size-big: Big
+    buttonCustomClasses:
+      type: textfield
+      label: Set a custom classnames for button. Split classnames with single space

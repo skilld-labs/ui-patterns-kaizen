@@ -1,0 +1,24 @@
+a_icon:
+  use: "@atoms/icon/a-icon.html.twig"
+  label: Atoms/Icon
+  description: Icon Component
+  fields:
+    content:
+      type: text
+      label: Icon name
+      description: Icon name (string)
+      # TODO: Reaserch usage of type: processed_text or media:image
+      # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
+      preview: 'Add'
+  settings:
+    icon:
+      type: select
+      label: Icon
+      default_value: default
+      options:
+        default: No icon
+        close: Close
+        add: Add
+    iconCustomClasses:
+      type: textfield
+      label: Set a custom classnames for button. Split classnames with single space

@@ -1,4 +1,4 @@
-import componentSource from "./a-button.ui_patterns.yml";
+import componentSource from "./a-icon.ui_patterns.yml";
 import { componentLoader, paramsLoader } from "../../../../.storybook/plugins/caesar";
 import drupalAttribute from 'drupal-attribute';
 const templates = import.meta.glob(`./*.html.twig`, {
@@ -9,21 +9,11 @@ const templates = import.meta.glob(`./*.html.twig`, {
 
 export default {
   // TODO: Research Dynamic titles generation.
-  title: "Atoms/Button",
-  render: (args) => componentLoader(componentSource, templates, {
-    ...args,
-    wrapper_attributes: new drupalAttribute(),
-  }),
+  title: "Atoms/Icon",
+  render: (args) => componentLoader(componentSource, templates, args),
   argTypes: {
     ...paramsLoader(componentSource),
   },
 };
 
 export const Basic = {}
-
-export const Primary = {
-  ...Basic,
-  args: {
-    content: 'F@ck yeah!',
-  }
-}

@@ -1,1 +1,11 @@
-<{{ tag }}{{ attributes }}>{{ content }}</{{ tag }}>
+{% if type and type != 'default' %}
+  {% set attributes = attributes.addClass(type) %}
+{% endif %}
+<{{ tag|default('button') }}{{ attributes }}>
+  {{ content }}
+  {% if icon and icon != 'default' %}
+    {% include '@atoms/icon/a-icon.html.twig' with {
+      icon: icon,
+    } only %}
+  {% endif %}
+</{{ tag|default('button') }}>
