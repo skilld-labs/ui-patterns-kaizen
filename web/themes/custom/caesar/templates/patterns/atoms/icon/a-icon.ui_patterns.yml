@@ -11,14 +11,6 @@ a_icon:
       # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
       preview: 'Add'
   settings:
-    icon:
-      type: select
-      label: Icon
-      default_value: default
-      options:
-        default: No icon
-        close: Close
-        add: Add
-    iconCustomClasses:
+    extra_classes:
       type: textfield
-      label: Set a custom classnames for button. Split classnames with single space
+      label: Add extra CSS classes separated by spaces.
