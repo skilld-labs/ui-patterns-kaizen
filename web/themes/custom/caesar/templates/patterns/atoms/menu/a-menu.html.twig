@@ -1,0 +1,23 @@
+{% import _self as menus %}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('a-menu') }}>
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+      <li{{ item.attributes.addClass('a-menu__item') }}>
+        {{ link(item.title, item.url, { 'class': ['a-menu__link'] }) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}
+
+{{ menus.menu_links(items, attributes, 0) }}

@@ -1,0 +1,8 @@
+a_menu:
+  use: "@atoms/menu/a-menu.html.twig"
+  label: Atoms/Menu
+  description: Menu Component
+  fields:
+    items:
+      type: render
+      label: Items

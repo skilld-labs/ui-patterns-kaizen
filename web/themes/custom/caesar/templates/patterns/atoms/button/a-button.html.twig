@@ -2,14 +2,10 @@
   set classes = [
     'a-button',
     modifier|safe_join(' '),
-    extra_classes
+    extra_classes,
   ]
 %}
 <{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
   {{ content }}
-  {# {% if icon and icon != 'default' %}
-    {% include '@atoms/icon/a-icon.html.twig' with {
-      icon: icon,
-    } only %}
-  {% endif %} #}
+{#  {% include '@atoms/icon/a-icon.html.twig' %}#}
 </{{ tag|default('button') }}>

@@ -1,0 +1,8 @@
+m_grid:
+  use: "@molecules/grid/m-grid.html.twig"
+  label: Molecules/Grid
+  description: Grid Component
+  fields:
+    items:
+      type: render
+      label: Items

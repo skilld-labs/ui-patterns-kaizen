@@ -2,7 +2,10 @@ import themeInfo from "../../caesar.info.yml";
 import Twig from "twig";
 import drupalAttribute from "drupal-attribute";
 import twigDrupal from "twig-drupal-filters";
+import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
+import * as path from 'path';
 twigDrupal(Twig);
+addDrupalExtensions(Twig);
 
 const argsDecoder = (setting, selected) => {
   let result;
@@ -30,13 +33,12 @@ export const componentRender = (src, templates, args) => {
   // Not used for now. We need to compare `use property` with existing templates.
   // We should manage it with dynamic Vite imports
   // const file = getFile(component.use);
-
   const template = Twig.twig({
     data: templates[getTemplatePath(componentName)],
     allowInlineIncludes: true,
     namespaces: {
       // TODO: how to set namespaces correctly to support {% include () %}
-      atoms: "../../../templates/patterns/atoms",
+      // atoms: '../templates/patterns/atoms/',
     },
   });
 
@@ -45,7 +47,7 @@ export const componentRender = (src, templates, args) => {
   };
 
   for (const [argName, argValue] of Object.entries(args)) {
-    if (component?.settings[argName]) {
+    if (component.settings && component.settings[argName]) {
       templateOptions[argName] = argsDecoder(
         component.settings[argName],
         argValue
