@@ -1,5 +1,4 @@
 import drupalAttribute from "drupal-attribute";
-import componentSource from "./a-menu.yml";
 import {
   componentRender,
   paramsLoader,
@@ -13,7 +12,7 @@ const templates = import.meta.glob(`./*.html.twig`, {
 export default {
   // TODO: Research Dynamic titles generation.
   title: "Atoms/Menu",
-  render: (args) => componentRender(componentSource, templates, {
+  render: (args) => componentRender('a_menu', templates, {
     ...args,
     items: [
       {
@@ -28,7 +27,7 @@ export default {
       },
     ],
   }),
-  ...paramsLoader(componentSource),
+  ...paramsLoader('a_menu'),
 };
 
 export const Basic = {};

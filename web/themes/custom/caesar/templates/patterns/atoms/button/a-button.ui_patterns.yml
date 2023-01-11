@@ -17,7 +17,7 @@ a_button:
       preview: '#'
   settings:
     # these settings presented in every component
-    modifier:
+    a_button_modifier:
       type: checkboxes
       label: Choose a modifier class
       options:
@@ -26,11 +26,11 @@ a_button:
         a-button--fourth: Fourth
         a-button--fifth: Fifth
         a-button--icon-big: Button with large icon
-    extra_classes:
+    a_button_extra_classes:
       type: textfield
-      label: Add extra CSS classes separated by spaces.
+      label: Add extra CSS classes for atom button separated by spaces.
     # next settings individual per component
-    icon:
+    a_button_icon:
       type: select
       label: Icon
       options:

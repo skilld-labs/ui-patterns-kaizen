@@ -1,4 +1,3 @@
-import componentSource from "./m-grid.ui_patterns.yml";
 import { componentRender, paramsLoader } from "../../../../.storybook/plugins/caesar";
 import * as Button from '../../atoms/button/a-button.stories';
 const templates = import.meta.glob(`./*.html.twig`, {
@@ -11,9 +10,9 @@ export default {
   // TODO: Research Dynamic titles generation.
   title: "Molecules/Grid",
   render: (args) => {
-    return componentRender(componentSource, templates, args)
+    return componentRender('m_grid', templates, args)
   },
-  ...paramsLoader(componentSource),
+  ...paramsLoader('m_grid'),
 };
 
 export const Basic = {

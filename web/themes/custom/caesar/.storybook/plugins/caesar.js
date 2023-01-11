@@ -3,8 +3,14 @@ import Twig from "twig";
 import drupalAttribute from "drupal-attribute";
 import twigDrupal from "twig-drupal-filters";
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
-import * as path from 'path';
+const ymlData = import.meta.glob('../../templates/**/*.yml', { import: 'default', eager: true });
 twigDrupal(Twig);
+
+let normalizedYmlData = {};
+Object.values(ymlData).forEach((data) => {
+  normalizedYmlData[Object.keys(data)[0]] = Object.values(data)[0];
+});
+
 addDrupalExtensions(Twig);
 
 const argsDecoder = (setting, selected) => {
@@ -26,9 +32,8 @@ const argsDecoder = (setting, selected) => {
   return result
 };
 
-export const componentRender = (src, templates, args) => {
-  const component = Object.values(src)[0];
-  const componentName = Object.keys(src)[0];
+export const componentRender = (componentName, templates, args) => {
+  const component = normalizedYmlData[componentName];
 
   // Not used for now. We need to compare `use property` with existing templates.
   // We should manage it with dynamic Vite imports
@@ -46,17 +51,30 @@ export const componentRender = (src, templates, args) => {
     attributes: new drupalAttribute(),
   };
 
-  for (const [argName, argValue] of Object.entries(args)) {
-    if (component.settings && component.settings[argName]) {
-      templateOptions[argName] = argsDecoder(
-        component.settings[argName],
-        argValue
-      );
+  if (component) {
+    for (const [argName, argValue] of Object.entries(args)) {
+      if (component.settings && component.settings[argName]) {
+        templateOptions[argName] = argsDecoder(
+          component.settings[argName],
+          argValue,
+        );
+      }
+      if (component.extends) {
+        component.extends.forEach((extend) => {
+          const extendedComponentName = normalizedYmlData[extend.split('.').shift()];
+          if (extendedComponentName && extendedComponentName.settings[argName]) {
+            templateOptions[argName] = argsDecoder(
+              extendedComponentName.settings[argName],
+              argValue,
+            );
+          }
+        });
+      }
     }
-  }
 
-  for (const [key, value] of Object.entries(component.fields)) {
-    templateOptions[key] = args[key] ?? value.preview;
+    for (const [key, value] of Object.entries(component.fields)) {
+      templateOptions[key] = args[key] ?? value.preview;
+    }
   }
 
   return template.render(templateOptions);
@@ -69,8 +87,7 @@ const getTemplatePath = (componentName) =>
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);
 
-export const paramsLoader = (src) => {
-  const component = Object.values(src)[0];
+const generateArgTypes = (component) => {
   const argTypes = {};
   if (component.settings) {
     for (const [argName, argValue] of Object.entries(component.settings)) {
@@ -87,6 +104,24 @@ export const paramsLoader = (src) => {
         }),
       };
     }
+    return argTypes;
+  }
+};
+
+export const paramsLoader = (componentName) => {
+  const component = normalizedYmlData[componentName];
+  let argTypes = {};
+  if (component) {
+    if (component.extends) {
+      component.extends.forEach((extend) => {
+        argTypes = {
+          ...generateArgTypes(normalizedYmlData[extend.split('.').shift()])};
+      });
+    }
+    argTypes = {
+      ...argTypes,
+      ...generateArgTypes(component),
+    };
   }
   return {
     argTypes,

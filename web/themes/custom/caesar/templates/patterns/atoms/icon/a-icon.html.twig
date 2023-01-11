@@ -1,1 +1,5 @@
-<div {{ attributes }}>[{{ content }}]</div>
+{% set classes = [
+  'a-icon',
+  a_button_modifier,
+] %}
+<div {{ attributes.addClass(classes) }}>[{{ content }}]</div>

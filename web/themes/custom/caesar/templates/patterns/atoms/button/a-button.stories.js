@@ -1,4 +1,3 @@
-import componentSource from "./a-button.ui_patterns.yml";
 import {
   componentRender,
   paramsLoader,
@@ -12,8 +11,8 @@ const templates = import.meta.glob(`./*.html.twig`, {
 export default {
   // TODO: Research Dynamic titles generation.
   title: "Atoms/Button",
-  render: (args) => componentRender(componentSource, templates, args),
-  ...paramsLoader(componentSource),
+  render: (args) => componentRender('a_button', templates, args),
+  ...paramsLoader('a_button'),
 };
 
 export const Basic = {};
