@@ -1,8 +1,8 @@
 {%
   set classes = [
     'a-button',
-    modifier|safe_join(' '),
-    extra_classes,
+    a_button_modifier|safe_join(' '),
+    a_button_extra_classes,
   ]
 %}
 <{{ tag|default('button') }}{{ attributes.addClass(classes) }}>

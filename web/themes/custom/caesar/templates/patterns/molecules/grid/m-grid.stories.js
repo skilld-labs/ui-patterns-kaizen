@@ -1,5 +1,5 @@
 import { componentRender, paramsLoader } from "../../../../.storybook/plugins/caesar";
-import * as Button from '../../atoms/button/a-button.stories';
+import { Basic as Button } from '../../atoms/button/a-button.stories';
 const templates = import.meta.glob(`./*.html.twig`, {
   as: "raw",
   import: "default",
@@ -9,14 +9,11 @@ const templates = import.meta.glob(`./*.html.twig`, {
 export default {
   // TODO: Research Dynamic titles generation.
   title: "Molecules/Grid",
-  render: (args) => {
-    return componentRender('m_grid', templates, args)
-  },
+  render: (args) => componentRender('m_grid', templates, {
+    ...args,
+    items: [Button],
+  }),
   ...paramsLoader('m_grid'),
 };
 
-export const Basic = {
-  args: {
-    items: [Button.Basic],
-  },
-}
+export const Basic = {}

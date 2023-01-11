@@ -6,11 +6,7 @@ import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 const ymlData = import.meta.glob('../../templates/**/*.yml', { import: 'default', eager: true });
 twigDrupal(Twig);
 
-let normalizedYmlData = {};
-Object.values(ymlData).forEach((data) => {
-  normalizedYmlData[Object.keys(data)[0]] = Object.values(data)[0];
-});
-
+const normalizedYmlData = Object.values(ymlData).reduce((a, i) => Object.assign(a, i), {});
 addDrupalExtensions(Twig);
 
 const argsDecoder = (setting, selected) => {
@@ -33,6 +29,7 @@ const argsDecoder = (setting, selected) => {
 };
 
 export const componentRender = (componentName, templates, args) => {
+  console.log(templates);
   const component = normalizedYmlData[componentName];
 
   // Not used for now. We need to compare `use property` with existing templates.
@@ -43,7 +40,7 @@ export const componentRender = (componentName, templates, args) => {
     allowInlineIncludes: true,
     namespaces: {
       // TODO: how to set namespaces correctly to support {% include () %}
-      // atoms: '../templates/patterns/atoms/',
+      atoms: '../../templates/patterns/atoms/',
     },
   });
 
