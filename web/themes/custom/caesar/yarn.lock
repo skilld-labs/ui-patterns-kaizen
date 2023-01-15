@@ -3381,6 +3381,15 @@ drupal-attribute@^1.0.2:
   resolved "https://registry.yarnpkg.com/drupal-attribute/-/drupal-attribute-1.0.2.tgz#cd33da1ce9e66a2077d522f73eecbe76e56e44bb"
   integrity sha512-jsgfdE3EzN6UFUASPKVr9il68ymytaCAv/EAFLCLe1Wdu0iQ3xWghcpbjiZBJp2hxBG9rjeDt4yMJrW2oTtBwg==
 
+drupal-twig-extensions@^1.0.0-beta.4:
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/drupal-twig-extensions/-/drupal-twig-extensions-1.0.0-beta.4.tgz#43d199eb96aa0cfb0cb24dab6f761743d55000fd"
+  integrity sha512-nTj/bhwxWmLJzVQNYq/dhiGhd8qjMDS1WOIlGwgM4boagvP4AMxfm0iloLKKpDnQXt6AvNSXGZHFnEtVGg3PkQ==
+  dependencies:
+    drupal-attribute "^1.0.2"
+    locutus "^2.0.15"
+    lodash.clonedeep "^4.5.0"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -4738,10 +4747,15 @@ locate-path@^7.1.0:
   dependencies:
     p-locate "^6.0.0"
 
-locutus@^2.0.11:
+locutus@^2.0.11, locutus@^2.0.15:
   version "2.0.16"
   resolved "https://registry.yarnpkg.com/locutus/-/locutus-2.0.16.tgz#1da15532f1d735712a27e35a1caf0ccb7041f6b3"
   integrity sha512-pGfl6Hb/1mXLzrX5kl5lH7gz25ey0vwQssZp8Qo2CEF59di6KrAgdFm+0pW8ghLnvNzzJGj5tlWhhv2QbK3jeQ==
+
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -6358,14 +6372,6 @@ tslib@^2.0.1, tslib@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
   integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
-
-twig-drupal-filters@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/twig-drupal-filters/-/twig-drupal-filters-3.2.0.tgz#6fc07b4705b174c10396799216c6c1db728d71c8"
-  integrity sha512-BSRyHsAII8/k9e7rLDOs/NtirIKxgHH7jKlLzCdjKAlRsNrAZQyFI0a3+SCt4PiqaZ6Zo9W+4/ZFlBJ0z+0AuA==
-  dependencies:
-    object-keys "^1.1.1"
-    twig "^1.15.4"
 
 twig@^1.15.4:
   version "1.15.4"

@@ -1,5 +1,6 @@
 {% set classes = [
   'a-icon',
-  a_button_modifier,
+  modifier is iterable ? modifier|safe_join(' ') : modifier,
+  extra_classes,
 ] %}
-<div {{ attributes.addClass(classes) }}>[{{ content }}]</div>
+<div {{ attributes.addClass(classes) }}>{{ content }}</div>

@@ -1,11 +1,17 @@
 {%
   set classes = [
     'a-button',
-    a_button_modifier|safe_join(' '),
-    a_button_extra_classes,
+    modifier is iterable ? modifier|safe_join(' ') : modifier,
+    extra_classes,
   ]
 %}
 <{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
   {{ content }}
-{#  {% include '@atoms/icon/a-icon.html.twig' %}#}
+  {% if icon %}
+    {% include '@atoms/icon/a-icon.html.twig' ignore missing with {
+      'content': icon,
+      'attributes': create_attribute()
+    } only %}
+  {% endif %}
+
 </{{ tag|default('button') }}>

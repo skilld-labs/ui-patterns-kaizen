@@ -1,13 +1,5 @@
-import themeInfo from "../../caesar.info.yml";
-import Twig from "twig";
-import drupalAttribute from "drupal-attribute";
-import twigDrupal from "twig-drupal-filters";
-import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
-const ymlData = import.meta.glob('../../templates/**/*.yml', { import: 'default', eager: true });
-twigDrupal(Twig);
-
-const normalizedYmlData = Object.values(ymlData).reduce((a, i) => Object.assign(a, i), {});
-addDrupalExtensions(Twig);
+import { useParameter } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
 
 const argsDecoder = (setting, selected) => {
   let result;
@@ -25,66 +17,43 @@ const argsDecoder = (setting, selected) => {
   } else {
     result = selected;
   }
-  return result
+  return result;
 };
 
-export const componentRender = (componentName, templates, args) => {
-  console.log(templates);
-  const component = normalizedYmlData[componentName];
+export const componentRender = (src, args) => {
+  const Twig = useParameter("Twig");
+  const component = Object.values(src)[0];
 
-  // Not used for now. We need to compare `use property` with existing templates.
-  // We should manage it with dynamic Vite imports
-  // const file = getFile(component.use);
-  const template = Twig.twig({
-    data: templates[getTemplatePath(componentName)],
+  const refTemplate =  Twig.twig({
+    ref: component.use,
     allowInlineIncludes: true,
-    namespaces: {
-      // TODO: how to set namespaces correctly to support {% include () %}
-      atoms: '../../templates/patterns/atoms/',
-    },
   });
 
   const templateOptions = {
-    attributes: new drupalAttribute(),
+    attributes: new DrupalAttribute(),
   };
 
-  if (component) {
-    for (const [argName, argValue] of Object.entries(args)) {
-      if (component.settings && component.settings[argName]) {
-        templateOptions[argName] = argsDecoder(
-          component.settings[argName],
-          argValue,
-        );
-      }
-      if (component.extends) {
-        component.extends.forEach((extend) => {
-          const extendedComponentName = normalizedYmlData[extend.split('.').shift()];
-          if (extendedComponentName && extendedComponentName.settings[argName]) {
-            templateOptions[argName] = argsDecoder(
-              extendedComponentName.settings[argName],
-              argValue,
-            );
-          }
-        });
-      }
-    }
-
-    for (const [key, value] of Object.entries(component.fields)) {
-      templateOptions[key] = args[key] ?? value.preview;
+  for (const [argName, argValue] of Object.entries(args)) {
+    if (component.settings && component.settings[argName]) {
+      templateOptions[argName] = argsDecoder(
+        component.settings[argName],
+        argValue
+      );
     }
   }
 
-  return template.render(templateOptions);
-};
+  for (const [key, value] of Object.entries(component.fields)) {
+    templateOptions[key] = args[key] ?? value.preview;
+  }
 
-// a_button -> ./a-button.html.twig
-const getTemplatePath = (componentName) =>
-  `./${componentName.replace(/_/g, "-")}.html.twig`;
+  return refTemplate.render(templateOptions);
+};
 
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);
 
-const generateArgTypes = (component) => {
+export const paramsLoader = (src) => {
+  const component = Object.values(src)[0];
   const argTypes = {};
   if (component.settings) {
     for (const [argName, argValue] of Object.entries(component.settings)) {
@@ -101,42 +70,10 @@ const generateArgTypes = (component) => {
         }),
       };
     }
-    return argTypes;
-  }
-};
-
-export const paramsLoader = (componentName) => {
-  const component = normalizedYmlData[componentName];
-  let argTypes = {};
-  if (component) {
-    if (component.extends) {
-      component.extends.forEach((extend) => {
-        argTypes = {
-          ...generateArgTypes(normalizedYmlData[extend.split('.').shift()])};
-      });
-    }
-    argTypes = {
-      ...argTypes,
-      ...generateArgTypes(component),
-    };
   }
   return {
     argTypes,
   };
-};
-
-// To merge themeInfo.info.yml with pattern template path with
-// components:
-//   namespaces:
-//     atoms:
-//       - templates/patterns/atoms
-// and
-// a_button:
-//   use: "@atoms/button/a-button.html.twig"
-const getFile = (use) => {
-  const namespace = use.substr(1).split("/")[0];
-  const filePath = use.substr(namespace.length + 1);
-  return themeInfo.components.namespaces[namespace] + filePath;
 };
 
 // Transforms Drupal module style to storybook

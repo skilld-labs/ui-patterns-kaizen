@@ -1,4 +1,3 @@
-const path = require("path");
 import content from "@originjs/vite-plugin-content";
 const { mergeConfig } = require("vite");
 

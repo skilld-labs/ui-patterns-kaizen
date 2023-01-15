@@ -2,8 +2,6 @@ a_icon:
   use: "@atoms/icon/a-icon.html.twig"
   label: Atoms/Icon
   description: Icon Component
-  extends:
-    - a_button.settings
   fields:
     content:
       type: text
@@ -13,6 +11,6 @@ a_icon:
       # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
       preview: 'Add'
   settings:
-    a_icon_extra_classes:
+    extra_classes:
       type: textfield
       label: Add extra CSS classes for atom icon separated by spaces.
