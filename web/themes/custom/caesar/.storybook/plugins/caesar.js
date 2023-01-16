@@ -1,5 +1,6 @@
 import { useParameter } from "@storybook/client-api";
 import DrupalAttribute from "drupal-attribute";
+import svgSpritePath from '../../assets/images/sprite.svg';
 
 const argsDecoder = (setting, selected) => {
   let result;
@@ -24,13 +25,14 @@ export const componentRender = (src, args) => {
   const Twig = useParameter("Twig");
   const component = Object.values(src)[0];
 
-  const refTemplate =  Twig.twig({
+  const refTemplate = Twig.twig({
     ref: component.use,
     allowInlineIncludes: true,
   });
 
   const templateOptions = {
     attributes: new DrupalAttribute(),
+    svgSpritePath: svgSpritePath,
   };
 
   for (const [argName, argValue] of Object.entries(args)) {
@@ -73,6 +75,21 @@ export const paramsLoader = (src) => {
   }
   return {
     argTypes,
+  };
+};
+
+// This is default storygenerator
+// still possible to use `componentRender` and `paramsLoader` as is
+
+export const storyGenerator = (componentSource) => {
+  return {
+    render: (args) =>
+      componentRender(componentSource, args),
+    ...paramsLoader(componentSource),
+    // global attachment of Drupal Behaviors
+    play: async ({ canvasElement }) => {
+      Drupal.attachBehaviors(canvasElement, drupalSettings);
+    },
   };
 };
 

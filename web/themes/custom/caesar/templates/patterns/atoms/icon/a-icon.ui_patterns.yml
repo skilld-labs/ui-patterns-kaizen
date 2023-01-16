@@ -1,5 +1,5 @@
 a_icon:
-  use: "@atoms/icon/a-icon.html.twig"
+  use: '@atoms/icon/a-icon.html.twig'
   label: Atoms/Icon
   description: Icon Component
   fields:
@@ -14,3 +14,8 @@ a_icon:
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom icon separated by spaces.
+  libraries:
+    - a-icon:
+        css:
+          component:
+            dist/pattern.css: {}
