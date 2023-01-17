@@ -1,5 +1,5 @@
 a_button:
-  use: "@atoms/button/a-button.html.twig"
+  use: '@atoms/button/a-button.html.twig'
   label: Atoms/Button
   description: Button Component
   fields:
@@ -12,7 +12,7 @@ a_button:
       preview: 'Button Text'
     href:
       type: string
-      label: Link href
+      label: 'Link href'
       description: Optional Link
       preview: '#'
   settings:

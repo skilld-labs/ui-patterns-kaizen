@@ -1,0 +1,3 @@
+/dist/**/*.js
+/color/*.js
+*.stories.js

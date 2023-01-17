@@ -1,0 +1,16 @@
+.a-button {
+  display: block;
+  width: 40px;
+  background-color: orange;
+  appearance: none;
+
+  &__sfg {
+    background-color: blue;
+  }
+}
+
+@media (--db-l) {
+  .a-button {
+    background-color: black;
+  }
+}

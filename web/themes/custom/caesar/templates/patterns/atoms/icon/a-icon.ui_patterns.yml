@@ -1,5 +1,5 @@
 a_icon:
-  use: "@atoms/icon/a-icon.html.twig"
+  use: '@atoms/icon/a-icon.html.twig'
   label: Atoms/Icon
   description: Icon Component
   fields:

@@ -13,5 +13,9 @@
       'attributes': create_attribute()
     } only %}
   {% endif %}
-
+  {% if svgSpritePath %}
+    <svg>
+      <use xlink:href="{{ svgSpritePath }}#svg-account-circle"></use>
+    </svg>
+  {% endif %}
 </{{ tag|default('button') }}>

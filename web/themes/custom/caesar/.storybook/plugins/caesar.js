@@ -1,5 +1,6 @@
 import { useParameter } from "@storybook/client-api";
 import DrupalAttribute from "drupal-attribute";
+import svgSpritePath from '../../assets/images/sprite.svg';
 
 const argsDecoder = (setting, selected) => {
   let result;
@@ -45,6 +46,7 @@ export const componentRender = (src, args) => {
   for (const [key, value] of Object.entries(component.fields)) {
     templateOptions[key] = args[key] ?? value.preview;
   }
+  templateOptions.svgSpritePath = svgSpritePath;
 
   return refTemplate.render(templateOptions);
 };

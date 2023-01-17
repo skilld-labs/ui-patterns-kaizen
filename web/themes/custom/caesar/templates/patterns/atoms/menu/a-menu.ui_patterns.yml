@@ -1,5 +1,5 @@
 a_menu:
-  use: "@atoms/menu/a-menu.html.twig"
+  use: '@atoms/menu/a-menu.html.twig'
   label: Atoms/Menu
   description: Menu Component
   fields:

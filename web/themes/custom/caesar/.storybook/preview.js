@@ -1,14 +1,17 @@
 import Twig from "twig";
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 import DrupalAttributes from "drupal-attribute";
+import svgSpritePath from '../assets/images/sprite.svg';
+import breakpoints from '../caesar.breakpoints.yml';
 addDrupalExtensions(Twig, {
   // Optionally, set options to configure how the Drupal
 });
-
 const allTwigPatternTemplates = import.meta.glob(
   "../templates/patterns/**/*.html.twig",
   { as: "raw", import: "default", eager: true }
 );
+
+window.svgSpritePath = svgSpritePath;
 
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
 // and get by reference in
@@ -33,3 +36,44 @@ export const parameters = {
   // Maybe load only Twig.Template.Registry somehow here.
   Twig: { ...Twig },
 };
+
+window.Drupal = { behaviors: {} };
+window.drupalSettings = {
+  caesar: {
+    svgSpritePath,
+    breakpoints: Object.keys(breakpoints).reduce((a, i) => Object.assign(a, {
+      [i.split('.').pop()]: breakpoints[i].mediaQuery,
+    }), {}),
+  },
+};
+
+((Drupal, drupalSettings) => {
+  // Simplified Drupal.t() function just to be able to use such constructions
+  // directly from component's js behaviors.
+  Drupal.t = function (str) {
+    return str;
+  };
+
+  Drupal.throwError = function (error) {
+    setTimeout(function () {
+      throw error;
+    }, 0);
+  };
+
+  Drupal.attachBehaviors = function (context, settings) {
+    context = context || document;
+    settings = settings || drupalSettings;
+    const behaviors = Drupal.behaviors;
+    // Execute all of them.
+    Object.keys(behaviors || {}).forEach((i) => {
+      if (typeof behaviors[i].attach === "function") {
+        // Don't stop the execution of behaviors in case of an error.
+        try {
+          behaviors[i].attach(context, settings);
+        } catch (e) {
+          Drupal.throwError(e);
+        }
+      }
+    });
+  };
+})(Drupal, window.drupalSettings);

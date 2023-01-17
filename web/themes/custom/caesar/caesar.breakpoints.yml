@@ -1,0 +1,48 @@
+caesar.xs:
+  label: xs
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
+caesar.s:
+  label: s
+  mediaQuery: '(min-width: 481px)'
+  weight: 10
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
+caesar.m:
+  label: m
+  mediaQuery: '(min-width: 769px)'
+  weight: 20
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
+caesar.l:
+  label: l
+  mediaQuery: '(min-width: 1025px)'
+  weight: 30
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
+caesar.xl:
+  label: xl
+  mediaQuery: '(min-width: 1441px)'
+  weight: 40
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
+caesar.xxl:
+  label: xxl
+  mediaQuery: '(min-width: 1921px)'
+  weight: 50
+  group: caesar
+  multipliers:
+    - 1x
+    - 2x
