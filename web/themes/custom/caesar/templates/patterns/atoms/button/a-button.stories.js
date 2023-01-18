@@ -1,14 +1,12 @@
 import componentSource from "./a-button.ui_patterns.yml";
-import {
-  componentRender,
-  paramsLoader,
-} from "../../../../.storybook/plugins/caesar";
+import { storyGenerator } from "../../../../.storybook/plugins/caesar";
+
+import "./atoms.button.styles.css";
+import "./atoms.button.script";
 
 export default {
-  // TODO: Research Dynamic titles generation.
   title: "Atoms/Button",
-  render: (args) => componentRender(componentSource, args),
-  ...paramsLoader(componentSource),
+  ...storyGenerator(componentSource),
 };
 
 export const Basic = {};

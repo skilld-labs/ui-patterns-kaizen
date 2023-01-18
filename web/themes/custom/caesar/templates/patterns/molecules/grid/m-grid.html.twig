@@ -1,8 +1,12 @@
-<style>
-    .m-grid { display: flex; }
-</style>
+{%
+  set classes = [
+    'm-grid',
+    modifier is iterable ? modifier|safe_join(' ') : modifier,
+    extra_classes,
+  ]
+%}
 
-<div {{ attributes.addClass('m-grid') }}>
+<div {{ attributes.addClass(classes) }}>
   {% for item in items %}
     {{ item }}
   {% endfor %}

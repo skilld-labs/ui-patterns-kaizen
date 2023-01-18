@@ -1,5 +1,5 @@
 a_button:
-  use: "@atoms/button/a-button.html.twig"
+  use: '@atoms/button/a-button.html.twig'
   label: Atoms/Button
   description: Button Component
   fields:
@@ -36,3 +36,16 @@ a_button:
       options:
         close: Close
         add: Add
+  libraries:
+    - a-button:
+        css:
+          component:
+            //unpkg.com/open-props@1.5.3/open-props.min.css:
+              { type: external, minified: true }
+            dist/pattern.css: {}
+        js:
+          dist/pattern.js: {}
+        dependencies:
+          - core/normalize
+          - core/drupal
+          - core/once

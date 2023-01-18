@@ -1,0 +1,11 @@
+.a-button {
+  background-color: green;
+
+  &--second {
+    background-color: pink;
+  }
+
+  @media (--db-l) {
+    background-color: gray;
+  }
+}

@@ -1,8 +1,12 @@
 a_menu:
-  use: "@atoms/menu/a-menu.html.twig"
+  use: '@atoms/menu/a-menu.html.twig'
   label: Atoms/Menu
   description: Menu Component
   fields:
     items:
       type: render
       label: Items
+  settings:
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.

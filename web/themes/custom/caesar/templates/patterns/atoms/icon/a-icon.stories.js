@@ -1,11 +1,11 @@
 import componentSource from "./a-icon.ui_patterns.yml";
-import { componentRender, paramsLoader } from "../../../../.storybook/plugins/caesar";
+import { storyGenerator } from "../../../../.storybook/plugins/caesar";
+
+import "./atoms.icon.styles.css";
 
 export default {
-  // TODO: Research Dynamic titles generation.
   title: "Atoms/Icon",
-  render: (args) => componentRender(componentSource, args),
-  ...paramsLoader(componentSource),
+  ...storyGenerator(componentSource),
 };
 
-export const Basic = {}
+export const Basic = {};
