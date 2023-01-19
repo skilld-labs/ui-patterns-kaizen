@@ -1,2 +1,3 @@
 /dist/**/*.js
 *.stories.js
+templates/patterns/**/script.js

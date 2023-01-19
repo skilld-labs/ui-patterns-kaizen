@@ -1,5 +1,6 @@
 .a-button {
   background-color: green;
+  background-image: url("@images/test.jpg");
 
   &--second {
     background-color: pink;

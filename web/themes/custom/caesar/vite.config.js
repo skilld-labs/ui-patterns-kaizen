@@ -51,6 +51,10 @@ export default defineConfig({
                 const patternPath = name.split('.');
                 return `${patternPath[0]}/${patternPath[1]}/dist/styles.css`;
               },
+              transform: (contents) =>
+                contents
+                  .toString()
+                  .replace('../images', '../../../../../dist/images/'),
             },
             {
               src: 'dist/js/*.script.js',
@@ -59,11 +63,15 @@ export default defineConfig({
                 const patternPath = name.split('.');
                 return `${patternPath[0]}/${patternPath[1]}/dist/script.js`;
               },
+              transform: (contents) =>
+                contents
+                  .toString()
+                  .replace('../chunks', '../../../../../dist/chunks/'),
             },
           ],
           hook: 'writeBundle',
           // Uncomment next to check how files copied
-          // verbose: true,
+          verbose: true,
         }),
       ],
     },

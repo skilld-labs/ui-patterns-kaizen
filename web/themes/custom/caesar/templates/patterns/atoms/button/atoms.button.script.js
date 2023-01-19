@@ -5,6 +5,7 @@ import Splide from '@splidejs/splide';
     attach(context, settings) {
       console.log(context, settings);
       const elements = once('a-button--processed', '.a-button');
+      console.log(Splide);
     },
   };
 })(Drupal);
