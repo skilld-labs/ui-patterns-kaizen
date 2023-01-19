@@ -7,8 +7,6 @@ a_icon:
       type: text
       label: Icon name
       description: Icon name (string)
-      # TODO: Reaserch usage of type: processed_text or media:image
-      # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
       preview: 'Add'
   settings:
     extra_classes:
@@ -18,4 +16,4 @@ a_icon:
     - a-icon:
         css:
           component:
-            dist/pattern.css: {}
+            dist/styles.css: {}

@@ -1,0 +1,20 @@
+a_inputtext:
+  use: '@atoms/inputtext/a-inputtext.html.twig'
+  label: Atoms/Inputtext
+  description: Inputtext Component
+  fields:
+    content:
+      type: text
+      label: Inputtext name
+      description: Inputtext name (string)
+      preview: 'Add'
+  settings:
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom inputtext separated by spaces.
+# This is no_pattern so please define its library in THEMENAME.libraries.yml
+# and attach it globally as dependency.
+#   - a-inputtext:
+#       css:
+#         component:
+#           templates/patterns/inputtext/dist/styles.css: {}

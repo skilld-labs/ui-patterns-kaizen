@@ -1,15 +1,6 @@
-# TODO: review default breakpoints.
-caesar.xs:
-  label: xs
-  mediaQuery: '(min-width: 320px)'
-  weight: 0
-  group: caesar
-  multipliers:
-    - 1x
-    - 2x
 caesar.s:
   label: s
-  mediaQuery: '(min-width: 481px)'
+  mediaQuery: '(min-width: 480px)'
   weight: 10
   group: caesar
   multipliers:
@@ -17,7 +8,7 @@ caesar.s:
     - 2x
 caesar.m:
   label: m
-  mediaQuery: '(min-width: 769px)'
+  mediaQuery: '(min-width: 768px)'
   weight: 20
   group: caesar
   multipliers:
@@ -25,7 +16,7 @@ caesar.m:
     - 2x
 caesar.l:
   label: l
-  mediaQuery: '(min-width: 1025px)'
+  mediaQuery: '(min-width: 1024px)'
   weight: 30
   group: caesar
   multipliers:
@@ -33,7 +24,7 @@ caesar.l:
     - 2x
 caesar.xl:
   label: xl
-  mediaQuery: '(min-width: 1441px)'
+  mediaQuery: '(min-width: 1440px)'
   weight: 40
   group: caesar
   multipliers:

@@ -17,7 +17,6 @@ module.exports = {
     require('postcss-pxtorem')({
       propList: ['*'],
     }),
-    // TODO: Check this stylelint work on live.
     require('stylelint')({
       configFile: './.stylelintrc',
       fix: true,

@@ -7,8 +7,6 @@ a_button:
       type: text
       label: Content
       description: Button text
-      # TODO: Reaserch usage of type: processed_text or media:image
-      # https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html#pattern-definitions
       preview: 'Button Text'
     href:
       type: string

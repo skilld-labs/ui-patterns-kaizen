@@ -39,9 +39,6 @@ export default defineConfig({
         },
       },
       plugins: [
-        // Copy patterns assets after writeBundle rollup hook
-        // TODO Research `Transform file contents` of plugin
-        // in case if component contains link on some image or chunk!!
         copy({
           targets: [
             {
@@ -54,7 +51,7 @@ export default defineConfig({
               transform: (contents) =>
                 contents
                   .toString()
-                  .replace('../images', '../../../../../dist/images/'),
+                  .replace('../images/', '../../../../../dist/images/'),
             },
             {
               src: 'dist/js/*.script.js',
@@ -66,12 +63,12 @@ export default defineConfig({
               transform: (contents) =>
                 contents
                   .toString()
-                  .replace('../chunks', '../../../../../dist/chunks/'),
+                  .replace('../chunks/', '../../../../../dist/chunks/'),
             },
           ],
           hook: 'writeBundle',
           // Uncomment next to check how files copied
-          verbose: true,
+          // verbose: true,
         }),
       ],
     },

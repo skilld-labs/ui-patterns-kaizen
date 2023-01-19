@@ -1,7 +1,2 @@
 @import "./_variables.css";
 @import "./_fonts.css";
-
-/* TODO: check in storybook */
-.a-button {
-  background-image: url("@images/test.jpg");
-}

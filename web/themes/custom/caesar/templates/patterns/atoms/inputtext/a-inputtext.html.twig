@@ -1,0 +1,6 @@
+{% set classes = [
+  'a-inputtext',
+  modifier is iterable ? modifier|safe_join(' ') : modifier,
+  extra_classes,
+] %}
+<input{{ attributes.addClass(classes)}}>{{ children }}
