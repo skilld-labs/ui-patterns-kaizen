@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+
+  php:
+    image: skilldlabs/php:81-unit-dev
+    restart: always
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - front
+    labels:
+      traefik.port: 80
+# Uncomment for MacOS.
+#      traefik.port: 8088
+#    ports:
+#    - "8088:80"
+
+networks:
+  front:
+    driver: bridge
