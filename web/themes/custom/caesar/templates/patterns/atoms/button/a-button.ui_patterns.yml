@@ -40,9 +40,9 @@ a_button:
           component:
             //unpkg.com/open-props@1.5.3/open-props.min.css:
               { type: external, minified: true }
-            dist/pattern.css: {}
+            dist/styles.css: {}
         js:
-          dist/pattern.js: {}
+          dist/script.js: {}
         dependencies:
           - core/normalize
           - core/drupal

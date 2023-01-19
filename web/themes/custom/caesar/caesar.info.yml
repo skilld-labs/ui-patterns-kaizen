@@ -6,6 +6,7 @@ base theme: false
 dependencies:
   - ui_patterns:ui_patterns
   - ui_patterns_library:ui_patterns_library
+  # TODO: Add components! module
 regions:
   header: 'Header'
   content: 'Content'
