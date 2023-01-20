@@ -16,4 +16,4 @@ a_icon:
     - a-icon:
         css:
           component:
-            dist/styles.css: {}
+            a-icon.css: {}

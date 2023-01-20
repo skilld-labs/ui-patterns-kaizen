@@ -1,6 +1,6 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
-const breakpoints = yaml.load(fs.readFileSync('./caesar.breakpoints.yml'));
+const breakpoints = yaml.load(fs.readFileSync(__dirname + '/caesar.breakpoints.yml'));
 
 module.exports = {
   plugins: [
@@ -17,9 +17,9 @@ module.exports = {
     require('postcss-pxtorem')({
       propList: ['*'],
     }),
-    require('stylelint')({
-      configFile: './.stylelintrc',
-      fix: true,
-    }),
+    // require('stylelint')({
+    //   configFile: __dirname + '/caesar.breakpoints.yml',
+    //   fix: true,
+    // }),
   ]
 }

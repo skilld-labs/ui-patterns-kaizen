@@ -1,10 +1,10 @@
-import componentSource from "./a-icon.ui_patterns.yml";
-import { storyGenerator } from "../../../../.storybook/plugins/caesar";
+import componentSource from './a-icon.ui_patterns.yml';
+import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
-import "./atoms.icon.styles.css";
+import './a-icon.pcss.css';
 
 export default {
-  title: "Atoms/Icon",
+  title: 'Atoms/Icon',
   ...storyGenerator(componentSource),
 };
 

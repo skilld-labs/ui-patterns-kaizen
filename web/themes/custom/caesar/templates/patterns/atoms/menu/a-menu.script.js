@@ -1,5 +1,3 @@
-import Splide from '@splidejs/splide';
-
 (({ behaviors }) => {
   behaviors.atomMenu = {
     attach(context, settings) {

@@ -10,3 +10,7 @@ a_menu:
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - a-menu:
+        js:
+          a-menu.js: {}

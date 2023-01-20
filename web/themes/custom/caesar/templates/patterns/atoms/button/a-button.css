@@ -1,0 +1,14 @@
+.a-button {
+  background-color: green;
+}
+
+  .a-button--second {
+    background-color: pink;
+  }
+
+  @media (min-width: 1024px) {
+
+  .a-button {
+    background-color: gray
+}
+  }

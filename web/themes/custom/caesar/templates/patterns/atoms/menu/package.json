@@ -1,0 +1,8 @@
+{
+  "name": "@caesar/a-menu",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  }
+}

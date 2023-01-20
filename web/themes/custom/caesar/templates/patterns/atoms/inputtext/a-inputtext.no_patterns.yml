@@ -17,4 +17,4 @@ a_inputtext:
 #   - a-inputtext:
 #       css:
 #         component:
-#           templates/patterns/inputtext/dist/styles.css: {}
+#           templates/patterns/inputtext/a-inputtext.css: {}
