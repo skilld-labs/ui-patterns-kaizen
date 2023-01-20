@@ -1,6 +1,6 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "name": "skilld-labs/ui-patterns-kaizen",
+    "description": "Project template for Drupal projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -16,18 +16,19 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "drupal/core-composer-scaffold": "^9.0",
-        "drupal/core-project-message": "^9.0",
-        "drupal/core-recommended": "^9.0",
-        "drupal/ui_patterns": "1.x-dev@dev",
-        "drupal/ui_patterns_layout_builder": "^1.1",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/core-composer-scaffold": "^10.0.2",
+        "drupal/core-project-message": "^10.0.2",
+        "drupal/core-recommended": "^10.0.2",
+        "drupal/ui_patterns": "^1.5",
+        "drupal/ui_patterns_layout_builder": "^1.2",
         "drupal/ui_patterns_settings": "^2.0@beta",
-        "drush/drush": "^11.3"
+        "drush/drush": "^11.4"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
@@ -35,7 +36,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
