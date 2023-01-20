@@ -6,6 +6,7 @@
 /web/sites/default/files
 /web/sites/default/default.services.yml
 /web/sites/default/default.settings.php
+/web/sites/default/settings.php
 /web/sites/development.services.yml
 /web/sites/example.settings.local.php
 /web/sites/example.sites.php
@@ -28,3 +29,4 @@
 .editorconfig
 .gitattributes
 .DS_Store
+/.idea/
