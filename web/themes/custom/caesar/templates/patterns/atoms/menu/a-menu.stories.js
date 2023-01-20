@@ -2,7 +2,7 @@ import componentSource from './a-menu.ui_patterns.yml';
 import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 import DrupalAttribute from 'drupal-attribute';
 
-import './atoms.menu.script';
+import './a-menu.script';
 
 export default {
   title: 'Atoms/Menu',

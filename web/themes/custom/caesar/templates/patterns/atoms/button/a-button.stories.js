@@ -1,11 +1,11 @@
-import componentSource from "./a-button.ui_patterns.yml";
-import { storyGenerator } from "../../../../.storybook/plugins/caesar";
+import componentSource from './a-button.ui_patterns.yml';
+import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
-import "./atoms.button.styles.css";
-import "./atoms.button.script";
+import './a-button.pcss.css';
+import './a-button.script';
 
 export default {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   ...storyGenerator(componentSource),
 };
 
@@ -14,8 +14,8 @@ export const Basic = {};
 export const Primary = {
   ...Basic,
   args: {
-    content: "F@ck yeah!",
-    modifier: "Second",
-    icon: "Close",
+    content: 'F@ck yeah!',
+    modifier: 'Second',
+    icon: 'Close',
   },
 };

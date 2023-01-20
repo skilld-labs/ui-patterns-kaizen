@@ -26,7 +26,6 @@
     "twig": "^1.15.4"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -49,6 +48,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "bc": "yarn workspaces run build --config='../../../../vite.components-config.js' ",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",
@@ -62,5 +62,9 @@
     "sprite:generateText": "prepend assets/images/sprite.svg \"<!--\n    DON'T CHANGE THIS FILE MANUALLY.\n\n    It's generated automatically by 'yarn sprite' command.\n\n    You have to re-generate 'sprite.svg' every time you\n    modifying icons in 'assets/images/svg/' folder\n-->\n\"",
     "sprite:removeTemp": "rm -R sprite-build-temp",
     "image": "sharp"
-  }
+  },
+  "private": true,
+  "workspaces": [
+    "templates/patterns/**/*"
+  ]
 }
