@@ -30,3 +30,7 @@
 .gitattributes
 .DS_Store
 /.idea/
+
+
+# temporary ignore
+/web/libraries

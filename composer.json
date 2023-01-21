@@ -23,7 +23,8 @@
         "drupal/ui_patterns": "^1.5",
         "drupal/ui_patterns_layout_builder": "^1.2",
         "drupal/ui_patterns_settings": "^2.0@beta",
-        "drush/drush": "^11.4"
+        "drush/drush": "^11.4",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -37,7 +38,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true
     },
@@ -96,6 +98,15 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/themes/custom/*/templates/patterns/*/*/component.composer.json"
+            ],
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true,
+            "ignore-duplicates": true
         }
     }
 }
