@@ -1,11 +1,11 @@
 {
   "name": "@caesar/m-grid",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.0",
   "license": "MIT",
   "scripts": {
     "build": "vite build --config='../../../../vite.components-config.js' "
   },
   "dependencies": {
-    "@caesar/a-button": "*"
+    "@caesar/a-button": "^0.0.1-alpha.0"
   }
 }
