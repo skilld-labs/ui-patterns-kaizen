@@ -45,3 +45,11 @@ a_button:
           - core/normalize
           - core/drupal
           - core/once
+          - ui_patterns/splide
+    - splide:
+        css:
+          component:
+            libraries/splide-core.min.css: {}
+        js:
+          libraries/splide.esm.js: {}
+
