@@ -14,6 +14,7 @@
     "cli-real-favicon": "^0.0.8",
     "drupal-attribute": "^1.0.2",
     "drupal-twig-extensions": "^1.0.0-beta.4",
+    "lerna": "^6.4.1",
     "oslllo-svg-fixer": "^2.2.0",
     "prepend-file-cli": "^1.0.6",
     "react": "^18.2.0",
@@ -47,7 +48,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "bc": "yarn workspaces run build --config='../../../../vite.components-config.js' ",
+    "bc": "lerna run build",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",
