@@ -1,6 +1,6 @@
 {
   "name": "@caesar/a-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "dependencies": {
     "@splidejs/splide": "^4.1.4"
