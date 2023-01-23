@@ -48,7 +48,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "bc": "yarn workspaces run build --config='../../../../vite.components-config.js' ",
+    "bc": "yarn workspaces run vite build --config='../../../../vite.components-config.js'",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",

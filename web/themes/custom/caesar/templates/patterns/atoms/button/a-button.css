@@ -2,13 +2,13 @@
   background-color: green;
 }
 
-  .a-button--second {
-    background-color: pink;
-  }
+.a-button--second {
+  background-color: pink;
+}
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
 
   .a-button {
-    background-color: gray
-}
+    background-color: gray;
   }
+}

@@ -1,8 +1,5 @@
 {
   "name": "@caesar/a-icon",
   "version": "1.0.0",
-  "license": "MIT",
-  "scripts": {
-    "build": "vite build"
-  }
+  "license": "MIT"
 }

@@ -1,3 +1,4 @@
+import '@splidejs/splide/dist/css/splide-core.min.css';
 import Splide from '@splidejs/splide';
 
 (({ behaviors }) => {

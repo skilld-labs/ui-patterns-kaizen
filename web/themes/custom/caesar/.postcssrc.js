@@ -17,9 +17,9 @@ module.exports = {
     require('postcss-pxtorem')({
       propList: ['*'],
     }),
-    // require('stylelint')({
-    //   configFile: __dirname + '/caesar.breakpoints.yml',
-    //   fix: true,
-    // }),
+    require('stylelint')({
+      configFile: __dirname + '/.stylelintrc',
+      fix: true,
+    }),
   ]
 }

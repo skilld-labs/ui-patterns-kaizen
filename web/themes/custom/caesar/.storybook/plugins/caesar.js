@@ -1,12 +1,12 @@
-import { useParameter } from "@storybook/client-api";
-import DrupalAttribute from "drupal-attribute";
+import { useParameter } from '@storybook/client-api';
+import DrupalAttribute from 'drupal-attribute';
 import svgSpritePath from '../../assets/images/sprite.svg';
 
 const argsDecoder = (setting, selected) => {
   let result;
 
   if (setting.options) {
-    if (typeof selected === "object") {
+    if (typeof selected === 'object') {
       result = [];
       Array.prototype.forEach.call(selected, (value) => {
         const key = findValueInObject(setting.options, value);
@@ -22,7 +22,7 @@ const argsDecoder = (setting, selected) => {
 };
 
 export const componentRender = (src, args) => {
-  const Twig = useParameter("Twig");
+  const Twig = useParameter('Twig');
   const component = Object.values(src)[0];
 
   const refTemplate = Twig.twig({
@@ -35,11 +35,24 @@ export const componentRender = (src, args) => {
     svgSpritePath: svgSpritePath,
   };
 
+  if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
+    if (component.extends) {
+      const uiPatterns = useParameter('uiPatterns');
+      component.extends.forEach((extend) => {
+        const depth = extend.split('.');
+        const extender = uiPatterns[depth[0]];
+        if (extender?.settings) {
+          component.settings = { ...extender.settings, ...component.settings };
+        }
+      });
+    }
+  }
+
   for (const [argName, argValue] of Object.entries(args)) {
     if (component.settings && component.settings[argName]) {
       templateOptions[argName] = argsDecoder(
         component.settings[argName],
-        argValue
+        argValue,
       );
     }
   }
@@ -83,8 +96,7 @@ export const paramsLoader = (src) => {
 
 export const storyGenerator = (componentSource) => {
   return {
-    render: (args) =>
-      componentRender(componentSource, args),
+    render: (args) => componentRender(componentSource, args),
     ...paramsLoader(componentSource),
     // global attachment of Drupal Behaviors
     play: async ({ canvasElement }) => {
@@ -101,12 +113,12 @@ export const storyGenerator = (componentSource) => {
 
 const transformDrupalControlToStorybook = (type) => {
   switch (type) {
-    case "radios":
-      return "radio";
-    case "checkboxes":
-      return "check";
-    case "textfield":
-      return "text";
+    case 'radios':
+      return 'radio';
+    case 'checkboxes':
+      return 'check';
+    case 'textfield':
+      return 'text';
   }
   return type;
 };
