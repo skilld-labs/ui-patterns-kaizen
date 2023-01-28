@@ -1,6 +1,9 @@
 .a-button {
   background-color: green;
   background-image: url("@images/test.jpg");
+  display: grid;
+  grid-template-columns: 1fr;
+  appearance: none;
 
   &--second {
     background-color: pink;
