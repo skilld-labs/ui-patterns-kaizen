@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
-import { extname } from 'path';
+import { extname, resolve } from 'path';
 
 export default defineConfig({
   base: '',
   resolve: {
     alias: {
-      '@images': 'assets/images',
-      '@fonts': 'assets/fonts',
+      '@images': resolve(__dirname, '/assets/images'),
+      '@fonts': resolve(__dirname, '/assets/fonts'),
     },
   },
   build: {

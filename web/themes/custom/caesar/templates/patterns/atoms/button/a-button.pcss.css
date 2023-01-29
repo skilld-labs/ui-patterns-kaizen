@@ -1,14 +1,37 @@
 .a-button {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: green;
-  appearance: none;
+  --a-button-bg: var(--color-light-accent);
+  --a-button-color: var(--color-light);
+
+  padding: var(--size-3) var(--size-7);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--a-button-color);
+  border: none;
+  border-radius: var(--radius-2);
+  background-color: var(--a-button-bg);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--font-weight-9);
+  line-height: 1;
 
   &--second {
-    background-color: pink;
+    --a-button-bg: var(--color-light);
+    --a-button-color: var(--color-dark);
+
+    box-shadow: 0 3px 9px rgba(57, 20, 0, 0.08);
   }
 
-  @media (--db-l) {
-    background-color: gray;
+  &--third {
+    --a-button-bg: #b550f8;
+    --a-button-color: var(--color-light);
+  }
+
+  &--fourth {
+    --a-button-bg: transparent;
+    --a-button-color: var(--color-light);
+
+    padding: calc(var(--size-3) - 1px) calc(var(--size-7) - 1px);
+    border: 1px solid rgba(255, 255, 255, 0.2954);
   }
 }

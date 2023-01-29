@@ -1,10 +1,10 @@
 {%
   set classes = [
-    'a-button',
+    'a-text',
     modifier is iterable ? modifier|safe_join(' ') : modifier,
     extra_classes,
   ]
 %}
-<{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
+<{{ tag|default('span') }}{{ attributes.addClass(classes) }}>
   {{ content }}
-</{{ tag|default('button') }}>
+</{{ tag|default('span') }}>

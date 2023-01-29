@@ -22,26 +22,11 @@ a_button:
         a-button--second: Second
         a-button--third: Third
         a-button--fourth: Fourth
-        a-button--fifth: Fifth
-        a-button--icon-big: Button with large icon
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom button separated by spaces.
-    # next settings individual per component
-    icon:
-      type: select
-      label: Icon
-      options:
-        close: Close
-        add: Add
   libraries:
     - a-button:
         css:
           component:
             a-button.css: {}
-        js:
-          a-button.js: {}
-        dependencies:
-          - core/normalize
-          - core/drupal
-          - core/once

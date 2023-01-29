@@ -1,0 +1,21 @@
+{
+  "cssvar.files": [
+    "./web/themes/custom/*/node_modules/open-props/open-props.min.css",
+    // if you have an alternative path to where your styles are located
+    // you can add it in this array of files
+    "./web/themes/custom/*/src/css/_variables.css",
+    "./web/themes/custom/*/src/css/_colors.css"
+  ],
+
+  // Do not ignore node_modules css files, which is ignored by default
+  "cssvar.ignore": [
+    "./vendor/*",
+    "./web/core/*",
+    "./web/sites/*"
+  ],
+
+  // add support for autocomplete in JS or JS like files
+  "cssvar.extensions": [
+    "css", "postcss", "jsx", "tsx"
+  ]
+}
