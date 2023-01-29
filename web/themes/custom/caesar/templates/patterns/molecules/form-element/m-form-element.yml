@@ -1,0 +1,15 @@
+m-form-element:
+  hook: 'form_element__m_form_element'
+  base hook: 'form_element'
+types:
+  - text
+  - email
+  - search
+  - password
+  - number
+  - tel
+  - textarea
+  - select
+  - checkbox
+  - radio
+  - file

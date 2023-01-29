@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Render\Element;
+use Drupal\Core\Serialization\Yaml;
 
 /**
  * Returns path to svg sprite.
@@ -106,4 +107,71 @@ function caesar_page_attachments_alter(array &$attachments) {
  */
 function caesar_preprocess(&$variables, $hook) {
   $variables['caesar_svg_sprite_path'] = _caesar_get_svg_sprite_path();
+}
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function caesar_theme_registry_alter(&$theme_registry) {
+  /** @var \Drupal\Core\Theme\ThemeManager $theme_manager */
+  $theme_manager = \Drupal::service('theme.manager');
+  $theme = $theme_manager->getActiveTheme();
+  /** @var \Drupal\Core\File\FileSystem $scanner */
+  $scanner = \Drupal::service('file_system');
+  // For now, we process atoms.
+  $files = $scanner->scanDirectory($theme->getPath(), '/^a-.*\.yml$/', ['key' => 'name']);
+  __replace_storybook_theme($files, $theme_registry);
+  // Process molecules to act as #theme_wrappers.
+  $files = $scanner->scanDirectory($theme->getPath(), '/^m-.*\.yml$/', ['key' => 'name']);
+  __replace_storybook_theme($files, $theme_registry);
+}
+
+function __replace_storybook_theme($files, &$theme_registry) {
+  foreach ($files as $file) {
+    $content = file_get_contents($file->uri);
+    foreach (Yaml::decode($content) as $definition) {
+      if (isset($definition['hook']) && isset($definition['base hook'])) {
+        if (isset($theme_registry[$definition['base hook']])) {
+          $theme_registry[$definition['hook']] = $theme_registry[$definition['base hook']];
+          $theme_registry[$definition['hook']]['template'] = $file->name;
+          $theme_registry[$definition['hook']]['base hook'] = $definition['base hook'];
+          $path_parts = pathinfo($file->uri);
+          $theme_registry[$definition['hook']]['path'] = $path_parts['dirname'];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function caesar_element_info_alter(array &$info) {
+  // Global override of RenderElement theme function to be able to use atoms.
+  // See Drupal\Core\Render\Element\RenderElement::getInfo() for details.
+  // Define elements to be extended with atoms.
+  // @todo: Convert override storage into plugin.
+  // Need additional coding & research.
+  $atoms_overrides = ['select' => 'select__a_select'];
+  foreach ($atoms_overrides as $base_theme => $override) {
+    if (isset($info[$override]["#theme"])) {
+      $info[$override]['#theme'] = $base_theme;
+    }
+  }
+  $molecules_overrides = ['form_element' => 'form_element__m_form_element'];
+  foreach ($info as &$item) {
+    if (isset($item["#theme_wrappers"])) {
+      foreach ($molecules_overrides as $base_theme => $override) {
+        if (in_array($base_theme, $item["#theme_wrappers"]) || isset($item["#theme_wrappers"][$base_theme])) {
+          foreach ($item["#theme_wrappers"] as $wrapper_key => $theme_wrapper) {
+            if (is_array($theme_wrapper)) {
+              $item["#theme_wrappers"][$override] = $item["#theme_wrappers"][$wrapper_key];
+              unset($item["#theme_wrappers"][$wrapper_key]);
+            } else {
+              $item["#theme_wrappers"][$wrapper_key] = $override;
+            }
+          }
+        }
+      }
+    }
+  }
 }

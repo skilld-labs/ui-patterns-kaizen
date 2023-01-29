@@ -7,12 +7,6 @@
 %}
 <{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
   {{ content }}
-  {% if icon %}
-    {% include '@atoms/icon/a-icon.html.twig' ignore missing with {
-      'content': icon,
-      'attributes': create_attribute().addClass('a-button__icon')
-    } only %}
-  {% endif %}
   {% if svgSpritePath %}
     <svg>
       <use xlink:href="{{ svgSpritePath }}#svg-account-circle"></use>
