@@ -47,3 +47,8 @@ a_button:
           - core/normalize
           - core/drupal
           - core/once
+          - a-button/choices
+    - choices:
+        js:
+        # TODO: review `installe-paths` option with `component-library` option
+          ../../../../../../../libraries/choices/src/scripts/choices.js: {}

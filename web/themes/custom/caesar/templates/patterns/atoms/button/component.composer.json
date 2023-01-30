@@ -1,0 +1,32 @@
+{
+  "name": "caesar/a-button",
+  "description": "Dynamic asset management",
+  "type": "package",
+  "authors": [
+    {
+      "name": "skilld"
+    }
+  ],
+  "minimum-stability": "beta",
+  "require": {
+    "choices/choices": "*"
+  },
+  "repositories": {
+    "choices": {
+      "type": "package",
+      "package": {
+        "name": "choices/choices",
+        "version": "9.0.1",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "choices"
+        },
+        "dist": {
+          "url": "https://github.com/Choices-js/Choices/archive/refs/tags/v9.0.1.zip",
+          "type": "zip"
+        },
+        "license": "MIT"
+      }
+    }
+  }
+}
