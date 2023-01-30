@@ -18,6 +18,7 @@
     "prepend-file-cli": "^1.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp-cli": "^4.1.0",
     "storybook": "^7.0.0-beta.19",
     "stylelint": "^14.16.1",
     "svg-sprite": "^2.0.2",
@@ -59,6 +60,7 @@
     "sprite:optimize": "svgo -f sprite-build-temp -o sprite-build-temp",
     "sprite:create": "svg-sprite -s --svg-xmldecl=false --symbol-sprite='sprite.svg' --symbol-dest=assets/images --shape-id-generator='svg-%s' sprite-build-temp/*.svg",
     "sprite:generateText": "prepend assets/images/sprite.svg \"<!--\n    DON'T CHANGE THIS FILE MANUALLY.\n\n    It's generated automatically by 'yarn sprite' command.\n\n    You have to re-generate 'sprite.svg' every time you\n    modifying icons in 'assets/images/svg/' folder\n-->\n\"",
-    "sprite:removeTemp": "rm -R sprite-build-temp"
+    "sprite:removeTemp": "rm -R sprite-build-temp",
+    "image": "sharp"
   }
 }
