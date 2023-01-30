@@ -1,0 +1,4 @@
+a-email:
+  content: Lorem Ipsum
+  hook: 'input__email'
+  base hook: 'input'

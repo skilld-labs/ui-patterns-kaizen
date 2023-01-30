@@ -1,0 +1,47 @@
+.m-form-element {
+  display: grid;
+  gap: 8px;
+
+  &--label-inline {
+    gap: 4px;
+  }
+
+  &__header {
+    .m-form-element--label-above & {
+      display: grid;
+      gap: 8px;
+    }
+
+    .m-form-element--label-inline & {
+      display: flex;
+    }
+  }
+
+  &__label {
+    .m-form-element--label-inline & {
+      padding-left: 16px;
+    }
+  }
+
+  &__children {
+    flex-shrink: 0;
+
+    .m-form-element--label-inline & {
+      margin-top: 3px;
+    }
+  }
+
+  &__error-messages {
+    color: var(--color-secondary-error);
+
+    .m-form-element--label-above & {
+      padding-left: 8px;
+    }
+  }
+
+  &__description {
+    .m-form-element--label-above & {
+      padding-left: 8px;
+    }
+  }
+}
