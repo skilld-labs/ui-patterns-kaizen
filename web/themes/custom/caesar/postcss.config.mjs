@@ -40,9 +40,9 @@ export default {
     postCssPxToRem({
       propList: ['*'],
     }),
-    stylelint({
-      configFile: __dirname + '/.stylelintrc',
-      fix: true,
-    }),
+    // stylelint({
+    //   configFile: __dirname + '/.stylelintrc',
+    //   fix: true,
+    // }),
   ],
 };
