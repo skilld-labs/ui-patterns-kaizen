@@ -3,22 +3,13 @@ import DrupalAttribute from 'drupal-attribute';
 import svgSpritePath from '../../assets/images/sprite.svg';
 
 const argsDecoder = (setting, selected) => {
-  let result;
-
   if (setting.options) {
     if (typeof selected === 'object') {
-      result = [];
-      Array.prototype.forEach.call(selected, (value) => {
-        const key = findValueInObject(setting.options, value);
-        result.push(key);
-      });
-    } else {
-      result = findValueInObject(setting.options, selected);
+      return selected.map(value => findValueInObject(setting.options, value));
     }
-  } else {
-    result = selected;
+    return findValueInObject(setting.options, selected);
   }
-  return result;
+  return selected;
 };
 
 export const componentRender = (src, args) => {
@@ -48,21 +39,22 @@ export const componentRender = (src, args) => {
     }
   }
 
-  for (const [argName, argValue] of Object.entries(args)) {
+  Object.entries(args).forEach(([argName, argValue]) => {
     if (component.settings && component.settings[argName]) {
       templateOptions[argName] = argsDecoder(
         component.settings[argName],
         argValue,
       );
     }
-  }
+  });
 
-  for (const [key, value] of Object.entries(component.fields)) {
+  Object.entries(component.fields).forEach(([key, value]) => {
     templateOptions[key] = args[key] ?? value.preview;
-  }
+  });
 
   return refTemplate.render(templateOptions);
 };
+
 
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);
@@ -71,7 +63,7 @@ export const paramsLoader = (src) => {
   const component = Object.values(src)[0];
   const argTypes = {};
   if (component.settings) {
-    for (const [argName, argValue] of Object.entries(component.settings)) {
+    Object.entries(component.settings).forEach(([argName, argValue]) => {
       argTypes[argName] = {
         ...(argValue.label && { name: argValue.label }),
         ...(argValue.type && {
@@ -84,7 +76,7 @@ export const paramsLoader = (src) => {
           defaultValue: argValue.default_value,
         }),
       };
-    }
+    });
   }
   return {
     argTypes,
