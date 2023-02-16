@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@originjs/vite-plugin-content": "^1.0.2",
     "@storybook/addon-essentials": "^7.0.0-beta.19",
     "@storybook/addon-interactions": "^7.0.0-beta.19",

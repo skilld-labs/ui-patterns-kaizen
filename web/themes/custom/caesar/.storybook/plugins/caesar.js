@@ -1,6 +1,18 @@
 import { useParameter } from '@storybook/client-api';
 import DrupalAttribute from 'drupal-attribute';
 import svgSpritePath from '../../assets/images/sprite.svg';
+import breakpointsList from '../../caesar.breakpoints.yml';
+import { faker } from '@faker-js/faker';
+
+export { faker };
+
+export const breakpoints = () => Object.keys(breakpointsList).reduce(
+  (a, i) =>
+    Object.assign(a, {
+      [i.split('.').pop()]: breakpointsList[i].mediaQuery,
+    }),
+  {},
+);
 
 const argsDecoder = (setting, selected) => {
   if (setting.options) {
@@ -40,6 +52,16 @@ export const componentRender = (src, args) => {
   }
 
   Object.entries(args).forEach(([argName, argValue]) => {
+    if (argName === 'attributes') {
+      Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
+        if (attrName === 'class') {
+          templateOptions[argName].addClass(attrValue);
+        }
+        else {
+          templateOptions[argName].setAttribute(attrName, attrValue);
+        }
+      });
+    }
     if (component.settings && component.settings[argName]) {
       templateOptions[argName] = argsDecoder(
         component.settings[argName],
@@ -48,9 +70,11 @@ export const componentRender = (src, args) => {
     }
   });
 
-  Object.entries(component.fields).forEach(([key, value]) => {
-    templateOptions[key] = args[key] ?? value.preview;
-  });
+  if (component.fields) {
+    Object.entries(component.fields).forEach(([key, value]) => {
+      templateOptions[key] = args[key] ?? value.preview;
+    });
+  }
 
   return refTemplate.render(templateOptions);
 };

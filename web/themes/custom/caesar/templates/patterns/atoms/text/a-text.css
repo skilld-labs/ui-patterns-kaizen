@@ -5,70 +5,70 @@
   --font-lineheight-1: 1.25;
   --font-weight-7: 700;
   --font-lineheight-2: 1.375;
-  --font-letterspacing-4: .150em;
+  --font-letterspacing-4: 0.15em;
   --font-lineheight-5: 2;
 }
 
-  .a-text {
+.a-text {
   font-weight: var(--font-weight-4);
 }
 
-  .a-text--big {
-    font-size: 1.25rem;
-  }
+.a-text--big {
+  font-size: 1.25rem;
+}
+
+.a-text--h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-8);
+  line-height: var(--font-lineheight-0);
+}
+
+@media (min-width: 1024px) {
 
   .a-text--h1 {
+    font-size: 4.5rem;
+  }
+}
+
+.a-text--h2 {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-8);
+  line-height: var(--font-lineheight-1);
+}
+
+@media (min-width: 1024px) {
+
+  .a-text--h2 {
     font-size: 3.5rem;
-    font-weight: var(--font-weight-8);
-    line-height: var(--font-lineheight-0);
   }
+}
 
-  @media (min-width: 1024px) {
+.a-text--h3 {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-8);
+  line-height: var(--font-lineheight-1);
+}
 
-  .a-text--h1 {
-      font-size: 4.5rem
-  }
-    }
+.a-text--h4 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-2);
+}
 
-  .a-text--h2 {
-    font-size: 2.5rem;
-    font-weight: var(--font-weight-8);
-    line-height: var(--font-lineheight-1);
-  }
+.a-text--h5 {
+  letter-spacing: var(--font-letterspacing-4);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: var(--font-weight-4);
+  line-height: var(--font-lineheight-5);
+}
 
-  @media (min-width: 1024px) {
+.a-text--label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-7);
+}
 
-  .a-text--h2 {
-      font-size: 3.5rem
-  }
-    }
-
-  .a-text--h3 {
-    font-size: 2.5rem;
-    font-weight: var(--font-weight-8);
-    line-height: var(--font-lineheight-1);
-  }
-
-  .a-text--h4 {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-7);
-    line-height: var(--font-lineheight-2);
-  }
-
-  .a-text--h5 {
-    letter-spacing: var(--font-letterspacing-4);
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: var(--font-weight-4);
-    line-height: var(--font-lineheight-5);
-  }
-
-  .a-text--label {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-7);
-  }
-
-  .a-text--small {
-    font-size: 0.875rem;
-  }
+.a-text--small {
+  font-size: 0.875rem;
+}

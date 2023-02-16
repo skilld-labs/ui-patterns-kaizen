@@ -1,13 +1,11 @@
-
-
-  :root {
+:root {
   --size-3: 1rem;
   --size-7: 2rem;
   --radius-2: 0.3125rem;
   --font-weight-9: 900;
 }
 
-  .a-button {
+.a-button {
   --a-button-bg: var(--color-light-accent);
   --a-button-color: var(--color-light);
 
@@ -25,22 +23,22 @@
   line-height: 1;
 }
 
-  .a-button--second {
-    --a-button-bg: var(--color-light);
-    --a-button-color: var(--color-dark);
+.a-button--second {
+  --a-button-bg: var(--color-light);
+  --a-button-color: var(--color-dark);
 
-    box-shadow: 0 0.1875rem 0.5625rem rgba(57, 20, 0, 0.08);
-  }
+  box-shadow: 0 0.1875rem 0.5625rem rgba(57, 20, 0, 0.08);
+}
 
-  .a-button--third {
-    --a-button-bg: #b550f8;
-    --a-button-color: var(--color-light);
-  }
+.a-button--third {
+  --a-button-bg: #b550f8;
+  --a-button-color: var(--color-light);
+}
 
-  .a-button--fourth {
-    --a-button-bg: transparent;
-    --a-button-color: var(--color-light);
+.a-button--fourth {
+  --a-button-bg: transparent;
+  --a-button-color: var(--color-light);
 
-    padding: calc(var(--size-3) - 0.0625rem) calc(var(--size-7) - 0.0625rem);
-    border: 0.0625rem solid rgba(255, 255, 255, 0.2954);
-  }
+  padding: calc(var(--size-3) - 0.0625rem) calc(var(--size-7) - 0.0625rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.2954);
+}

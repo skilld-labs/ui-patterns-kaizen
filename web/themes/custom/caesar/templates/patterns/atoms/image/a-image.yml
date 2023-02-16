@@ -1,0 +1,38 @@
+# This is yml configuration with all image styles defined.
+#
+# ~95% of all images on the web-site usually have image effect "scale and crop".
+# ~5% are about "scale".
+# ~0.000001% other cases have other image effects (or more than 1 image effect
+# applied to the image).
+#
+# We don't want to go very deep in the settings, like provide setting for focal
+# points, or "allow upscale" property for "scale" effect, or other. It's all so
+# rare cases and for sure it can be manually configured in drupal if needed.
+# This is just a basic concept of some yml configuration, which storybook and
+# drupal can grab and do something with it.
+styles:
+  - name: 1000_x_1000
+    label: 1000 x 1000
+    effect: image_scale_and_crop
+    width: 1000
+    height: 1000
+  - name: 700_x_700
+    label: 700 x 700
+    effect: image_scale_and_crop
+    width: 700
+    height: 700
+  - name: 500_x_500
+    label: 500 x 500
+    effect: image_scale_and_crop
+    width: 500
+    height: 500
+  - name: 50_x_auto
+    label: 50 x Auto
+    effect: image_scale
+    width: 50
+    height: auto
+  - name: 1_x_1
+    label: 1 x 1
+    effect: image_scale_and_crop
+    width: 1
+    height: 1
