@@ -1,7 +1,7 @@
 import DrupalAttribute from 'drupal-attribute';
 import { useParameter } from '@storybook/client-api';
 import componentSource from './m-responsive-image.yml';
-import './m-responsive-image.pcss.css';
+import './m-responsive-image.src.css';
 import { breakpoints } from '../../../../.storybook/plugins/caesar';
 import imageStyles from '../../atoms/image/a-image.yml';
 import { getImageProperties } from '../../atoms/image/a-image.stories';

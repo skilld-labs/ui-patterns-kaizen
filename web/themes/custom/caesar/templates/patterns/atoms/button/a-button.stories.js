@@ -1,7 +1,8 @@
 import componentSource from './a-button.ui_patterns.yml';
 import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
-import './a-button.pcss.css';
+import './a-button.src.css';
+import './a-button.src.js';
 
 export default {
   title: 'Atoms/Button',

@@ -2,7 +2,7 @@ import DrupalAttribute from 'drupal-attribute';
 import { useParameter } from '@storybook/client-api';
 import componentSource from './a-image.yml';
 import { faker } from '../../../../.storybook/plugins/caesar';
-import './a-image.pcss.css';
+import './a-image.src.css';
 
 const attributes = new DrupalAttribute();
 const randomVal = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

@@ -1,10 +1,3 @@
-:root {
-  --size-3: 1rem;
-  --size-7: 2rem;
-  --radius-2: 0.3125rem;
-  --font-weight-9: 900;
-}
-
 .a-button {
   --a-button-bg: var(--color-light-accent);
   --a-button-color: var(--color-light);
