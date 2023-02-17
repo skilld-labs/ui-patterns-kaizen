@@ -1,28 +1,31 @@
-import { useParameter } from "@storybook/client-api";
-import DrupalAttribute from "drupal-attribute";
+import { useParameter } from '@storybook/client-api';
+import DrupalAttribute from 'drupal-attribute';
 import svgSpritePath from '../../assets/images/sprite.svg';
+import breakpointsList from '../../caesar.breakpoints.yml';
+import { faker } from '@faker-js/faker';
+
+export { faker };
+
+export const breakpoints = () => Object.keys(breakpointsList).reduce(
+  (a, i) =>
+    Object.assign(a, {
+      [i.split('.').pop()]: breakpointsList[i].mediaQuery,
+    }),
+  {},
+);
 
 const argsDecoder = (setting, selected) => {
-  let result;
-
   if (setting.options) {
-    if (typeof selected === "object") {
-      result = [];
-      Array.prototype.forEach.call(selected, (value) => {
-        const key = findValueInObject(setting.options, value);
-        result.push(key);
-      });
-    } else {
-      result = findValueInObject(setting.options, selected);
+    if (typeof selected === 'object') {
+      return selected.map(value => findValueInObject(setting.options, value));
     }
-  } else {
-    result = selected;
+    return findValueInObject(setting.options, selected);
   }
-  return result;
+  return selected;
 };
 
 export const componentRender = (src, args) => {
-  const Twig = useParameter("Twig");
+  const Twig = useParameter('Twig');
   const component = Object.values(src)[0];
 
   const refTemplate = Twig.twig({
@@ -35,21 +38,47 @@ export const componentRender = (src, args) => {
     svgSpritePath: svgSpritePath,
   };
 
-  for (const [argName, argValue] of Object.entries(args)) {
-    if (component.settings && component.settings[argName]) {
-      templateOptions[argName] = argsDecoder(
-        component.settings[argName],
-        argValue
-      );
+  if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
+    if (component.extends) {
+      const uiPatterns = useParameter('uiPatterns');
+      component.extends.forEach((extend) => {
+        const depth = extend.split('.');
+        const extender = uiPatterns[depth[0]];
+        if (extender?.settings) {
+          component.settings = { ...extender.settings, ...component.settings };
+        }
+      });
     }
   }
 
-  for (const [key, value] of Object.entries(component.fields)) {
-    templateOptions[key] = args[key] ?? value.preview;
+  Object.entries(args).forEach(([argName, argValue]) => {
+    if (argName === 'attributes') {
+      Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
+        if (attrName === 'class') {
+          templateOptions[argName].addClass(attrValue);
+        }
+        else {
+          templateOptions[argName].setAttribute(attrName, attrValue);
+        }
+      });
+    }
+    if (component.settings && component.settings[argName]) {
+      templateOptions[argName] = argsDecoder(
+        component.settings[argName],
+        argValue,
+      );
+    }
+  });
+
+  if (component.fields) {
+    Object.entries(component.fields).forEach(([key, value]) => {
+      templateOptions[key] = args[key] ?? value.preview;
+    });
   }
 
   return refTemplate.render(templateOptions);
 };
+
 
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);
@@ -58,7 +87,7 @@ export const paramsLoader = (src) => {
   const component = Object.values(src)[0];
   const argTypes = {};
   if (component.settings) {
-    for (const [argName, argValue] of Object.entries(component.settings)) {
+    Object.entries(component.settings).forEach(([argName, argValue]) => {
       argTypes[argName] = {
         ...(argValue.label && { name: argValue.label }),
         ...(argValue.type && {
@@ -71,7 +100,7 @@ export const paramsLoader = (src) => {
           defaultValue: argValue.default_value,
         }),
       };
-    }
+    });
   }
   return {
     argTypes,
@@ -83,8 +112,7 @@ export const paramsLoader = (src) => {
 
 export const storyGenerator = (componentSource) => {
   return {
-    render: (args) =>
-      componentRender(componentSource, args),
+    render: (args) => componentRender(componentSource, args),
     ...paramsLoader(componentSource),
     // global attachment of Drupal Behaviors
     play: async ({ canvasElement }) => {
@@ -101,12 +129,12 @@ export const storyGenerator = (componentSource) => {
 
 const transformDrupalControlToStorybook = (type) => {
   switch (type) {
-    case "radios":
-      return "radio";
-    case "checkboxes":
-      return "check";
-    case "textfield":
-      return "text";
+    case 'radios':
+      return 'radio';
+    case 'checkboxes':
+      return 'check';
+    case 'textfield':
+      return 'text';
   }
   return type;
 };

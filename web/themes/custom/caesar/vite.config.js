@@ -1,29 +1,24 @@
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
-import copy from 'rollup-plugin-copy';
+import { extname, resolve } from 'path';
 
 export default defineConfig({
   base: '',
   resolve: {
     alias: {
-      '@images': 'assets/images',
-      '@fonts': 'assets/fonts',
-      '@patterns': 'templates/patterns',
+      '@images': resolve(__dirname, '/assets/images'),
+      '@fonts': resolve(__dirname, '/assets/fonts'),
     },
   },
   build: {
     minify: false,
     rollupOptions: {
-      input: [
-        ...sync('src/**/*.{css,js}', {}),
-        ...sync('templates/patterns/**/*.styles.css', {}),
-        ...sync('templates/patterns/**/*.script.js', {}),
-      ],
+      input: [...sync('src/**/*.{css,js}', {})],
       output: {
         entryFileNames: 'js/[name].js',
         chunkFileNames: 'chunks/[name].js',
         assetFileNames: ({ name }) => {
-          const ext = name.split('.').pop();
+          const ext = extname(name);
           if (ext === 'css') {
             return `css/[name].[ext]`;
           }
@@ -38,39 +33,6 @@ export default defineConfig({
           return `[name].[ext]`;
         },
       },
-      plugins: [
-        copy({
-          targets: [
-            {
-              src: 'dist/css/*.styles.css',
-              dest: 'templates/patterns/',
-              rename: (name) => {
-                const patternPath = name.split('.');
-                return `${patternPath[0]}/${patternPath[1]}/dist/styles.css`;
-              },
-              transform: (contents) =>
-                contents
-                  .toString()
-                  .replace('../images/', '../../../../../dist/images/'),
-            },
-            {
-              src: 'dist/js/*.script.js',
-              dest: 'templates/patterns/',
-              rename: (name) => {
-                const patternPath = name.split('.');
-                return `${patternPath[0]}/${patternPath[1]}/dist/script.js`;
-              },
-              transform: (contents) =>
-                contents
-                  .toString()
-                  .replace('../chunks/', '../../../../../dist/chunks/'),
-            },
-          ],
-          hook: 'writeBundle',
-          // Uncomment next to check how files copied
-          // verbose: true,
-        }),
-      ],
     },
   },
 });

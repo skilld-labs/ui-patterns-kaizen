@@ -1,28 +1,30 @@
-caesar.s:
-  label: s
+# Initially breakpoints of components based on https://open-props.style/#media-queries
+# In case when they overriden in this file they will get new values in components.
+caesar.sm-n-above:
+  label: sm-n-above
   mediaQuery: '(min-width: 480px)'
   weight: 10
   group: caesar
   multipliers:
     - 1x
     - 2x
-caesar.m:
-  label: m
+caesar.md-n-above:
+  label: md-n-above
   mediaQuery: '(min-width: 768px)'
   weight: 20
   group: caesar
   multipliers:
     - 1x
     - 2x
-caesar.l:
-  label: l
+caesar.lg-n-above:
+  label: lg-n-above
   mediaQuery: '(min-width: 1024px)'
   weight: 30
   group: caesar
   multipliers:
     - 1x
     - 2x
-caesar.xl:
+caesar.xl-n-above:
   label: xl
   mediaQuery: '(min-width: 1440px)'
   weight: 40
@@ -30,9 +32,9 @@ caesar.xl:
   multipliers:
     - 1x
     - 2x
-caesar.xxl:
+caesar.xxl-n-above:
   label: xxl
-  mediaQuery: '(min-width: 1921px)'
+  mediaQuery: '(min-width: 1920px)'
   weight: 50
   group: caesar
   multipliers:

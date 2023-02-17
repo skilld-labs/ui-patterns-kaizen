@@ -1,0 +1,39 @@
+a_text:
+  use: '@atoms/text/a-text.html.twig'
+  label: Atoms/Text
+  description: Text Component
+  fields:
+    content:
+      type: text
+      label: Content
+      description: Content
+      preview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  settings:
+    # these settings presented in every component
+    modifier:
+      type: checkboxes
+      label: Choose a modifier class
+      options:
+        a-text--h1: Heading 1
+        a-text--h2: Heading 2
+        a-text--h3: Heading 3
+        a-text--h4: Heading 4
+        a-text--h5: Heading 5
+        a-text--label: Label
+        a-text--big: Big text
+        a-text--small: Small text
+    tag:
+      type: radios
+      label: Choose element tag
+      options:
+        h1: Heading 1
+        h2: Heading 2
+        h3: Heading 3
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom text separated by spaces.
+  libraries:
+    - a-text:
+        css:
+          component:
+            a-text.css: {}

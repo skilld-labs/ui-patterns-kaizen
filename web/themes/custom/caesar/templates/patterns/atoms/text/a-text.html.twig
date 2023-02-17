@@ -1,0 +1,10 @@
+{%
+  set classes = [
+    'a-text',
+    modifier is iterable ? modifier|safe_join(' ') : modifier,
+    extra_classes,
+  ]
+%}
+<{{ tag|default('span') }}{{ attributes.addClass(classes) }}>
+  {{ content }}
+</{{ tag|default('span') }}>

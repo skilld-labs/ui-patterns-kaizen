@@ -4,9 +4,31 @@ a_menu:
   description: Menu Component
   fields:
     items:
-      type: render
-      label: Items
+      type: "render"
+      label: "Menu items"
+      description: "Nav items that appear inside the navigation component."
+      preview:
+        - title: "Home"
+          url: "https://example.com"
+        - title: "Library"
+          url: "https://example.com"
+          below:
+            - title: "Sub 1"
+              url: "https://example.com"
+            - title: "Sub 2"
+              url: "https://example.com"
+        - title: "Data"
+          url: "route:<nolink>"
   settings:
+    modifier:
+      type: checkboxes
+      label: Choose a modifier class
+      options:
+        a-menu--main: Main
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - a-menu:
+        js:
+          a-menu.js: {}
