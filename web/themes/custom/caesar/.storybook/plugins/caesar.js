@@ -1,6 +1,6 @@
 import { useParameter } from '@storybook/client-api';
 import DrupalAttribute from 'drupal-attribute';
-import svgSpritePath from '../../assets/images/sprite.svg';
+import svgSpritePath from '../../images/sprite.svg';
 import breakpointsList from '../../caesar.breakpoints.yml';
 import { faker } from '@faker-js/faker';
 

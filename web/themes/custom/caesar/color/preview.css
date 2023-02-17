@@ -1,0 +1,38 @@
+.colors {
+  display: grid;
+  max-width: 100%;
+  gap: 10px;
+}
+.colors__item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  background: #f1f9f5;
+  gap: 16px;
+}
+.colors__item > div:first-of-type {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #c5d5dc;
+  border-radius: 8px;
+}
+.colors__item .description {
+  display: grid;
+  margin: 0;
+  text-align: start;
+  gap: 8px;
+}
+.colors__item h3 {
+  margin: 0;
+}
+.color-form .form-text,
+.color-form .form-select {
+  width: 160px;
+}
+button.color-palette__lock,
+.color-palette__lock {
+  top: 0;
+}

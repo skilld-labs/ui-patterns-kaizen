@@ -1,7 +1,7 @@
 import componentSource from './m-grid.ui_patterns.yml';
 import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
-import './m-grid.pcss.css';
+import './m-grid.src.css';
 
 import {
   default as Button,

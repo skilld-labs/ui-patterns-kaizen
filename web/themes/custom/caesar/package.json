@@ -27,7 +27,9 @@
     "twig": "^1.15.4"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "autoprefixer": "^10.4.13",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.6.0",
@@ -35,6 +37,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-yml": "^1.4.0",
     "glob": "^8.1.0",
+    "leaflet": "^1.9.3",
     "open-props": "^1.5.5",
     "postcss": "^8.4.21",
     "postcss-custom-media": "^9.0.1",
@@ -50,13 +53,22 @@
     "yaml": "^2.2.1"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "yarn build:theme && yarn build:components && yarn build:libraries",
+    "build:theme": "yarn build:theme:css && yarn build:theme:js",
+    "build:theme:css": "yarn vite build --config='vite.theme-css.config.js'",
+    "build:theme:js": "yarn vite build --config='vite.theme-js.config.js'",
+    "build:libraries": "yarn build:libraries:css && yarn build:libraries:js",
+    "build:libraries:css": "yarn vite build --config='vite.libraries-css.config.js'",
+    "build:libraries:js": "yarn vite build --config='vite.libraries-js.config.js'",
+    "build:components": "yarn build:components:css && yarn build:components:js",
+    "build:components:css": "yarn vite build --config='vite.components-css.config.js'",
+    "build:components:js": "yarn vite build --config='vite.components-js.config.js'",
     "bc": "yarn workspaces run vite build --config='../../../../vite.components-config.js'",
     "wc": "yarn workspaces run vite build --watch --config='../../../../vite.components-config.js'",
-    "build-storybook": "storybook build",
+    "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",
-    "lint-fix": "FIX_FLAG=--fix yarn lint",
+    "lint:fix": "FIX_FLAG=--fix yarn lint",
     "favicon": "mkdir -p favicon && real-favicon generate favicon.config.json favicon.output.json favicon && rm favicon.output.json",
     "sprite": "yarn sprite:createTemp && yarn sprite:strokeToFill && yarn sprite:optimize && yarn sprite:create && yarn sprite:generateText && yarn sprite:removeTemp",
     "sprite:createTemp": "mkdir -p sprite-build-temp",
@@ -67,8 +79,5 @@
     "sprite:removeTemp": "rm -R sprite-build-temp",
     "image": "sharp"
   },
-  "private": true,
-  "workspaces": [
-    "templates/patterns/**/*"
-  ]
+  "private": true
 }

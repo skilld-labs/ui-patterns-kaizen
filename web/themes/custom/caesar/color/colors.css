@@ -1,9 +1,10 @@
+/* ---------- Color Module Styles ----------- */
 :root {
   --color-dark: #391400;
   --color-dark-accent: #ef6d58;
-  --color-dark-gray: rgba(57, 20, 0, 0.64);
+  --color-dark-gray: #391409;
   --color-light: #fff;
   --color-light-accent: #ef6d58;
-  --color-light-gray: rgba(255, 255, 255, 0.64);
+  --color-light-gray: #eee;
   --color-page-bg: #fdf0ed;
 }

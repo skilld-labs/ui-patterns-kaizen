@@ -1,2 +1,5 @@
-dist/**/*.css
-templates/patterns/**/libraries
+css/**/*.css
+!css/**/*.src.css
+libraries
+templates/patterns/**/*.css
+!templates/patterns/**/*.src.css

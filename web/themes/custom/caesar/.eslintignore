@@ -1,3 +1,5 @@
-/dist/**/*.js
-*.stories.js
-templates/patterns/**/libraries
+js/**/*.js
+!js/**/*.src.js
+libraries
+templates/patterns/**/*.js
+!templates/patterns/**/*.src.js

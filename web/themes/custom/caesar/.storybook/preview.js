@@ -1,5 +1,6 @@
-import '../src/css/styles.css';
-import svgSpritePath from '../assets/images/sprite.svg';
+import '../color/colors.css';
+import '../css/styles.css';
+import svgSpritePath from '../images/sprite.svg';
 import breakpoints from '../caesar.breakpoints.yml';
 
 import Twig from 'twig';
