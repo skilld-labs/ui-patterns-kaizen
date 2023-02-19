@@ -1,0 +1,22 @@
+uuid: 8eb79e19-da57-4bd3-8304-4e0b5a147276
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.325x325
+    - image.style.500x500
+id: card
+label: Card
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 325x325
+    breakpoint_id: caesar.xl-n-above
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 500x500
+    breakpoint_id: caesar.lg-n-above
+    multiplier: 1x
+breakpoint_group: caesar
+fallback_image_style: 325x325

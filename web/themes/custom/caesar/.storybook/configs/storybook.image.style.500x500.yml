@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 500x500
+label: '500x500'
+effects:
+  cb842cc8-682f-42a6-bd05-5a1ac726f0d8:
+    uuid: cb842cc8-682f-42a6-bd05-5a1ac726f0d8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 500

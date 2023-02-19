@@ -3,6 +3,7 @@ const { mergeConfig } = require("vite");
 
 module.exports = {
   stories: [
+    "./",
     "../templates/patterns/",
   ],
   addons: [

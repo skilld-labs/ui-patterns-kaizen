@@ -32,6 +32,7 @@
     "no-underscore-dangle": ["off"],
     "max-nested-callbacks": ["warn", 3],
     "import/no-mutable-exports": ["warn"],
+    "import/no-extraneous-dependencies": ["off"],
     "no-plusplus": ["warn", {
       "allowForLoopAfterthoughts": true
     }],

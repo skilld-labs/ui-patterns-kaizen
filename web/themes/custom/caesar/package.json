@@ -78,6 +78,5 @@
     "sprite:generateText": "prepend assets/images/sprite.svg \"<!--\n    DON'T CHANGE THIS FILE MANUALLY.\n\n    It's generated automatically by 'yarn sprite' command.\n\n    You have to re-generate 'sprite.svg' every time you\n    modifying icons in 'assets/images/svg/' folder\n-->\n\"",
     "sprite:removeTemp": "rm -R sprite-build-temp",
     "image": "sharp"
-  },
-  "private": true
+  }
 }

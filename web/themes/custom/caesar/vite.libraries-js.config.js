@@ -9,12 +9,11 @@ export default defineConfig({
   build: {
     minify: false,
     rollupOptions: {
-      input: [
-        ...input,
-      ],
+      input: [...input],
       output: {
         dir: '.',
-        entryFileNames: ({ name }) => input.find((a) => a.includes(basename(name))).replace('.src', ''),
+        entryFileNames: ({ name }) =>
+          input.find((a) => a.includes(basename(name))).replace('.src', ''),
       },
     },
   },

@@ -9,9 +9,9 @@ import {
   Primary as PrimaryButton,
 } from '../../atoms/button/a-button.stories';
 
-import {
-  default as ResponsiveImage,
-} from '../responsive-image/m-responsive-image.stories';
+import ResponsiveImage from '../responsive-image/m-responsive-image.stories';
+
+import { ResponsiveImage as AnotherResponsiveImage } from '../../../../.storybook/images.stories';
 
 export default {
   title: 'Molecules/Grid',
@@ -34,7 +34,7 @@ export const Images = {
   ...Basic,
   args: {
     items: [
-      () => ResponsiveImage.render({ name: 'card' }),
+      () => AnotherResponsiveImage.render({ responsiveImageStyle: 'card' }),
       () => ResponsiveImage.render({ name: 'banner' }),
       () => ResponsiveImage.render({ name: 'card' }),
       () => ResponsiveImage.render({ name: 'banner' }),
