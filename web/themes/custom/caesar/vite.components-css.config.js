@@ -8,6 +8,7 @@ export default defineConfig({
   base: '',
   build: {
     minify: false,
+    assetsInlineLimit: 10000000000,
     rollupOptions: {
       input: [
         ...input,
@@ -19,14 +20,6 @@ export default defineConfig({
           if (ext === '.css') {
             return input.find((a) => a.includes(basename(name))).replace('.src', '');
           }
-          // if (['.woff2', '.woff', '.ttf', '.otf', '.eot'].includes(ext)) {
-          //   return `fonts/[name].[ext]`;
-          // }
-          // if (
-          //   ['.svg', '.png', '.jpeg', '.jpg', '.gif', '.avif', '.webp'].includes(ext)
-          // ) {
-          //   return `images/[name].[ext]`;
-          // }
           return `dist/[name].[ext]`;
         },
       },

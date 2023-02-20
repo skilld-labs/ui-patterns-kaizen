@@ -2,20 +2,20 @@
   --a-menu__link-color: var(--blue-4);
 }
 
-.a-menu--main {
-  --a-menu__link-color: #fff;
+  .a-menu--main {
+    --a-menu__link-color: #fff;
 
-  display: grid;
-  list-style: none;
-}
+    display: grid;
+    list-style: none;
+  }
 
-@media (min-width: 1024px) {
+  @media (min-width: 1024px) {
 
   .a-menu--main {
-    grid-auto-flow: column;
+      grid-auto-flow: column
   }
-}
+    }
 
-.a-menu__link {
-  color: var(--a-menu__link-color);
-}
+  .a-menu__link {
+    color: var(--a-menu__link-color);
+  }
