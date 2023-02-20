@@ -3,9 +3,7 @@ import { sync } from 'glob';
 import { basename, extname, resolve } from 'path';
 
 const input = sync('css/**/*.src.css', {
-  ignore: [
-    'css/**/_*.src.css',
-  ],
+  ignore: ['css/**/_*.src.css'],
 });
 
 export default defineConfig({
@@ -17,23 +15,32 @@ export default defineConfig({
     },
   },
   build: {
+    emptyOutDir: false,
     minify: false,
     rollupOptions: {
-      input: [
-        ...input
-      ],
+      input: [...input],
       output: {
         dir: '.',
         assetFileNames: ({ name }) => {
           const ext = extname(name);
           if (ext === '.css') {
-            return input.find((a) => a.includes(basename(name))).replace('.src', '');
+            return input
+              .find((a) => a.includes(basename(name)))
+              .replace('.src', '');
           }
           if (['.woff2', '.woff', '.ttf', '.otf', '.eot'].includes(ext)) {
             return `fonts/[name].[ext]`;
           }
           if (
-            ['.svg', '.png', '.jpeg', '.jpg', '.gif', '.avif', '.webp'].includes(ext)
+            [
+              '.svg',
+              '.png',
+              '.jpeg',
+              '.jpg',
+              '.gif',
+              '.avif',
+              '.webp',
+            ].includes(ext)
           ) {
             return `images/[name].[ext]`;
           }

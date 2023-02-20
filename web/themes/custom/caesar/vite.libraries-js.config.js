@@ -7,6 +7,7 @@ const input = sync('libraries/**/*.src.js');
 export default defineConfig({
   base: '',
   build: {
+    emptyOutDir: false,
     minify: false,
     rollupOptions: {
       input: [...input],

@@ -1,6 +1,6 @@
 import { useParameter } from '@storybook/client-api';
 import DrupalAttribute from 'drupal-attribute';
-import svgSpritePath from '../../images/sprite.svg';
+import caesarSvgSpritePath from '../../images/sprite.svg';
 import breakpointsList from '../../caesar.breakpoints.yml';
 import { faker } from '@faker-js/faker';
 
@@ -35,7 +35,7 @@ export const componentRender = (src, args) => {
 
   const templateOptions = {
     attributes: new DrupalAttribute(),
-    svgSpritePath: svgSpritePath,
+    caesarSvgSpritePath,
   };
 
   if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {

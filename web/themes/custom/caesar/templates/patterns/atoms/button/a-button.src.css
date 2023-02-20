@@ -11,11 +11,14 @@
   border-radius: var(--radius-2);
   background-color: var(--a-button-bg);
   background-image: url("./test.png");
-  background-image: url("./close.SVG");
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: var(--font-weight-9);
   line-height: 1;
+
+  @media (--lg-n-above) {
+    display: block;
+  }
 
   &--second {
     --a-button-bg: var(--color-light);

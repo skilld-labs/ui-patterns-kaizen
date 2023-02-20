@@ -10,7 +10,7 @@
 # to smallest (from top to bottom).
 groups:
   - name: card
-    label: "Card"
+    label: 'Card'
     breakpoints:
       - name: xl-n-above
         1x: 700_x_700
@@ -19,7 +19,7 @@ groups:
         2x: 1000_x_1000
     fallback_image_style: 700_x_700
   - name: banner
-    label: "Banner"
+    label: 'Banner'
     breakpoints:
       - name: xl-n-above
         1x: 500_x_500

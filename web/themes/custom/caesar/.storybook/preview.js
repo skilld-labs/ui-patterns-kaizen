@@ -1,6 +1,6 @@
 import '../color/colors.css';
 import '../css/styles.css';
-import svgSpritePath from '../images/sprite.svg';
+import caesarSvgSpritePath from '../images/sprite.svg';
 import breakpoints from '../caesar.breakpoints.yml';
 
 import Twig from 'twig';
@@ -118,7 +118,7 @@ export const parameters = {
 window.Drupal = { behaviors: {} };
 window.drupalSettings = {
   caesar: {
-    svgSpritePath,
+    caesarSvgSpritePath,
     breakpoints: breakpointsList,
   },
 };

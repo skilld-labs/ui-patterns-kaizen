@@ -4,10 +4,16 @@ status: true
 dependencies:
   config:
     - image.style.325x325
+    - image.style.325xauto
     - image.style.500x500
 id: card
 label: Card
 image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 325xauto
+    breakpoint_id: caesar.xl-n-above
+    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: 325x325

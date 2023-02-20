@@ -63,8 +63,6 @@
     "build:components": "yarn build:components:css && yarn build:components:js",
     "build:components:css": "yarn vite build --config='vite.components-css.config.js'",
     "build:components:js": "yarn vite build --config='vite.components-js.config.js'",
-    "bc": "yarn workspaces run vite build --config='../../../../vite.components-config.js'",
-    "wc": "yarn workspaces run vite build --watch --config='../../../../vite.components-config.js'",
     "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",

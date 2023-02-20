@@ -5,6 +5,25 @@ export default {
   title: 'Protons/Images',
 };
 
+const FAKER_IMAGE_FUNCTION = import.meta.env.VITE_FAKER_IMAGE_FUNCTION;
+const MIN_RATIO = 0.5;
+const MAX_RATIO = 1.5;
+const randomDimension = (base) =>
+  Math.floor(
+    Math.random() * (base * MIN_RATIO - base * MAX_RATIO) + base * MAX_RATIO,
+  );
+
+const getSrcFromLabel = (label) => {
+  let [width, height] = label.split('x');
+  if (height === 'auto' && width !== 'auto') {
+    height = randomDimension(width);
+  }
+  if (width === 'auto' && height !== 'auto') {
+    width = randomDimension(height);
+  }
+  return faker.image[FAKER_IMAGE_FUNCTION](width, height);
+};
+
 export const Image = {
   argTypes: {
     imageStyle: {
@@ -15,10 +34,9 @@ export const Image = {
   },
   render: (args) => {
     if (args.imageStyle) {
-      const [width, height] = args.imageStyle.split('x');
       const image = document.createElement('img');
-      image.src = faker.image.dataUri(width, height);
-      return image;
+      image.src = getSrcFromLabel(args.imageStyle);
+      return image.outerHTML;
     } else {
       return 'Check image style in controls panel';
     }
@@ -42,15 +60,18 @@ export const ResponsiveImage = {
       const image = document.createElement('img');
       style.image_style_mappings.forEach((breakpointStyle) => {
         const src = document.createElement('source');
-        const [width, height] = breakpointStyle.image_mapping.split('x');
-        src.srcset = faker.image.dataUri(width, height);
+        const multiplier = breakpointStyle.multiplier
+          ? ` ${breakpointStyle.multiplier}`
+          : '';
+        src.srcset = `${getSrcFromLabel(
+          breakpointStyle.image_mapping,
+        )}${multiplier}`;
         src.media = breakpointsList[breakpointStyle.breakpoint_id];
         picture.appendChild(src);
       });
-      const [width, height] = style.fallback_image_style.split('x');
-      image.src = faker.image.dataUri(width, height);
+      image.src = getSrcFromLabel(style.fallback_image_style);
       picture.appendChild(image);
-      return picture;
+      return picture.outerHTML;
     } else {
       return 'Check responsive image style in controls panel';
     }

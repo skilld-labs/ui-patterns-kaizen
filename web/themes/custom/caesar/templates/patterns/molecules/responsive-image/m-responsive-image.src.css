@@ -1,1 +1,3 @@
-.m-responsive-image {}
+.m-responsive-image {
+  display: block;
+}

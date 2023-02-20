@@ -4,21 +4,21 @@ a_menu:
   description: Menu Component
   fields:
     items:
-      type: "render"
-      label: "Menu items"
-      description: "Nav items that appear inside the navigation component."
+      type: 'render'
+      label: 'Menu items'
+      description: 'Nav items that appear inside the navigation component.'
       preview:
-        - title: "Home"
-          url: "https://example.com"
-        - title: "Library"
-          url: "https://example.com"
+        - title: 'Home'
+          url: 'https://example.com'
+        - title: 'Library'
+          url: 'https://example.com'
           below:
-            - title: "Sub 1"
-              url: "https://example.com"
-            - title: "Sub 2"
-              url: "https://example.com"
-        - title: "Data"
-          url: "route:<nolink>"
+            - title: 'Sub 1'
+              url: 'https://example.com'
+            - title: 'Sub 2'
+              url: 'https://example.com'
+        - title: 'Data'
+          url: 'route:<nolink>'
   settings:
     modifier:
       type: checkboxes

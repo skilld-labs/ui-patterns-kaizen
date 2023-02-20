@@ -32,14 +32,20 @@
       "dollar-variables",
       {
         "type": "at-rule",
-        "hasBlock": false
+        "hasBlock": true
       },
       "declarations",
-      "rules",
       {
         "type": "at-rule",
+        "name": "supports",
         "hasBlock": true
-      }
+      },
+      {
+        "type": "at-rule",
+        "name": "media",
+        "hasBlock": true
+      },
+      "rules"
     ],
     "order/properties-order": [
       "position",

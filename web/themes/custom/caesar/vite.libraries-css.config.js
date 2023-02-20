@@ -7,17 +7,18 @@ const input = sync('libraries/**/*.src.css');
 export default defineConfig({
   base: '',
   build: {
+    emptyOutDir: false,
     minify: false,
     rollupOptions: {
-      input: [
-        ...input,
-      ],
+      input: [...input],
       output: {
         dir: '.',
         assetFileNames: ({ name }) => {
           const ext = extname(name);
           if (ext === '.css') {
-            return input.find((a) => a.includes(basename(name))).replace('.src', '');
+            return input
+              .find((a) => a.includes(basename(name)))
+              .replace('.src', '');
           }
           // if (['.woff2', '.woff', '.ttf', '.otf', '.eot'].includes(ext)) {
           //   return `fonts/[name].[ext]`;
