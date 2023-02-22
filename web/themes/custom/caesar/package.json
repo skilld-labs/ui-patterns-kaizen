@@ -64,6 +64,8 @@
     "build:components:css": "yarn vite build --config='vite.components-css.config.js'",
     "build:components:js": "yarn vite build --config='vite.components-js.config.js'",
     "build:storybook": "storybook build",
+    "bc": "yarn workspaces run vite build --config='../../../../vite.components-config.js'",
+    "wc": "yarn workspaces run vite build --watch --config='../../../../vite.components-config.js'",
     "storybook": "storybook dev -p 6006",
     "lint": "stylelint \"**/*.css\" $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",
     "lint:fix": "FIX_FLAG=--fix yarn lint",
@@ -76,5 +78,9 @@
     "sprite:generateText": "prepend assets/images/sprite.svg \"<!--\n    DON'T CHANGE THIS FILE MANUALLY.\n\n    It's generated automatically by 'yarn sprite' command.\n\n    You have to re-generate 'sprite.svg' every time you\n    modifying icons in 'assets/images/svg/' folder\n-->\n\"",
     "sprite:removeTemp": "rm -R sprite-build-temp",
     "image": "sharp"
-  }
+  },
+  "private": true,
+  "workspaces": [
+    "templates/patterns/**/*"
+  ]
 }
