@@ -7,7 +7,7 @@ export default defineConfig({
     minify: false,
     emptyOutDir: false,
     rollupOptions: {
-      input: [...sync('*.pcss.css', {}), ...sync('*.src.js', {})],
+      input: [...sync('*.src.css', {}), ...sync('*.src.js', {})],
       output: {
         preserveModules: true,
         dir: '.',
@@ -18,8 +18,9 @@ export default defineConfig({
           return `${basename(name)}.js`;
         },
         assetFileNames: ({ name }) => {
-          if (basename(name).includes('.pcss')) {
-            return `${basename(name).replace('.pcss', '')}`;
+          console.log(basename(name));
+          if (basename(name).includes('.src')) {
+            return `${basename(name).replace('.src', '')}`;
           }
           return `${basename(name)}`;
         },

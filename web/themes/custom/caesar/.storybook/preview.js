@@ -2,18 +2,19 @@ import '../color/colors.css';
 import '../css/styles.css';
 import caesarSvgSpritePath from '../images/sprite.svg';
 import breakpoints from '../caesar.breakpoints.yml';
-
 import Twig from 'twig';
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 import DrupalAttributes from 'drupal-attribute';
 addDrupalExtensions(Twig, {
   // Optionally, set options to configure how the Drupal
 });
-
 const allTwigPatternTemplates = import.meta.glob(
   '../templates/patterns/**/*.html.twig',
   { as: 'raw', import: 'default', eager: true },
 );
+
+const modules = import.meta.glob('../libraries/**/*.src.js', { eager: true });
+console.log(modules);
 
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
 // and get by reference in

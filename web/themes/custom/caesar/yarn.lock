@@ -7612,6 +7612,11 @@ postcss-custom-media@^9.0.1:
     "@csstools/css-tokenizer" "^1.0.0"
     "@csstools/media-query-list-parser" "^1.0.0"
 
+postcss-header@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-header/-/postcss-header-3.0.3.tgz#b25e54c86b3f58346e6ae1d7b852ae90be7c3dae"
+  integrity sha512-bmm/qVdphnJcHHLyL2efiPUaLRR6y0iMRYKWl06cfdvNEoXlPUBENL1vqBBn2uTnxYTYvWoec7o+bYnPRJAmMA==
+
 postcss-jit-props@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/postcss-jit-props/-/postcss-jit-props-1.0.9.tgz#b875b20a17fa66821be1d8f14f144ec09e4d3a0d"

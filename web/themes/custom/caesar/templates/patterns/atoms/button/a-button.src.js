@@ -1,12 +1,13 @@
-(({ behaviors }) => {
-  behaviors.caesarContainerAtomButton = {
+(({ behaviors }, Splide) => {
+  behaviors.caesarAtomButton = {
     attach: (context) => {
+      console.log(Splide);
       once('a-button', '.a-button', context).forEach((el) => {
-        Drupal.behaviors.caesarContainerAtomButton.handler(el);
+        behaviors.caesarAtomButton.handler(el);
       });
     },
     handler: (el) => {
       console.log(el);
     },
   };
-})(Drupal);
+})(Drupal, window.Splide);

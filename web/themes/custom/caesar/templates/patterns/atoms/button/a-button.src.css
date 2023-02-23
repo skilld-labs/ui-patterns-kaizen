@@ -2,8 +2,8 @@
   --a-button-bg: var(--color-light-accent);
   --a-button-color: var(--color-light);
 
-  padding: var(--size-3) var(--size-7);
   cursor: pointer;
+  padding: var(--size-3) var(--size-7);
   text-align: center;
   text-transform: uppercase;
   color: var(--a-button-color);
