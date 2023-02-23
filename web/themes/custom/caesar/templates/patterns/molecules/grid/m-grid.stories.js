@@ -1,17 +1,16 @@
 import componentSource from './m-grid.ui_patterns.yml';
-import { storyGenerator } from '../../../../.storybook/plugins/caesar';
+import { storyGenerator } from '@caesar_sb/plugins/caesar';
 
 import './m-grid.src.css';
 
 import {
   default as Button,
-  Basic as BasicButton,
   Primary as PrimaryButton,
-} from '../../atoms/button/a-button.stories';
+} from '@caesar/a-button/a-button.stories';
 
-import ResponsiveImage from '../responsive-image/m-responsive-image.stories';
+import ResponsiveImage from '@caesar/m-responsive-image/m-responsive-image.stories';
 
-import { ResponsiveImage as AnotherResponsiveImage } from '../../../../.storybook/images.stories';
+import { ResponsiveImage as AnotherResponsiveImage } from '@caesar_sb/images.stories';
 
 export default {
   title: 'Molecules/Grid',

@@ -1,5 +1,5 @@
+import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-icon.ui_patterns.yml';
-import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
 import './a-icon.src.css';
 

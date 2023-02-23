@@ -1,5 +1,5 @@
+import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-text.ui_patterns.yml';
-import { storyGenerator } from '../../../../.storybook/plugins/caesar';
 
 import './a-text.src.css';
 

@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
 import { basename } from 'path';
+import viteGlobals from './vite.globals-config';
 
 const input = sync('js/**/*.src.js');
 
 export default defineConfig({
-  base: '',
+  ...viteGlobals,
   build: {
     emptyOutDir: false,
     minify: false,

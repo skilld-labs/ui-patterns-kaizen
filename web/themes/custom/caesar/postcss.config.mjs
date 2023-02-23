@@ -31,6 +31,7 @@ export default {
   plugins: [
     stylelint({
       configFile: __dirname + '/.stylelintrc',
+      ignorePath: [__dirname + '/.stylelintignore'],
     }),
     postcssNested,
     postCssCustomMediaGenerator({

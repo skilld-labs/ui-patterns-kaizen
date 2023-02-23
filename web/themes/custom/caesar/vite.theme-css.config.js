@@ -1,19 +1,14 @@
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
-import { basename, extname, resolve } from 'path';
+import { basename, extname } from 'path';
+import viteGlobals from './vite.globals-config';
 
 const input = sync('css/**/*.src.css', {
   ignore: ['css/**/_*.src.css'],
 });
 
 export default defineConfig({
-  base: '',
-  resolve: {
-    alias: {
-      '@images': resolve(__dirname, '/images'),
-      '@fonts': resolve(__dirname, '/fonts'),
-    },
-  },
+  ...viteGlobals,
   build: {
     emptyOutDir: false,
     minify: false,
