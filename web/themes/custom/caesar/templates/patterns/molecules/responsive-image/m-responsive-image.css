@@ -3,17 +3,6 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-:root {
-  --blue-4: #4dabf7;
-  --font-weight-4: 400;
-  --font-weight-8: 800;
-  --font-lineheight-0: 1.1;
-  --font-lineheight-1: 1.25;
-  --font-weight-7: 700;
-  --font-lineheight-2: 1.375;
-  --font-letterspacing-4: .150em;
-  --font-lineheight-5: 2;
-}
 .m-responsive-image {
   display: block;
 }

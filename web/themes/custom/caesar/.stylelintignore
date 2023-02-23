@@ -1,5 +1,5 @@
-css/**/*.css
-!css/**/*.src.css
+# css/**/*.css
+# !css/**/*.src.css
 libraries
-templates/patterns/**/*.css
-!templates/patterns/**/*.src.css
+# templates/patterns/**/*.css
+# !templates/patterns/**/*.src.css

@@ -18,6 +18,7 @@ export default defineConfig({
           return `${basename(name)}.js`;
         },
         assetFileNames: ({ name }) => {
+          // eslint-disable-next-line no-console
           console.log(basename(name));
           if (basename(name).includes('.src')) {
             return `${basename(name).replace('.src', '')}`;

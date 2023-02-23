@@ -3,7 +3,7 @@
  * This is simple js for management of color module display.
  */
 
-(function (Drupal) {
+((Drupal) => {
   Drupal.color = {
     logoChanged: false,
     callback: function callback(context, settings, form) {

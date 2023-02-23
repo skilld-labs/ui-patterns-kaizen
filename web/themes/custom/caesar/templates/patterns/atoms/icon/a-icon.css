@@ -4,5 +4,7 @@
  * @preserve
  */
 .a-icon {
+  --color-icon-fill: gray;
+
   background-color: var(--color-icon-fill);
 }

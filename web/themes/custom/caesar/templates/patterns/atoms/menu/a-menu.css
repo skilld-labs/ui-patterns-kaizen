@@ -4,24 +4,27 @@
  * @preserve
  */
 
-  .a-menu {
+:root {
+  --blue-4: #4dabf7;
+}
+
+.a-menu {
   --a-menu__link-color: var(--blue-4);
 }
 
+.a-menu--main {
+  --a-menu__link-color: #fff;
+
+  display: grid;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
   .a-menu--main {
-    --a-menu__link-color: #fff;
-
-    display: grid;
-    list-style: none;
+    grid-auto-flow: column;
   }
+}
 
-  @media (min-width: 1024px) {
-
-  .a-menu--main {
-      grid-auto-flow: column
-  }
-    }
-
-  .a-menu__link {
-    color: var(--a-menu__link-color);
-  }
+.a-menu__link {
+  color: var(--a-menu__link-color);
+}
