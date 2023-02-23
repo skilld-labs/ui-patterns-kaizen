@@ -5,6 +5,8 @@ import breakpoints from '../caesar.breakpoints.yml';
 import Twig from 'twig';
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 import DrupalAttributes from 'drupal-attribute';
+import once from '@drupal/once';
+window.once = once;
 addDrupalExtensions(Twig, {
   // Optionally, set options to configure how the Drupal
 });
@@ -13,8 +15,11 @@ const allTwigPatternTemplates = import.meta.glob(
   { as: 'raw', import: 'default', eager: true },
 );
 
-const modules = import.meta.glob('../libraries/**/*.src.js', { eager: true });
-console.log(modules);
+import.meta.glob(['../libraries/**/*.css', '!../libraries/**/*.src.css'], { import: 'default', eager: true });
+const librariesJS = import.meta.glob(['../libraries/**/*.js', '!../libraries/**/*.src.js']);
+for (const path in librariesJS) {
+  librariesJS[path]();
+}
 
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
 // and get by reference in

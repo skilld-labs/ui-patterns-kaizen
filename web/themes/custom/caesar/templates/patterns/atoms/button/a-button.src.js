@@ -1,4 +1,4 @@
-(({ behaviors }, Splide) => {
+(({ behaviors }, Splide, disableBodyScroll) => {
   behaviors.caesarAtomButton = {
     attach: (context) => {
       console.log(Splide);
@@ -8,6 +8,7 @@
     },
     handler: (el) => {
       console.log(el);
+      disableBodyScroll(el);
     },
   };
-})(Drupal, window.Splide);
+})(Drupal, window.Splide, window.disableBodyScroll);

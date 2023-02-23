@@ -3,22 +3,8 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-:root {
-  --font-weight-4: 400;
-  --font-weight-8: 800;
-  --font-lineheight-0: 1.1;
-  --font-lineheight-1: 1.25;
-  --font-weight-7: 700;
-  --font-lineheight-2: 1.375;
-  --font-letterspacing-4: .150em;
-  --font-lineheight-5: 2;
-  --blue-4: #4dabf7;
-  --size-3: 1rem;
-  --size-7: 2rem;
-  --radius-2: 0.3125rem;
-  --font-weight-9: 900;
-}
-.a-button {
+
+  .a-button {
   --a-button-bg: var(--color-light-accent);
   --a-button-color: var(--color-light);
 
@@ -36,22 +22,27 @@
   font-weight: var(--font-weight-9);
   line-height: 1;
 }
-@media (min-width: 1024px) {
+
+  @media (min-width: 1024px) {
+
   .a-button {
     display: block
 }
   }
-.a-button--second {
+
+  .a-button--second {
     --a-button-bg: var(--color-light);
     --a-button-color: var(--color-dark);
 
     box-shadow: 0 0.1875rem 0.5625rem rgba(57, 20, 0, 0.08);
   }
-.a-button--third {
+
+  .a-button--third {
     --a-button-bg: #b550f8;
     --a-button-color: var(--color-light);
   }
-.a-button--fourth {
+
+  .a-button--fourth {
     --a-button-bg: transparent;
     --a-button-color: var(--color-light);
 

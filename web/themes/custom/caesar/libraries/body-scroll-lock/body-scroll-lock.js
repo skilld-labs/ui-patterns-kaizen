@@ -29,7 +29,6 @@ var locks = [];
 var documentListenerAdded = false;
 var initialClientY = -1;
 var previousBodyOverflowSetting = void 0;
-var previousBodyPosition = void 0;
 var previousBodyPaddingRight = void 0;
 var allowTouchMove = function allowTouchMove2(el) {
   return locks.some(function(lock) {
@@ -55,9 +54,8 @@ var setOverflowHidden = function setOverflowHidden2(options) {
     var _reserveScrollBarGap = !!options && options.reserveScrollBarGap === true;
     var scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
     if (_reserveScrollBarGap && scrollBarGap > 0) {
-      var computedBodyPaddingRight = parseInt(window.getComputedStyle(document.body).getPropertyValue("padding-right"), 10);
       previousBodyPaddingRight = document.body.style.paddingRight;
-      document.body.style.paddingRight = computedBodyPaddingRight + scrollBarGap + "px";
+      document.body.style.paddingRight = scrollBarGap + "px";
     }
   }
   if (previousBodyOverflowSetting === void 0) {
@@ -73,40 +71,6 @@ var restoreOverflowSetting = function restoreOverflowSetting2() {
   if (previousBodyOverflowSetting !== void 0) {
     document.body.style.overflow = previousBodyOverflowSetting;
     previousBodyOverflowSetting = void 0;
-  }
-};
-var setPositionFixed = function setPositionFixed2() {
-  return window.requestAnimationFrame(function() {
-    if (previousBodyPosition === void 0) {
-      previousBodyPosition = {
-        position: document.body.style.position,
-        top: document.body.style.top,
-        left: document.body.style.left
-      };
-      var _window = window, scrollY = _window.scrollY, scrollX = _window.scrollX, innerHeight = _window.innerHeight;
-      document.body.style.position = "fixed";
-      document.body.style.top = -scrollY;
-      document.body.style.left = -scrollX;
-      setTimeout(function() {
-        return window.requestAnimationFrame(function() {
-          var bottomBarHeight = innerHeight - window.innerHeight;
-          if (bottomBarHeight && scrollY >= innerHeight) {
-            document.body.style.top = -(scrollY + bottomBarHeight);
-          }
-        });
-      }, 300);
-    }
-  });
-};
-var restorePositionSetting = function restorePositionSetting2() {
-  if (previousBodyPosition !== void 0) {
-    var y = -parseInt(document.body.style.top, 10);
-    var x = -parseInt(document.body.style.left, 10);
-    document.body.style.position = previousBodyPosition.position;
-    document.body.style.top = previousBodyPosition.top;
-    document.body.style.left = previousBodyPosition.left;
-    window.scrollTo(x, y);
-    previousBodyPosition = void 0;
   }
 };
 var isTargetElementTotallyScrolled = function isTargetElementTotallyScrolled2(targetElement) {
@@ -142,11 +106,6 @@ var disableBodyScroll = function disableBodyScroll2(targetElement, options) {
   };
   locks = [].concat(_toConsumableArray(locks), [lock]);
   if (isIosDevice) {
-    setPositionFixed();
-  } else {
-    setOverflowHidden(options);
-  }
-  if (isIosDevice) {
     targetElement.ontouchstart = function(event) {
       if (event.targetTouches.length === 1) {
         initialClientY = event.targetTouches[0].clientY;
@@ -161,6 +120,8 @@ var disableBodyScroll = function disableBodyScroll2(targetElement, options) {
       document.addEventListener("touchmove", preventDefault, hasPassiveEvents ? { passive: false } : void 0);
       documentListenerAdded = true;
     }
+  } else {
+    setOverflowHidden(options);
   }
 };
 var clearAllBodyScrollLocks = function clearAllBodyScrollLocks2() {
@@ -174,13 +135,10 @@ var clearAllBodyScrollLocks = function clearAllBodyScrollLocks2() {
       documentListenerAdded = false;
     }
     initialClientY = -1;
-  }
-  if (isIosDevice) {
-    restorePositionSetting();
   } else {
     restoreOverflowSetting();
   }
   locks = [];
 };
-window.disableBodyScroll = disableBodyScroll();
-window.clearAllBodyScrollLocks = clearAllBodyScrollLocks();
+window.disableBodyScroll = disableBodyScroll;
+window.clearAllBodyScrollLocks = clearAllBodyScrollLocks;
