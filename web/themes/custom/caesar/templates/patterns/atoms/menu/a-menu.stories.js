@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import DrupalAttribute from 'drupal-attribute';
 import componentSource from './a-menu.ui_patterns.yml';

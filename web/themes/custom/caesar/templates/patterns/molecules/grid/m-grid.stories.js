@@ -1,16 +1,11 @@
-import componentSource from './m-grid.ui_patterns.yml';
+// eslint-disable-next-line import/no-unresolved
 import { storyGenerator } from '@caesar_sb/plugins/caesar';
-
-import './m-grid.src.css';
-
-import {
-  default as Button,
+import Button, {
   Primary as PrimaryButton,
 } from '@caesar/a-button/a-button.stories';
+import componentSource from './m-grid.ui_patterns.yml';
 
-import ResponsiveImage from '@caesar/m-responsive-image/m-responsive-image.stories';
-
-import { ResponsiveImage as AnotherResponsiveImage } from '@caesar_sb/images.stories';
+import './m-grid.src.css';
 
 export default {
   title: 'Molecules/Grid',
@@ -29,14 +24,14 @@ export default {
 
 export const Basic = {};
 
-export const Images = {
-  ...Basic,
-  args: {
-    items: [
-      () => AnotherResponsiveImage.render({ responsiveImageStyle: 'card' }),
-      () => ResponsiveImage.render({ name: 'banner' }),
-      () => ResponsiveImage.render({ name: 'card' }),
-      () => ResponsiveImage.render({ name: 'banner' }),
-    ],
-  },
-};
+// export const Images = {
+//   ...Basic,
+//   args: {
+//     items: [
+//       () => AnotherResponsiveImage.render({ responsiveImageStyle: 'card' }),
+//       () => ResponsiveImage.render({ name: 'banner' }),
+//       () => ResponsiveImage.render({ name: 'card' }),
+//       () => ResponsiveImage.render({ name: 'banner' }),
+//     ],
+//   },
+// };

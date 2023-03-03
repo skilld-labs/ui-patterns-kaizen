@@ -47,32 +47,6 @@ if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
   }
 }
 
-const imageStyles = new Map();
-
-const allImageStyles = import.meta.glob(
-  './configs/storybook.image.style.*.yml',
-  {
-    import: 'default',
-    eager: true,
-  },
-);
-for (const data of Object.values(allImageStyles)) {
-  imageStyles.set(data['name'], data);
-}
-
-const responsiveImageStyles = new Map();
-
-const allResponsiveImageStyles = import.meta.glob(
-  './configs/storybook.responsive_image.styles.*.yml',
-  {
-    import: 'default',
-    eager: true,
-  },
-);
-for (const data of Object.values(allResponsiveImageStyles)) {
-  responsiveImageStyles.set(data['id'], data);
-}
-
 const breakpointsList = Object.keys(breakpoints).reduce(
   (a, i) =>
     Object.assign(a, {
@@ -81,27 +55,6 @@ const breakpointsList = Object.keys(breakpoints).reduce(
   {},
 );
 
-export const argTypes = {
-  // set imageStylesControls as argTypes globally but disabled from user
-  imageStyle: {
-    control: {
-      type: 'radio',
-    },
-    options: [...imageStyles.keys()],
-    table: {
-      disable: true,
-    },
-  },
-  responsiveImageStyle: {
-    control: {
-      type: 'radio',
-    },
-    options: [...responsiveImageStyles.keys()],
-    table: {
-      disable: true,
-    },
-  },
-};
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -114,8 +67,6 @@ export const parameters = {
   // Maybe load only Twig.Template.Registry somehow here.
   Twig: { ...Twig },
   uiPatterns,
-  imageStyles,
-  responsiveImageStyles,
   breakpointsList,
 };
 

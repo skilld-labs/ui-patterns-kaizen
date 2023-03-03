@@ -1,7 +1,9 @@
+// eslint-disable-next-line import/no-unresolved
 import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-button.ui_patterns.yml';
 
 import './a-button.src.css';
+// eslint-disable-next-line import/extensions
 import './a-button.src.js';
 
 export default {

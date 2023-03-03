@@ -1,0 +1,16 @@
+banner:
+  image_style_mappings:
+    caesar.xl-n-above:
+      2x: 325xauto
+      1x: 325x325
+    caesar.lg-n-above:
+      1x: 500x500
+  fallback: 100x100
+card:
+  image_style_mappings:
+    caesar.xl-n-above:
+      2x: 325xauto
+      1x: 325x325
+    caesar.lg-n-above:
+      1x: 500x500
+  fallback: 100x100
