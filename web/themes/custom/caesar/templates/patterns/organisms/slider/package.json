@@ -1,0 +1,8 @@
+{
+  "name": "@caesar/o-slider",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@glidejs/glide": "^3.6.0"
+  }
+}

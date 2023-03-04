@@ -2,7 +2,7 @@
 import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-icon.ui_patterns.yml';
 
-import './a-icon.src.css';
+import './src/a-icon.pcss.css';
 
 export default {
   title: 'Atoms/Icon',

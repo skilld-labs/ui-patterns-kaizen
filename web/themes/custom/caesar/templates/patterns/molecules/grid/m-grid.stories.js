@@ -5,7 +5,7 @@ import Button, {
 } from '@caesar/a-button/a-button.stories';
 import componentSource from './m-grid.ui_patterns.yml';
 
-import './m-grid.src.css';
+import './src/m-grid.pcss.css';
 
 export default {
   title: 'Molecules/Grid',

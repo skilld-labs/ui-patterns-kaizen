@@ -1,18 +1,6 @@
 import { useParameter } from '@storybook/client-api';
 import DrupalAttribute from 'drupal-attribute';
 import caesarSvgSpritePath from '../../images/sprite.svg';
-import breakpointsList from '../../caesar.breakpoints.yml';
-import { faker } from '@faker-js/faker';
-
-export { faker };
-
-export const breakpoints = () => Object.keys(breakpointsList).reduce(
-  (a, i) =>
-    Object.assign(a, {
-      [i.split('.').pop()]: breakpointsList[i].mediaQuery,
-    }),
-  {},
-);
 
 const argsDecoder = (setting, selected) => {
   if (setting.options) {

@@ -1,0 +1,26 @@
+o_slider4:
+  use: '@organisms/slider4/o-slider4.html.twig'
+  label: Organisms/Slider4(Theme namespace)
+  description: This slider uses component namespace
+  fields:
+    items:
+      type: 'render'
+      label: 'Slider items'
+      description: 'Slider items that appear inside the slider component.'
+      preview:
+        - content: 'First slide'
+        - content: 'Second slide'
+        - content: 'Third slide'
+  settings:
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - o-slider2:
+        js:
+          o-slider4.js: {}
+        css:
+          component:
+            o-slider4.css: {}
+        dependencies:
+          - caesar/glide

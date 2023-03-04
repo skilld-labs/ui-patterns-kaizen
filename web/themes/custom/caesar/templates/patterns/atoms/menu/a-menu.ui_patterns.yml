@@ -30,5 +30,6 @@ a_menu:
       label: Add extra CSS classes for atom button separated by spaces.
   libraries:
     - a-menu:
-        js:
-          a-menu.js: {}
+        css:
+          component:
+            a-menu.css: {}
