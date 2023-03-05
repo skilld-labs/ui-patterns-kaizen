@@ -1,19 +1,25 @@
 import '../color/colors.css';
 import '../css/styles.css';
-import svgSpritePath from '../images/sprite.svg';
+import caesarSvgSpritePath from '../images/sprite.svg';
 import breakpoints from '../caesar.breakpoints.yml';
-
 import Twig from 'twig';
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 import DrupalAttributes from 'drupal-attribute';
+import once from '@drupal/once';
+window.once = once;
 addDrupalExtensions(Twig, {
   // Optionally, set options to configure how the Drupal
 });
-
 const allTwigPatternTemplates = import.meta.glob(
   '../templates/patterns/**/*.html.twig',
   { as: 'raw', import: 'default', eager: true },
 );
+
+import.meta.glob(['../libraries/**/*.css', '!../libraries/**/*.src.css'], { import: 'default', eager: true });
+const librariesJS = import.meta.glob(['../libraries/**/*.js', '!../libraries/**/*.src.js']);
+for (const path in librariesJS) {
+  librariesJS[path]();
+}
 
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
 // and get by reference in
@@ -41,6 +47,15 @@ if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
   }
 }
 
+const breakpointsList = Object.keys(breakpoints).reduce(
+  (a, i) =>
+    Object.assign(a, {
+      [i]: breakpoints[i].mediaQuery,
+    }),
+  {},
+);
+
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -51,7 +66,8 @@ export const parameters = {
   },
   // Maybe load only Twig.Template.Registry somehow here.
   Twig: { ...Twig },
-  uiPatterns: { ...uiPatterns },
+  uiPatterns,
+  breakpointsList,
 };
 
 // Drupal + drupalSettings
@@ -59,14 +75,8 @@ export const parameters = {
 window.Drupal = { behaviors: {} };
 window.drupalSettings = {
   caesar: {
-    svgSpritePath,
-    breakpoints: Object.keys(breakpoints).reduce(
-      (a, i) =>
-        Object.assign(a, {
-          [i.split('.').pop()]: breakpoints[i].mediaQuery,
-        }),
-      {},
-    ),
+    caesarSvgSpritePath,
+    breakpoints: breakpointsList,
   },
 };
 

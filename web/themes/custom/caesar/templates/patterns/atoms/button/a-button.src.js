@@ -1,14 +1,16 @@
-(({ behaviors }) => {
-  behaviors.caesarContainerAtomButton = {
+(({ behaviors }, Splide, disableBodyScroll) => {
+  behaviors.caesarAtomButton = {
     attach: (context) => {
-      once('a-button', '.a-button', context).forEach(
-        (el) => {
-          Drupal.behaviors.caesarContainerAtomButton.handler(el);
-        },
-      );
+      // eslint-disable-next-line no-console
+      console.log(Splide);
+      once('a-button', '.a-button', context).forEach((el) => {
+        behaviors.caesarAtomButton.handler(el);
+      });
     },
     handler: (el) => {
+      // eslint-disable-next-line no-console
       console.log(el);
+      disableBodyScroll(el);
     },
   };
-})(Drupal);
+})(Drupal, window.Splide, window.disableBodyScroll);

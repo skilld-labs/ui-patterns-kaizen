@@ -3,8 +3,6 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-.a-icon {
-  --color-icon-fill: gray;
-
-  background-color: var(--color-icon-fill);
+.a-button-second {
+  display: block;
 }

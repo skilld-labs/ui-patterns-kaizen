@@ -7,7 +7,6 @@ dependencies:
   - ui_patterns:ui_patterns
   - ui_patterns_library:ui_patterns_library
   - components:components
-  # TODO: Add components! module
 regions:
   header: 'Header'
   content: 'Content'

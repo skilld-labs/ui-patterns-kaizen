@@ -11,7 +11,7 @@ use Drupal\Core\Render\Element;
  * Returns path to svg sprite.
  */
 function _caesar_get_svg_sprite_path() {
-  return base_path() . \Drupal::theme()->getActiveTheme()->getPath() . '/assets/images/sprite.svg';
+  return base_path() . \Drupal::theme()->getActiveTheme()->getPath() . '/images/sprite.svg';
 }
 
 /**
@@ -27,7 +27,7 @@ function caesar_page_attachments_alter(array &$attachments) {
     $js_breakpoints[explode(".", $breakpoint->getBaseId())[1]] = $breakpoint->getMediaQuery();
   }
   $attachments['#attached']['drupalSettings']['caesar'] = [
-    'svgSpritePath' => _caesar_get_svg_sprite_path(),
+    'caesarSvgSpritePath' => _caesar_get_svg_sprite_path(),
     'breakpoints' => $js_breakpoints,
   ];
   $attachments['#attached']['html_head'][] = [
@@ -105,5 +105,5 @@ function caesar_page_attachments_alter(array &$attachments) {
  * full path to svg sprite from twig.
  */
 function caesar_preprocess(&$variables, $hook) {
-  $variables['caesar_svg_sprite_path'] = _caesar_get_svg_sprite_path();
+  $variables['caesarSvgSpritePath'] = _caesar_get_svg_sprite_path();
 }
