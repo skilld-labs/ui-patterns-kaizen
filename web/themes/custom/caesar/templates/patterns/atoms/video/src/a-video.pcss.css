@@ -1,0 +1,14 @@
+.a-video {
+  max-width: 100%;
+  border-radius: 6px;
+
+  &::-webkit-media-controls-play-button {
+    position: fixed;
+    top: calc(50% - 74px);
+    left: calc(50% - 74px);
+    width: 148px;
+    height: 148px;
+    background-image: url("./play.svg");
+    background-size: contain;
+  }
+}

@@ -2,7 +2,7 @@
 import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-text.ui_patterns.yml';
 
-import './a-text.src.css';
+import './src/a-text.pcss.css';
 
 export default {
   title: 'Atoms/Text',

@@ -12,10 +12,12 @@ regions:
   content: 'Content'
   footer: 'Footer'
 libraries:
-  - patterns/styles
+  - caesar/base
 components:
   namespaces:
     atoms:
       - templates/patterns/atoms
     molecules:
       - templates/patterns/molecules
+    organisms:
+      - templates/patterns/organisms

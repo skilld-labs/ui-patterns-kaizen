@@ -1,0 +1,21 @@
+o_slider5:
+  use: '@organisms/slider5/o-slider5.html.twig'
+  label: Organisms/Slider5(Webcomponent!!!)
+  description: This slider is Lit based webcomponent
+  fields:
+    items:
+      type: 'render'
+      label: 'Slider items'
+      description: 'Slider items that appear inside the slider component.'
+      preview:
+        - content: 'First slide'
+        - content: 'Second slide'
+        - content: 'Third slide'
+  settings:
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - o-slider2:
+        js:
+          o-slider5.js: {}

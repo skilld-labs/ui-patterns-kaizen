@@ -3,6 +3,7 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-.a-button-second {
-  display: block;
+.a-image {
+  max-width: 100%;
+  height: auto;
 }

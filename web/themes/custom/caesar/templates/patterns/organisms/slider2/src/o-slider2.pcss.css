@@ -1,0 +1,6 @@
+@import "@glidejs/glide/dist/css/glide.core.css";
+
+.o-slider2 {
+  max-width: 800px;
+  background-color: pink;
+}

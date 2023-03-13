@@ -2,6 +2,7 @@ base:
   css:
     theme:
       color/colors.css: {}
+      css/styles.css: {}
 
 color.preview:
   css:
@@ -11,3 +12,12 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+
+# in fact next bundle is still contains only o-slider4 requirements
+# so more correct is to name it o-slider4 and namespace accordingly
+glide:
+  css:
+    component:
+      libraries/glide/glide.css: {}
+  js:
+    libraries/glide/glide.js: {}
