@@ -5,7 +5,7 @@ import caesarSvgSpritePath from '../../images/sprite.svg';
 const argsDecoder = (setting, selected) => {
   if (setting.options) {
     if (typeof selected === 'object') {
-      return selected.map(value => findValueInObject(setting.options, value));
+      return selected.map((value) => findValueInObject(setting.options, value));
     }
     return findValueInObject(setting.options, selected);
   }
@@ -44,8 +44,7 @@ export const componentRender = (src, args) => {
       Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
         if (attrName === 'class') {
           templateOptions[argName].addClass(attrValue);
-        }
-        else {
+        } else {
           templateOptions[argName].setAttribute(attrName, attrValue);
         }
       });
@@ -66,7 +65,6 @@ export const componentRender = (src, args) => {
 
   return refTemplate.render(templateOptions);
 };
-
 
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);

@@ -15,8 +15,14 @@ const allTwigPatternTemplates = import.meta.glob(
   { as: 'raw', import: 'default', eager: true },
 );
 
-import.meta.glob(['../libraries/**/*.css', '!../libraries/**/*.src.css'], { import: 'default', eager: true });
-const librariesJS = import.meta.glob(['../libraries/**/*.js', '!../libraries/**/*.src.js']);
+import.meta.glob(['../libraries/**/*.css', '!../libraries/**/*.src.css'], {
+  import: 'default',
+  eager: true,
+});
+const librariesJS = import.meta.glob([
+  '../libraries/**/*.js',
+  '!../libraries/**/*.src.js',
+]);
 for (const path in librariesJS) {
   librariesJS[path]();
 }
@@ -55,7 +61,6 @@ const breakpointsList = Object.keys(breakpoints).reduce(
   {},
 );
 
-
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -69,6 +74,29 @@ export const parameters = {
   uiPatterns,
   breakpointsList,
 };
+
+export const decorators = [
+  (story, context) => {
+    for (const argName of Object.keys(context.args)) {
+
+      // Converts argTypes prefixed with DRUPAL_ATTRIBUTE_ to drupal attributes args
+      if (argName.startsWith('DRUPAL_ATTRIBUTE_')) {
+        const name = argName.replace('DRUPAL_ATTRIBUTE_', '');
+        context.args.attributes[name] = context.args[argName];
+
+        // Also if drupal attribute is boolean and =false (disabled) remove it from attributes.
+        if (
+          context.argTypes[argName].control.type === 'boolean' &&
+          !context.args[argName]
+        ) {
+          delete context.args.attributes[name];
+        }
+      }
+    }
+
+    return story();
+  },
+];
 
 // Drupal + drupalSettings
 
