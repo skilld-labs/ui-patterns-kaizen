@@ -9,6 +9,11 @@ a_inputtext:
       description: Inputtext name (string)
       preview: 'Add'
   settings:
+    modifier:
+      type: checkboxes
+      label: Choose a modifier class
+      options:
+        a-inputtext--large: Large
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom inputtext separated by spaces.
