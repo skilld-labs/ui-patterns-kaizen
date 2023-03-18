@@ -3,8 +3,7 @@ import { storyGenerator } from '@caesar_sb/plugins/caesar';
 import componentSource from './a-button.ui_patterns.yml';
 
 import './src/a-button.pcss.css';
-// eslint-disable-next-line import/extensions
-import './src/a-button.src.js';
+import './src/a-button.src';
 
 export default {
   title: 'Atoms/Button',

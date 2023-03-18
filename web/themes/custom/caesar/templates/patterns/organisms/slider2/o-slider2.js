@@ -922,7 +922,7 @@ function Run(Glide2, Components, Events) {
   return Run2;
 }
 function now() {
-  return new Date().getTime();
+  return (/* @__PURE__ */ new Date()).getTime();
 }
 function throttle(func, wait, options) {
   var timeout, context, args, result;

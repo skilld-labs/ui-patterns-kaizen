@@ -16,7 +16,6 @@ export default defineConfig({
       ],
       output: {
         dir: '.',
-        // preserveModules: true,
         entryFileNames: ({ name }) => {
           return `${basename(name).replace('.src', '')}.js`;
         },
@@ -46,7 +45,6 @@ export default defineConfig({
           **/
         `,
       },
-      // preserveEntrySignatures: 'strict',
     },
   },
 });

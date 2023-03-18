@@ -2,14 +2,14 @@ import content from '@originjs/vite-plugin-content';
 const { mergeConfig } = require('vite');
 
 module.exports = {
-  stories: ['./', '../templates/patterns/'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  stories: ['../templates/patterns/'],
+  addons: [
+    '@storybook/addon-essentials',
+    './addons/caesar/manager.js',
+  ],
   framework: {
     name: '@storybook/html-vite',
     options: {},
-  },
-  docs: {
-    autodocs: 'tag',
   },
   async viteFinal(config, { configType }) {
     return mergeConfig(config, {
