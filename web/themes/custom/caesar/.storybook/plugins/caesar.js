@@ -5,7 +5,7 @@ import caesarSvgSpritePath from '../../images/sprite.svg';
 const argsDecoder = (setting, selected) => {
   if (setting.options) {
     if (typeof selected === 'object') {
-      return selected.map(value => findValueInObject(setting.options, value));
+      return selected.map((value) => findValueInObject(setting.options, value));
     }
     return findValueInObject(setting.options, selected);
   }
@@ -26,26 +26,12 @@ export const componentRender = (src, args) => {
     caesarSvgSpritePath,
   };
 
-  if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
-    if (component.extends) {
-      const uiPatterns = useParameter('uiPatterns');
-      component.extends.forEach((extend) => {
-        const depth = extend.split('.');
-        const extender = uiPatterns[depth[0]];
-        if (extender?.settings) {
-          component.settings = { ...extender.settings, ...component.settings };
-        }
-      });
-    }
-  }
-
   Object.entries(args).forEach(([argName, argValue]) => {
     if (argName === 'attributes') {
       Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
         if (attrName === 'class') {
           templateOptions[argName].addClass(attrValue);
-        }
-        else {
+        } else {
           templateOptions[argName].setAttribute(attrName, attrValue);
         }
       });
@@ -66,7 +52,6 @@ export const componentRender = (src, args) => {
 
   return refTemplate.render(templateOptions);
 };
-
 
 const findValueInObject = (obj, value) =>
   Object.keys(obj).find((key) => obj[key] === value);

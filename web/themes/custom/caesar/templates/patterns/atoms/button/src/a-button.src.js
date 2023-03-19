@@ -1,4 +1,4 @@
-(({ behaviors }, Splide, disableBodyScroll) => {
+(({ behaviors }, Splide) => {
   behaviors.caesarAtomButton = {
     attach: (context) => {
       // eslint-disable-next-line no-console
@@ -10,7 +10,6 @@
     handler: (el) => {
       // eslint-disable-next-line no-console
       console.log(el);
-      disableBodyScroll(el);
     },
   };
-})(Drupal, window.Splide, window.disableBodyScroll);
+})(Drupal, window.Splide);

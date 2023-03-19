@@ -1,5 +1,5 @@
 o_slider3:
-  use: '@organisms/slider3/o-slider3.html.twig'
+  use: '@patterns/organisms/slider3/o-slider3.html.twig'
   label: Organisms/Slider3(Component namespace)
   description: This slider uses component namespace
   fields:

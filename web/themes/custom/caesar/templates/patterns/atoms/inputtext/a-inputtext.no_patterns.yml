@@ -1,5 +1,5 @@
 a_inputtext:
-  use: '@atoms/inputtext/a-inputtext.html.twig'
+  use: '@patterns/atoms/inputtext/a-inputtext.html.twig'
   label: Atoms/Inputtext
   description: Inputtext Component
   fields:

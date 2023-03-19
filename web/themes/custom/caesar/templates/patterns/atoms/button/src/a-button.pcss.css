@@ -1,6 +1,6 @@
 .a-button {
-  --a-button-bg: var(--color-light-accent);
-  --a-button-color: var(--color-light);
+  --a-button-bg: var(--choco-1);
+  --a-button-color: var(--blue-10);
 
   padding: var(--size-3) var(--size-7);
   cursor: pointer;

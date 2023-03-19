@@ -29,7 +29,7 @@
   line-height: var(--font-lineheight-0);
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .a-text--h1 {
     font-size: 4.5rem;
   }
@@ -41,7 +41,7 @@
   line-height: var(--font-lineheight-1);
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .a-text--h2 {
     font-size: 3.5rem;
   }
