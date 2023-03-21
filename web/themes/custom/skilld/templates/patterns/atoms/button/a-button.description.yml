@@ -1,0 +1,42 @@
+a_button:
+  use: '@atoms/button/a-button.html.twig'
+  label: Atoms/Button
+  fields:
+    content:
+      type: text
+      label: Text content
+    href:
+      type: string
+      label: Link href
+  settings:
+    custom_content:
+      type: textfield
+      label: Custom text content
+    type:
+      type: radios
+      label: Type
+      options:
+        default: Default
+        a-button--second: Second
+    leading_icon:
+      type: select
+      label: Leading icon name
+      options:
+        default: Default
+        add: Add
+        remove: Remove
+    trailing_icon:
+      type: select
+      label: Trailing icon name
+      options:
+        default: Default
+        add: Add
+        remove: Remove
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - a-button:
+        css:
+          component:
+            a-button.css: {}

@@ -1,0 +1,8 @@
+a_throbber:
+  use: '@atoms/throbber/a-throbber.html.twig'
+  label: Atoms/Throbber
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

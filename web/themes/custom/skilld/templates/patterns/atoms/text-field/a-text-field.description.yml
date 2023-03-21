@@ -1,0 +1,8 @@
+a_text_field:
+  use: '@atoms/text-field/a-text-field.html.twig'
+  label: Atoms/Text field
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

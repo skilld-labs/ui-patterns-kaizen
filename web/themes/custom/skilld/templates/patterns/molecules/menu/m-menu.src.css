@@ -1,0 +1,20 @@
+.m-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--2-level {
+    padding-left: 40px;
+  }
+
+  &__arrow {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__link {
+    display: inline-flex;
+    gap: 10px;
+    color: inherit;
+  }
+}

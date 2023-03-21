@@ -1,0 +1,8 @@
+m_fieldset:
+  use: '@molecules/fieldset/m-fieldset.html.twig'
+  label: Molecules/Fieldset
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

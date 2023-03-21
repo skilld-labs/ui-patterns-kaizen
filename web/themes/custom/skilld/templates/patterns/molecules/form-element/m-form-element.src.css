@@ -1,0 +1,22 @@
+.m-form-element {
+  display: grid;
+  gap: 8px;
+
+  &__header {
+    display: grid;
+    gap: 8px;
+
+    .m-form-element--label-inline & {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+  &__children {
+    flex-shrink: 0;
+  }
+
+  &__error-messages {
+    color: var(--color-danger);
+  }
+}

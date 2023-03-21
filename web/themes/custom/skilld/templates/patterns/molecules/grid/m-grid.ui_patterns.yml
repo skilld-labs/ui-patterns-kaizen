@@ -1,0 +1,17 @@
+m_grid:
+  use: '@molecules/grid/m-grid.html.twig'
+  label: Molecules/Grid
+  description: Grid Component
+  fields:
+    items:
+      type: render
+      label: Items
+  settings:
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - m-grid:
+        css:
+          component:
+            m-grid.css: {}

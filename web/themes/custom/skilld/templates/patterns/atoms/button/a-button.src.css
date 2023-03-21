@@ -1,0 +1,115 @@
+.a-button {
+  padding: 16px;
+  appearance: none;
+  cursor: pointer;
+  text-align: center;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  background-color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition-property: border-color, background-color, color;
+  transition-duration: var(--transition-duration-0-25);
+  transition-timing-function: var(--transition-timing-function-cubic-bezier);
+
+  &:not([disabled]):hover,
+  [container-as-link-built]:hover & {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  &[disabled],
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--second {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+
+    &--start {
+      margin-left: var(--a-button-icon-side-offset);
+
+      .a-button__ajax--start ~ & {
+        display: none;
+      }
+    }
+
+    &--end {
+      margin-right: var(--a-button-icon-side-offset);
+
+      .a-button__ajax--end ~ & {
+        display: none;
+      }
+    }
+
+    .a-button__ajax--full ~ & {
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    .a-button__ajax--full ~ & {
+      opacity: 0;
+    }
+  }
+
+  &__ajax {
+    &--start,
+    &--end {
+      animation: a-button-ajax-circle-animation var(--transition-duration-0-25) linear infinite;
+    }
+
+    &--start {
+      margin-left: var(--a-button-icon-side-offset);
+    }
+
+    &--end {
+      margin-right: var(--a-button-icon-side-offset);
+    }
+
+    &--full {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: a-button-ajax-circle-full-animation var(--transition-duration-0-25) linear infinite;
+    }
+  }
+}
+
+@keyframes a-button-ajax-circle-animation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes a-button-ajax-circle-full-animation {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

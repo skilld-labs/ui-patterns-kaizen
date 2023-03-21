@@ -1,0 +1,15 @@
+.m-form-element-label {
+  display: table;
+  cursor: pointer;
+
+  &--after {
+    padding-left: 16px;
+  }
+
+  &--required {
+    &::after {
+      margin-left: 0.3em;
+      content: "*";
+    }
+  }
+}

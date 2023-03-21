@@ -1,0 +1,46 @@
+a_text:
+  use: '@atoms/text/a-text.html.twig'
+  label: Atoms/Text
+  fields:
+    content:
+      type: text
+      label: Content
+  settings:
+    custom_content:
+      type: textfield
+      label: Custom text content
+    type:
+      type: select
+      label: Choose a type
+      options:
+        default: Default
+        a-text--h1: Heading 1
+        a-text--h2: Heading 2
+        a-text--h3: Heading 3
+        a-text--h4: Heading 4
+        a-text--h5: Heading 5
+        a-text--h6: Heading 6
+        a-text--small: Small
+    tag:
+      type: select
+      label: Choose element tag
+      options:
+        default: Default (div)
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+        p: p
+        a: a
+        span: span
+        pre: pre
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom text separated by spaces.
+  libraries:
+    - a-text:
+        css:
+          component:
+            a-text.css: {}

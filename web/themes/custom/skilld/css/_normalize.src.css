@@ -1,0 +1,25 @@
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+svg:not(:root) {
+  overflow: visible;
+}
+
+:focus-visible {
+  outline: var(--outline-size) solid var(--outline-color);
+  outline-offset: var(--outline-offset);
+}
+
+pre {
+  white-space: normal;
+  word-break: break-all;
+}
+
+[disabled],
+.is-disabled {
+  cursor: not-allowed;
+}

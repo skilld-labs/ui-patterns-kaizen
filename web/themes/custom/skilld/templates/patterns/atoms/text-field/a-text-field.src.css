@@ -1,0 +1,66 @@
+.a-text-field {
+  position: relative;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-black);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    &--start {
+      left: 16px;
+    }
+  }
+
+  &__element {
+    width: 100%;
+    padding: 16px;
+    cursor: pointer;
+    appearance: none;
+    border: 1px solid var(--color-grey);
+    color: var(--color-black);
+    background-color: transparent;
+    font: inherit;
+
+    .a-text-field__icon ~ & {
+      padding-left: 48px;
+    }
+
+    &::placeholder {
+      opacity: 1;
+      color: var(--color-dark-grey);
+    }
+
+    &:focus-visible {
+      border-color: var(--color-black);
+      outline: none;
+    }
+
+    &[disabled],
+    &.is-disabled {
+      cursor: not-allowed;
+      color: var(--color-grey-light);
+      border-color: currentColor;
+
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+
+    &.error {
+      color: var(--color-danger);
+      border-color: currentColor;
+
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+  }
+}
+
+input[type="search" i]::-webkit-search-cancel-button {
+  display: none;
+}

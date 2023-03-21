@@ -1,0 +1,15 @@
+{% set classes = [
+  'a-text',
+  type and type != 'default' ? type : [],
+  extra_classes ? extra_classes : [],
+] %}
+{% if custom_content %}
+  {% set content = custom_content %}
+{% endif %}
+{% if href %}
+  {% set tag = 'a' %}
+  {% set attributes = attributes.setAttribute('href', href) %}
+{% endif %}
+<{{ tag|default('div') }}{{ attributes.addClass(classes) }}>
+  {{ content }}
+</{{ tag|default('div') }}>

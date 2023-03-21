@@ -1,0 +1,18 @@
+a_icon:
+  use: '@atoms/icon/a-icon.html.twig'
+  label: Atoms/Icon
+  settings:
+    icon:
+      type: select
+      label: Icon name
+      options:
+        add: Add
+        remove: Remove
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom icon separated by spaces.
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

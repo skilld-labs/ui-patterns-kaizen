@@ -1,0 +1,53 @@
+{% set classes = [
+  'm-form-element',
+  type|clean_class in ['radio', 'checkbox'] ? 'm-form-element--label-inline' : 'm-form-element--label-above',
+  'js-form-item',
+  'form-item',
+  'js-form-type-' ~ type|clean_class,
+  'form-type-' ~ type|clean_class,
+  'js-form-item-' ~ name|clean_class,
+  'form-item-' ~ name|clean_class,
+  disabled == 'disabled' ? 'form-disabled' : [],
+  errors ? 'form-item--error' : [],
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <div class="m-form-element__header">
+    {% if label and label['#title_display'] not in ['invisible', 'none'] and type|clean_class not in ['checkbox', 'radio'] %}
+      <div class="m-form-element__label">
+        {{ label }}
+      </div>
+    {% endif %}
+    {% if prefix is not empty %}
+      <span class="m-form-element__prefix field-prefix">{{ prefix }}</span>
+    {% endif %}
+    <div class="m-form-element__children">
+      {{ children }}
+    </div>
+    {% if suffix is not empty %}
+      <span class="m-form-element__suffix field-suffix">{{ suffix }}</span>
+    {% endif %}
+    {% if label and type|clean_class in ['checkbox', 'radio'] %}
+      <div class="m-form-element__label">
+        {{ label }}
+      </div>
+    {% endif %}
+  </div>
+  {% if errors or description.content %}
+    <div class="m-form-element__footer">
+      {% if errors %}
+        {% include '@atoms/text/a-text.html.twig' with {
+          attributes: create_attribute().addClass('m-form-element__error-messages', 'form-item--error-message'),
+          content: errors,
+          tag: 'div',
+        } %}
+      {% endif %}
+      {% if description.content %}
+        {% include '@atoms/text/a-text.html.twig' with {
+          attributes: description.attributes.addClass('m-form-element__description', 'description'),
+          content: description.content,
+          tag: 'div',
+        } %}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,8 @@
+m_form_element:
+  use: '@molecules/form-element/m-form-element.html.twig'
+  label: Molecules/Form element
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

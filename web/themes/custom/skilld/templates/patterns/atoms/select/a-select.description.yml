@@ -1,0 +1,8 @@
+a_select:
+  use: '@atoms/select/a-select.html.twig'
+  label: Atoms/Select
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

@@ -1,0 +1,10 @@
+html {
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: var(--font-size-1);
+  line-height: var(--font-lineheight-3);
+}
+
+body {
+  background-color: var(--color-page-bg);
+}

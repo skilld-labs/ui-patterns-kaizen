@@ -1,0 +1,42 @@
+{% set classes = [
+  'm-fieldset',
+  'js-form-item',
+  'form-item',
+  'js-form-wrapper',
+  'form-wrapper',
+] %}
+<fieldset{{ attributes.addClass(classes) }}>
+  {% set legend_span_classes = [
+    'm-fieldset__title-span',
+    'fieldset-legend',
+    required ? 'js-form-required form-required' : [],
+  ] %}
+  <legend{{ legend.attributes.addClass('m-fieldset__title') }}>
+    {% include '@atoms/text/a-text.html.twig' with {
+      attributes: legend_span.attributes.addClass(legend_span_classes),
+      content: legend.title,
+      tag: 'span',
+      type: 'a-text--h5',
+    } only %}
+  </legend>
+  <div class="m-fieldset__content fieldset-wrapper">
+    {% if description_display == 'before' and description.content %}
+      <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
+    {% endif %}
+    {% if errors %}
+      <div>
+        {{ errors }}
+      </div>
+    {% endif %}
+    {% if prefix %}
+      <span class="field-prefix">{{ prefix }}</span>
+    {% endif %}
+    {{ children }}
+    {% if suffix %}
+      <span class="field-suffix">{{ suffix }}</span>
+    {% endif %}
+    {% if description_display in ['after', 'invisible'] and description.content %}
+      <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
+    {% endif %}
+  </div>
+</fieldset>

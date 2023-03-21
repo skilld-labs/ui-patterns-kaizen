@@ -1,0 +1,14 @@
+{% if title is not empty or required -%}
+  {% set classes = [
+    'm-form-element-label',
+    title_display in ['before', 'after'] ? 'm-form-element-label--' ~ title_display : [],
+    title_display == 'invisible' ? 'visually-hidden' : [],
+    required ? 'm-form-element-label--required js-form-required form-required' : [],
+  ] %}
+  {% include '@atoms/text/a-text.html.twig' with {
+    attributes: attributes.addClass(classes),
+    content: title,
+    tag: 'label',
+    type: title_display == 'after' ? 'a-text--small' : []
+  } %}
+{%- endif %}

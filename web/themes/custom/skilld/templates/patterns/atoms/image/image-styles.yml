@@ -1,0 +1,64 @@
+# This is yml configuration where all image styles should be defined from the
+# entire design system.
+#
+# ~95% of all images on the web-site usually have image effect "scale and crop".
+# ~5% are about "scale". Sometimes these values can be different (like 60/40,
+# depending on the web-site of course, but still!).
+# ~0.000001% other cases have other image effects (or more than 1 image effect
+# per image). Usually it's focal-points image effects or something like this,
+# and we can ignore it in storybook, because we are using fake images.
+#
+# Idea of this file is next:
+#   1. Prepare yml file with all image styles described
+#   2. Then, backender can write a little script, which can grab all image styles
+#      from here and generate configs for drupal automatically.
+#      Depending on the site needs of course, but usually on large web-sites we
+#      can have hundreds of image styles. So it becomes hard to manually create
+#      them in drupal -> this is where this idea can help, just to automate
+#      processes and save time.
+#   3. It's a specification of all image styles from design system, located in
+#      one place.
+#
+# We don't want to go very deep in the settings, like provide setting for focal
+# points, or "allow upscale" property for "scale" effect, or other. It's all so
+# rare cases and for sure it can be manually configured in drupal if needed.
+1400_x_1400_scale_and_crop:
+  label: 1400 x 1400 (Scale and crop)
+  effect: image_scale_and_crop
+  width: 1400
+  height: 1400
+1000_x_1000_scale_and_crop:
+  label: 1000 x 1000 (Scale and crop)
+  effect: image_scale_and_crop
+  width: 1000
+  height: 1000
+700_x_700_scale_and_crop:
+  label: 700 x 700 (Scale and crop)
+  effect: image_scale_and_crop
+  width: 700
+  height: 700
+500_x_500_scale_and_crop:
+  label: 500 x 500 (Scale and crop)
+  effect: image_scale_and_crop
+  width: 500
+  height: 500
+50_x_auto_scale:
+  label: 50 x Auto (Scale, auto height)
+  effect: image_scale
+  width: 50
+  height: auto
+30_x_30_scale:
+  label: 30 x 30 (Scale, 30px maximum width and height)
+  effect: image_scale
+  width: 30
+  height: 30
+# Why do you see 1_x_1 image style here?
+# That's a little trick for responsive image groups, which can be hidden
+# on some breakpoint for example. And when image is hidden - we can set it
+# to use 1_x_1 image style in that case. In that case browser will download just
+# few bytes (because of 1px image).
+1_x_1_scale_and_crop:
+  label: 1 x 1 (Scale, auto height)
+  effect: image_scale_and_crop
+  width: 1
+  height: 1

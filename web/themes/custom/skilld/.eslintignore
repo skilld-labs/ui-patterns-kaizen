@@ -1,0 +1,8 @@
+js/**/*.js
+!js/**/*.src.js
+libraries
+node_modules
+templates/patterns/**/*.js
+templates/patterns/**/vendor.*.js
+!templates/patterns/**/*.src.js
+!templates/patterns/**/*.stories.js

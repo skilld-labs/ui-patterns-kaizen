@@ -1,0 +1,23 @@
+name: Skilld
+type: theme
+description: 'Skilld theme'
+core_version_requirement: ^9 || ^10
+base theme: false
+dependencies:
+  - ui_patterns:ui_patterns
+  - ui_patterns_library:ui_patterns_library
+  - components:components
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer: 'Footer'
+libraries:
+  - skilld/base
+components:
+  namespaces:
+    atoms:
+      - templates/patterns/atoms
+    molecules:
+      - templates/patterns/molecules
+    organisms:
+      - templates/patterns/organisms

@@ -1,0 +1,8 @@
+m_form_element_label:
+  use: '@molecules/form-element-label/m-form-element-label.html.twig'
+  label: Molecules/Form element label
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

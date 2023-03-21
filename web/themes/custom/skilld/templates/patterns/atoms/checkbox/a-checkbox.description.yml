@@ -1,0 +1,8 @@
+a_checkbox:
+  use: '@atoms/checkbox/a-checkbox.html.twig'
+  label: Atoms/Checkbox
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

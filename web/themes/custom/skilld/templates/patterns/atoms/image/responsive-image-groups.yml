@@ -1,0 +1,17 @@
+machine_name_of_responsive_image_group_1:
+  label: Label of responsive image group 1
+  breakpoints:
+    xl:
+      1x: 700_x_700_scale_and_crop
+      2x: 1400_x_1400_scale_and_crop
+    xs:
+      1x: 500_x_500_scale_and_crop
+  fallback: 700_x_700_scale_and_crop
+machine_name_of_responsive_image_group_2:
+  label: Label of responsive image group 2
+  breakpoints:
+    m:
+      1x: 50_x_auto_scale
+    xs:
+      1x: 1_x_1_scale_and_crop
+  fallback: 50_x_auto_scale

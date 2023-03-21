@@ -1,0 +1,8 @@
+m_details:
+  use: '@molecules/details/m-details.html.twig'
+  label: Molecules/Details
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

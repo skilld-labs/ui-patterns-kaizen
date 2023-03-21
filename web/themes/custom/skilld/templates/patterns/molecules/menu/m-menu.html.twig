@@ -1,0 +1,37 @@
+{% import _self as menus %}
+
+{% macro menu_links(items, attributes, menu_level, skilld_svg_sprite) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 1 %}
+      <ul{{ attributes.addClass('m-menu', 'm-menu--' ~ menu_level ~ '-level' ) }}>
+    {% else %}
+      <ul class="m-menu m-menu--{{ menu_level}}-level">
+    {% endif %}
+    {% for item in items %}
+      {% set item_classes = [
+        'm-menu__item',
+        item.in_active_trail ? 'm-menu__item--active' : [],
+      ] %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {% set title %}
+          <span class="a-text">
+            {{ item.title }}
+          </span>
+          {% if item.below %}
+            <svg class="m-menu__arrow a-icon" aria-hidden="true">
+              <use xlink:href="{{ skilld_svg_sprite }}#svg-add"></use>
+            </svg>
+          {% endif %}
+        {% endset %}
+        {{ link(title, item.url, { 'class': ['m-menu__link'] }) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, skilld_svg_sprite) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}
+
+{{ menus.menu_links(items, attributes, 1, skilld_svg_sprite) }}

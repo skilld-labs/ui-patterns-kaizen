@@ -1,0 +1,13 @@
+m_menu:
+  use: '@molecules/menu/m-menu.html.twig'
+  label: Molecules/Menu
+  description: Menu Component
+  fields:
+    items:
+      type: render
+      label: Menu items
+  libraries:
+    - a-menu:
+        css:
+          component:
+            a-menu.css: {}
