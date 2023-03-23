@@ -1,0 +1,18 @@
+h_slider:
+  use: '@helpers/slider/h-slider.html.twig'
+  label: Helpers/Slider
+  fields:
+    items:
+      type: render
+      label: Items
+  settings:
+    type:
+      type: radios
+      label: Gap between columns
+      default_value: h-slider--banner
+      options:
+        h-slider--banner: Banner
+        h-slider--cards: Cards
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for helper slider separated by spaces.

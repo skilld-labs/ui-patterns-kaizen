@@ -10,38 +10,22 @@
 
   .a-select__element {
     width: 100%;
-    padding: 1.0625rem 1.5rem;
+    padding: 1rem 3rem 1rem 1rem;
     cursor: pointer;
-    letter-spacing: var(--letter-spacing-0-03);
-    color: var(--color-text-stroke-primary);
-    border: 0.0625rem solid var(--color-text-stroke-strokes);
-    border-radius: var(--border-radius-8);
-    background-color: var(--color-background-primary);
-    box-shadow: none;
-    font-family: var(--font-family-roboto);
-    font-size: var(--font-size-14);
-    font-weight: var(--font-weight-400);
-    line-height: var(--line-height-1-71);
+    background-color: transparent;
     -webkit-appearance: none;
     appearance: none;
+    border: 0.0625rem solid var(--color-grey);
+    color: var(--color-black);
+    font: inherit;
   }
 
-  .a-select__element:-ms-input-placeholder {
-      opacity: 1;
-      color: var(--color-text-stroke-secondary);
-    }
-
-  .a-select__element::placeholder {
-      opacity: 1;
-      color: var(--color-text-stroke-secondary);
-    }
-
   .is-focused .a-select__element {
-      border-color: var(--color-text-stroke-secondary);
+      border-color: var(--color-black);
     }
 
   .a-select__element:focus {
-      border-color: var(--color-text-stroke-secondary);
+      border-color: var(--color-black);
       outline: none;
     }
 
@@ -49,24 +33,24 @@
       .a-select__element[disabled] ~ .a-select__js-select-list .a-select__element,
       .a-select__element.is-disabled,
       .a-select__element.is-disabled ~ .a-select__js-select-list .a-select__element {
-        cursor: not-allowed;
-        color: var(--color-text-stroke-secondary);
-        background-color: var(--color-ghost-theme);
+        color: var(--color-grey-light);
+        border-color: currentColor;
       }
 
   .error ~ .a-select__js-select-list .a-select__element {
-      border-color: var(--color-secondary-error);
+      color: var(--color-danger);
+      border-color: currentColor;
     }
 
   .a-select__chevron {
     position: absolute;
     top: 50%;
-    right: 1.625rem;
+    right: 1rem;
     width: 0.75rem;
     height: 0.75rem;
     transform: translateY(-50%);
     pointer-events: none;
-    fill: var(--color-text-stroke-secondary);
+    border-color: var(--color-black);
   }
 
   [data-once*="storybook-a-select"] > .a-select__chevron {
@@ -96,7 +80,7 @@
   }
 
   .a-select__js-select-placeholder {
-    color: var(--color-text-stroke-secondary);
+    color: var(--color-dark-grey);
   }
 
   .a-select__js-select-list--dropdown {
@@ -108,10 +92,10 @@
       overflow: auto;
       min-width: 100%;
       max-height: 11.875rem;
-      padding: 0.25rem 0;
-      border-radius: 0 0 var(--border-radius-6) var(--border-radius-6);
-      background-color: var(--color-background-primary);
-      box-shadow: var(--box-shadow);
+      background-color: var(--color-white);
+      border-width: 0 0.0625rem 0.0625rem;
+      border-style: solid;
+      border-color: var(--color-black);
     }
 
   .is-open .a-select__js-select-list--dropdown {
@@ -119,18 +103,18 @@
       }
 
   .is-flipped .a-select__js-select-list--dropdown {
+        border-width: 0.0625rem 0.0625rem 0;
         top: auto;
         bottom: 100%;
-        border-radius: var(--border-radius-6) var(--border-radius-6) 0 0;
       }
 
   .a-select__js-select-item--choice {
-      padding: 0.375rem 1rem 0.375rem 1.5rem;
+      padding: 0.375rem 1rem;
       cursor: pointer;
     }
 
   .a-select__js-select-item--choice.is-highlighted {
-        background-color: var(--color-background-secondary);
+        background-color: var(--color-grey-light);
       }
 
   .a-select__js-select-item--default-value {

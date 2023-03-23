@@ -3,7 +3,10 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-.m-grid {
-  display: block;
-  background-color: url('../../../../images/test.jpg');
+.m-checkboxes {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
 }

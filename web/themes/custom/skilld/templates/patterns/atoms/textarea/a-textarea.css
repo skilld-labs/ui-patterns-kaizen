@@ -12,7 +12,6 @@
     display: block;
     resize: vertical;
     cursor: pointer;
-    box-shadow: none;
     -webkit-appearance: none;
     appearance: none;
     border: 0.0625rem solid var(--color-grey);

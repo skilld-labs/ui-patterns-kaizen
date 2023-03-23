@@ -15,9 +15,13 @@ libraries:
   - skilld/base
 components:
   namespaces:
+    helpers:
+      - templates/patterns/helpers
     atoms:
       - templates/patterns/atoms
     molecules:
       - templates/patterns/molecules
     organisms:
       - templates/patterns/organisms
+    templates:
+      - templates/patterns/templates

@@ -11,7 +11,7 @@
       }
       once("a-select", ".a-select", context).forEach(
         (el) => {
-          behaviors.eshopgen_base_theme_storybook_a_select.handler(el, settings);
+          behaviors.skilldASelect.handler(el, settings);
         }
       );
     },
@@ -31,7 +31,7 @@
             item: "a-select__js-select-item",
             itemSelectable: "a-select__js-select-item--selectable",
             itemDisabled: "a-select__js-select-item--disabled",
-            itemChoice: "a-select__js-select-item--choice a-text a-text--body-1-bold a-text--color-text-stroke-primary",
+            itemChoice: "a-select__js-select-item--choice a-text",
             placeholder: "a-select__js-select-placeholder",
             group: "a-select__js-select-group",
             groupHeading: "a-select__js-select-group-heading",

@@ -2,7 +2,7 @@ import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_stor
 import { useEffect } from '@storybook/client-api';
 import description from './a-checkbox.description.yml';
 import './a-checkbox.src.css';
-import './a-checkbox.src.js';
+// import './a-checkbox.src.js';
 
 export default {
   title: 'Atoms/Checkbox',

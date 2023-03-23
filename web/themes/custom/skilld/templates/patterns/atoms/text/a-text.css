@@ -15,43 +15,37 @@
 }
 
   .a-text--h1 {
-    font-family: var(--font-family);
     font-size: 2rem;
     line-height: 1.2;
     font-weight: 700;
   }
 
   .a-text--h2 {
-    font-family: var(--font-family);
     font-size: 1.625rem;
     line-height: 1.2;
     font-weight: 700;
   }
 
   .a-text--h3 {
-    font-family: var(--font-family);
     font-size: 1.5rem;
     line-height: 1.2;
-    font-weight: 400;
   }
 
   .a-text--h4 {
-    font-family: var(--font-family);
     font-size: 1.375rem;
     line-height: 1.2;
-    font-weight: 400;
   }
 
   .a-text--h5 {
-    font-family: var(--font-family);
     font-size: 1.125rem;
     line-height: 1.2;
-    font-weight: 400;
   }
 
   .a-text--h6 {
-    font-family: var(--font-family);
     font-size: 1rem;
     line-height: 1.2;
-    font-weight: 400;
+  }
+
+  .a-text--small {
+    font-size: 0.875rem;
   }

@@ -1,0 +1,17 @@
+{% set classes = [
+  'h-slider',
+  type ? type : [],
+] %}
+<div {{ attributes.addClass(classes).setAttribute('data-items-amount', items|length) }}>
+  <div class="h-slider__slider splide" role="group">
+    <div class="h-slider__track splide__track">
+      <ul class="h-slider__list splide__list">
+        {% for item in items %}
+          <li class="h-slider__slide splide__slide">
+            {{ item }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.o-local-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+  gap: 10px;
+}

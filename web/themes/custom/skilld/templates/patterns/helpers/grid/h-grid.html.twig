@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'h-grid',
+    columns and columns != 'default' ? columns : [],
+    gap and gap != 'default' ? gap : [],
+    extra_classes ? extra_classes : [],
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+  {% for item in items %}
+    {% if item_wrapper %}
+      <div class="h-grid__item">
+    {% endif %}
+    {{ item }}
+    {% if item_wrapper %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

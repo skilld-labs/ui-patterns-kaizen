@@ -1,0 +1,8 @@
+m_local_task:
+  use: '@molecules/local-task/m-local-task.html.twig'
+  label: Molecules/Local task
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

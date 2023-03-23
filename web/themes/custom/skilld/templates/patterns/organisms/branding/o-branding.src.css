@@ -1,0 +1,14 @@
+.o-branding {
+  &__link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    vertical-align: top;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__image {
+    width: 100px;
+  }
+}

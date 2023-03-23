@@ -1,0 +1,8 @@
+o_local_tasks:
+  use: '@organisms/local-tasks/o-local-tasks.html.twig'
+  label: Organisms/Local tasks
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

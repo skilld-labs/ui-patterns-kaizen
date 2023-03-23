@@ -1,0 +1,8 @@
+o_branding:
+  use: '@organisms/branding/o-branding.html.twig'
+  label: Organisms/Branding
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

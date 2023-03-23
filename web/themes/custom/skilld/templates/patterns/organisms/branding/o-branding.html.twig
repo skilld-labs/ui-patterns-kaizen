@@ -1,0 +1,23 @@
+<div{{ attributes.addClass('o-branding') }}>
+  <a class="o-branding__link" href="{{ path('<front>') }}" rel="home">
+    {% if site_logo %}
+      <img class="o-branding__image" src="{{ site_logo }}" alt="{{ 'Home'|t }}"/>
+    {% endif %}
+    {% if site_name %}
+      {% include '@atoms/text/a-text.html.twig' with {
+        attributes: create_attribute().addClass('o-branding__name'),
+        tag: 'span',
+        content: site_name,
+        type: 'a-text--h2',
+      } only %}
+    {% endif %}
+    {% if site_slogan %}
+      {% include '@atoms/text/a-text.html.twig' with {
+        attributes: create_attribute().addClass('o-branding__slogan'),
+        tag: 'span',
+        content: site_slogan,
+        type: 'a-text--h5',
+      } only %}
+    {% endif %}
+  </a>
+</div>

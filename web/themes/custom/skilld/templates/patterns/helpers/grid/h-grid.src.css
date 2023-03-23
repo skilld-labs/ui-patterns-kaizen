@@ -1,0 +1,27 @@
+.h-grid {
+  display: grid;
+
+  &--gap-16 {
+    gap: 16px;
+  }
+
+  &--two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--three-columns {
+    @media (--l) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--four-columns {
+    @media (--m) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (--l) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
