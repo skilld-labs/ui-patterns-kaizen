@@ -1,6 +1,4 @@
-import { defineConfig } from 'vite';
-import { jsBuild } from './vite.globals-config';
+import { defineConfig } from "vite";
+import { jsBuild } from "./vite.globals-config";
 
-export default defineConfig(
-  jsBuild('libraries')
-);
+export default defineConfig(jsBuild("libraries"));

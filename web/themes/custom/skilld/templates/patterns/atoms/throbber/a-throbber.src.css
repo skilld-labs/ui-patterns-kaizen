@@ -8,7 +8,7 @@
   animation: ajax-progress-animate var(--transition-duration-1) var(--transition-timing-function-ease) infinite;
   pointer-events: none;
 
-  @db l {
+  @media (--m) {
     height: 7px;
   }
 
@@ -23,7 +23,7 @@
     content: "";
     background-color: var(--color-black);
 
-    @db m {
+    @media (--m) {
       width: 50%;
     }
   }

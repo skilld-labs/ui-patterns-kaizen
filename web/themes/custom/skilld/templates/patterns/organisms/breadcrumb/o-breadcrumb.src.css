@@ -1,0 +1,35 @@
+.o-breadcrumb {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    column-gap: 8px;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+
+    &:nth-child(n + 2)::before {
+      padding-right: 8px;
+      content: "/";
+    }
+  }
+
+  &__breadcrumb {
+    &--trailing {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &--current {
+      color: var(--color-dark-grey);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+body[class*="toolbar"] {
+  /* stylelint-disable-next-line unit-case */
+  --toolbar-height: 39px;
+}
+
+body[class*="toolbar"].toolbar-tray-open:not(.toolbar-vertical) {
+  /* stylelint-disable-next-line unit-case */
+  --toolbar-height: 79px;
+}
+
+.toolbar-oriented .toolbar-bar {
+  position: fixed;
+}
+
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
+  margin-left: 0;
+}

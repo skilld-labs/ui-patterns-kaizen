@@ -7,4 +7,7 @@
   --outline-color: var(--color-black);
   --outline-size: 2px;
   --outline-offset: 2px;
+  --header-height: 120px;
+  /* stylelint-disable-next-line length-zero-no-unit */
+  --toolbar-height: 0rem;
 }

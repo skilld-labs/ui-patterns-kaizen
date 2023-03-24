@@ -35,8 +35,3 @@ a_button:
     extra_classes:
       type: textfield
       label: Add extra CSS classes for atom button separated by spaces.
-  libraries:
-    - a-button:
-        css:
-          component:
-            a-button.css: {}

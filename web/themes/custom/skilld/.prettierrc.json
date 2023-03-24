@@ -5,11 +5,15 @@
   "trailingComma": "all",
   "overrides": [
     {
-        "files": ["**/*.css"],
-        "options": {
-            "singleQuote": false,
-            "printWidth": 1000
-        }
+      "files": [
+        "**/*.{css,js}",
+        "libraries/**/*.{css,js}",
+        "templates/patterns/**/*.{css,js}"
+      ],
+      "options": {
+        "singleQuote": false,
+        "printWidth": 1000
+      }
     }
   ]
 }

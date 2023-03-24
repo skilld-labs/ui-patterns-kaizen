@@ -1,0 +1,54 @@
+<div data-drupal-messages>
+  {% for type, messages in message_list %}
+    {% set classes = [
+      'm-status-messages',
+      'm-status-messages--' ~ type,
+    ] %}
+    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+      {% if type == 'status' %}
+        {% set icon = 'checkbox-filled' %}
+      {% elseif type == 'warning' %}
+        {% set icon = 'radio-empty' %}
+      {% elseif type == 'error' %}
+        {% set icon = 'remove' %}
+      {% else %}
+        {% set icon = 'add' %}
+      {% endif %}
+      {% include '@atoms/icon/a-icon.html.twig' with {
+        attributes: create_attribute().addClass('m-status-messages__icon'),
+        icon: icon,
+        skilld_svg_sprite: skilld_svg_sprite,
+      } only %}
+      <div class="m-status-messages__content">
+        {% if type == 'error' %}
+          <div role="alert">
+        {% endif %}
+        {% if status_headings[type] %}
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        {% endif %}
+        {% if messages|length > 1 %}
+          <ul class="m-status-messages__list">
+            {% for message in messages %}
+              <li class="m-status-messages__item">
+                {% include '@atoms/text/a-text.html.twig' with {
+                  attributes: create_attribute(),
+                  content: message,
+                  tag: 'div',
+                } %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {% include '@atoms/text/a-text.html.twig' with {
+            attributes: create_attribute(),
+            content: messages|first,
+            tag: 'div',
+          } %}
+        {% endif %}
+        {% if type == 'error' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

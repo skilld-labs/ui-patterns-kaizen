@@ -1,0 +1,3 @@
+t_page:
+  use: '@templates/page/t-page.html.twig'
+  label: Templates/Page

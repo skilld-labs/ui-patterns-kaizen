@@ -1,0 +1,13 @@
+m_banner:
+  use: '@molecules/banner/m-banner.html.twig'
+  label: Banner
+  fields:
+    media:
+      type: render
+      label: Media
+    title:
+      type: render
+      label: Title
+    cta:
+      type: render
+      label: CTA

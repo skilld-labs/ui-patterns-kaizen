@@ -3,6 +3,20 @@
   type ? type : [],
 ] %}
 <div {{ attributes.addClass(classes).setAttribute('data-items-amount', items|length) }}>
+  {% if label or label_override %}
+    {% if label %}
+      {% set label_content = label %}
+    {% endif %}
+    {% if label_override %}
+      {% set label_content = label_override %}
+    {% endif %}
+    {% include '@atoms/text/a-text.html.twig' with {
+      attributes: create_attribute().addClass('h-grid__title'),
+      tag: 'h2',
+      type: 'a-text--h2',
+      content: label_content,
+    } only %}
+  {% endif %}
   <div class="h-slider__slider splide" role="group">
     <div class="h-slider__track splide__track">
       <ul class="h-slider__list splide__list">

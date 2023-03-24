@@ -1,6 +1,4 @@
-import { defineConfig } from 'vite';
-import { cssBuild } from './vite.globals-config';
+import { defineConfig } from "vite";
+import { cssBuild } from "./vite.globals-config";
 
-export default defineConfig(
-  cssBuild('css')
-);
+export default defineConfig(cssBuild("css"));

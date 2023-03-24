@@ -1,0 +1,15 @@
+.m-card {
+  border: 1px solid var(--color-black);
+
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+  }
+}

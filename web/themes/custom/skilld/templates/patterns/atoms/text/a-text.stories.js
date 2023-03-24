@@ -1,24 +1,28 @@
-import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_storybook/plugins/skilld';
-import { useEffect } from '@storybook/client-api';
-import description from './a-text.description.yml';
-import './a-text.src.css';
-import './a-text.src.js';
+import { defRender, defArgTypes } from "@skilld_storybook/plugins/skilld";
+import { useEffect } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
+import description from "./a-text.description.yml";
+import "./a-text.src.css";
+// import './a-text.src.js';
+
+const BasicRender = (args) => {
+  const { data, template } = defRender(args, description);
+  data.content = args.content || "Lorem ipsum";
+  if (args.tag === "a" || args.link) {
+    data.attributes.setAttribute("href", args.href || "#");
+  }
+  // useEffect(() => { place-your-js-code-here }, [args]);
+  return template.render(data);
+};
 
 export default {
-  title: 'Atoms/Text',
-  ...defaultPlay(),
-  render: (args) => {
-    const storyDefaultRender = defaultRenderSettings(args, description);
-    const { data, template } = storyDefaultRender;
-    data.content = args.content || 'Lorem ipsum';
-    if (args.tag === 'a' || args.link) {
-      data.attributes.setAttribute('href', args.href || '#');
-    }
-    return template.render(data);
-  },
+  title: "Atoms/Text",
+  // parameters: { layout: 'fullscreen' },
   argTypes: {
-    ...argTypesLoader(description),
+    ...defArgTypes(description),
   },
 };
 
-export const Basic = {};
+export const Basic = {
+  render: (args = {}) => BasicRender(args),
+};

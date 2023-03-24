@@ -1,0 +1,20 @@
+.t-page--maintenance {
+  --outline-color: var(--color-background-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--viewport-height);
+  padding: 16px;
+  text-align: center;
+
+  .t-page__content {
+    display: grid;
+    gap: 16px;
+    max-width: 420px;
+  }
+
+  img {
+    width: 150px;
+  }
+}

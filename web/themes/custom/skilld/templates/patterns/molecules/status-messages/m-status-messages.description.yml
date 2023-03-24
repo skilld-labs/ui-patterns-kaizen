@@ -1,0 +1,8 @@
+m_status_messages:
+  use: '@molecules/status-messages/m-status-messages.html.twig'
+  label: Molecules/Status messages
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

@@ -1,0 +1,21 @@
+<nav {{ attributes.addClass('o-breadcrumb').setAttribute('role', 'navigation') }}>
+  <ul class="o-breadcrumb__list">
+    {% for item in breadcrumb %}
+      <li class="o-breadcrumb__item">
+        {% if item.url %}
+          {% include '@atoms/text/a-text.html.twig' with {
+            attributes: create_attribute().addClass('o-breadcrumb__breadcrumb', 'o-breadcrumb__breadcrumb--trailing'),
+            href: item.url,
+            content: item.text,
+          } %}
+        {% else %}
+          {% include '@atoms/text/a-text.html.twig' with {
+            attributes: create_attribute().addClass('o-breadcrumb__breadcrumb', 'o-breadcrumb__breadcrumb--current'),
+            content: item.text,
+            tag: 'span',
+          } %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

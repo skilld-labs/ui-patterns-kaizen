@@ -4,16 +4,16 @@
  * @preserve
  */
 
-  .m-form-element-label {
+.m-form-element-label {
   display: table;
   cursor: pointer;
 }
 
-  .m-form-element-label--after {
-    padding-left: 1rem;
-  }
+.m-form-element-label--after {
+  padding-left: 1rem;
+}
 
-  .m-form-element-label--required::after {
-      margin-left: 0.3em;
-      content: "*";
-    }
+.m-form-element-label--required::after {
+  margin-left: 0.3em;
+  content: "*";
+}

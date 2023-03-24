@@ -4,18 +4,18 @@
  * @preserve
  */
 
-  .m-fieldset {
+.m-fieldset {
   margin: 0;
   border: 0;
 }
 
-  .m-fieldset__title {
-    display: contents;
-    float: left;
-    width: 100%;
-    padding: 0;
-  }
+.m-fieldset__title {
+  display: contents;
+  float: left;
+  width: 100%;
+  padding: 0;
+}
 
-  .m-fieldset__content {
-    padding-top: 1rem;
-  }
+.m-fieldset__content {
+  padding-top: 1rem;
+}

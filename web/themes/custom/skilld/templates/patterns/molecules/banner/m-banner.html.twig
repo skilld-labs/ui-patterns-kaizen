@@ -1,0 +1,21 @@
+<div {{ attributes.addClass('m-banner') }}>
+	{% if media %}
+		<div class="m-banner__media">
+			{{ media }}
+		</div>
+	{% endif %}
+	{% if title or cta %}
+		<div class="m-banner__content">
+			{% if title %}
+				<div class="m-banner__title">
+					{{ title }}
+				</div>
+			{% endif %}
+			{% if cta %}
+				<div class="m-banner__cta">
+					{{ cta }}
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>

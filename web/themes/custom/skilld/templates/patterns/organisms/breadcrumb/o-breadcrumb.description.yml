@@ -1,0 +1,8 @@
+o_breadcrumb:
+  use: '@organisms/breadcrumb/o-breadcrumb.html.twig'
+  label: Organisms/Breadcrumb
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

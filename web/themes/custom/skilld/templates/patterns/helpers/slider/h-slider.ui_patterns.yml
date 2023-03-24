@@ -13,6 +13,9 @@ h_slider:
       options:
         h-slider--banner: Banner
         h-slider--cards: Cards
+    label_override:
+      type: textfield
+      label: Override label
     extra_classes:
       type: textfield
       label: Add extra CSS classes for helper slider separated by spaces.

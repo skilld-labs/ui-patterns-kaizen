@@ -1,8 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-order"
-  ],
+  "plugins": ["stylelint-order"],
   "rules": {
     "alpha-value-notation": "number",
     "color-function-notation": "legacy",
@@ -16,12 +14,15 @@
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
     "no-unknown-animations": true,
-    "media-feature-name-no-unknown": [true, {
-      "ignoreMediaFeatureNames": [
-        "prefers-reduced-motion",
-        "min--moz-device-pixel-ratio"
-      ]
-    }],
+    "media-feature-name-no-unknown": [
+      true,
+      {
+        "ignoreMediaFeatureNames": [
+          "prefers-reduced-motion",
+          "min--moz-device-pixel-ratio"
+        ]
+      }
+    ],
     "media-feature-name-no-vendor-prefix": null,
     "number-max-precision": 5,
     "order/order": [
@@ -466,14 +467,28 @@
     "selector-no-vendor-prefix": null,
     "selector-pseudo-element-colon-notation": null,
     "shorthand-property-no-redundant-values": null,
-    "unit-allowed-list": ["ch", "deg", "dpcm", "em", "ex", "fr", "ms", "rem", "%", "s", "px", "vw", "vh"],
-    "value-keyword-case": ["lower", {
-      "camelCaseSvgKeywords": true,
-      "ignoreProperties": [
-        "--font-family",
-        "font-family"
-      ]
-    }],
+    "unit-allowed-list": [
+      "ch",
+      "deg",
+      "dpcm",
+      "em",
+      "ex",
+      "fr",
+      "ms",
+      "rem",
+      "%",
+      "s",
+      "px",
+      "vw",
+      "vh"
+    ],
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true,
+        "ignoreProperties": ["--font-family", "font-family"]
+      }
+    ],
     "value-no-vendor-prefix": null
   }
 }

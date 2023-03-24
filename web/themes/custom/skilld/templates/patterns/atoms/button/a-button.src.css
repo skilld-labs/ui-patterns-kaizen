@@ -1,8 +1,15 @@
 .a-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 16px;
-  appearance: none;
   cursor: pointer;
+  transition-timing-function: var(--transition-timing-function-cubic-bezier);
+  transition-duration: var(--transition-duration-0-25);
+  transition-property: border-color, background-color, color;
   text-align: center;
+  text-decoration: none;
   color: var(--color-black);
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
@@ -10,20 +17,13 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  appearance: none;
   gap: 10px;
-  text-decoration: none;
-  transition-property: border-color, background-color, color;
-  transition-duration: var(--transition-duration-0-25);
-  transition-timing-function: var(--transition-timing-function-cubic-bezier);
 
   &:not([disabled]):hover,
   [container-as-link-built]:hover & {
-    background-color: var(--color-black);
     color: var(--color-white);
+    background-color: var(--color-black);
   }
 
   &[disabled],
@@ -44,16 +44,12 @@
     fill: currentColor;
 
     &--start {
-      margin-left: var(--a-button-icon-side-offset);
-
       .a-button__ajax--start ~ & {
         display: none;
       }
     }
 
     &--end {
-      margin-right: var(--a-button-icon-side-offset);
-
       .a-button__ajax--end ~ & {
         display: none;
       }
@@ -74,14 +70,6 @@
     &--start,
     &--end {
       animation: a-button-ajax-circle-animation var(--transition-duration-0-25) linear infinite;
-    }
-
-    &--start {
-      margin-left: var(--a-button-icon-side-offset);
-    }
-
-    &--end {
-      margin-right: var(--a-button-icon-side-offset);
     }
 
     &--full {

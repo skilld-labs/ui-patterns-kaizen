@@ -71,7 +71,7 @@
     "storybook": "storybook dev",
     "lint": "stylelint \"**/*.css\" --config='./.stylelintrc' $FIX_FLAG && eslint --ext .yml . $FIX_FLAG && eslint . $FIX_FLAG --max-warnings 0",
     "lint:fix": "FIX_FLAG=--fix yarn lint && yarn prettier",
-    "prettier": "prettier --write \"./**/*.css\"",
+    "prettier": "prettier --write .",
     "favicon": "mkdir -p favicon && real-favicon generate favicon.config.json favicon.output.json favicon && rm favicon.output.json",
     "sprite": "yarn sprite:removeOld && yarn sprite:createTemp && yarn sprite:strokeToFill && yarn sprite:optimize && yarn sprite:create && yarn sprite:generateText && yarn sprite:removeTemp",
     "sprite:removeOld": "rm -f images/sprite.svg",

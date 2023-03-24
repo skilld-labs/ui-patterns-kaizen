@@ -1,80 +1,75 @@
-import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_storybook/plugins/skilld';
-import { useEffect } from '@storybook/client-api';
-import description from './a-text-field.description.yml';
-import './a-text-field.src.css';
-import './a-text-field.src.js';
+import { defRender, defArgTypes } from "@skilld_storybook/plugins/skilld";
+import { useEffect } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
+import description from "./a-text-field.description.yml";
+import "./a-text-field.src.css";
+// import './a-text-field.src.js';
+
+const BasicRender = (args) => {
+  Object.values(description)[0].use = args.type === "search" ? "@atoms/text-field/a-text-field--search.html.twig" : "@atoms/text-field/a-text-field.html.twig";
+  const { data, template } = defRender(args, description);
+  if (args.id) {
+    data.attributes.setAttribute("id", args.id);
+  }
+  if (args.disabled) {
+    data.attributes.setAttribute("disabled", "");
+  }
+  if (args.required) {
+    data.attributes.setAttribute("required", "");
+  }
+  if (args.error) {
+    data.attributes.addClass("error");
+  }
+  if (args.placeholder) {
+    data.attributes.setAttribute("placeholder", args.placeholder !== true ? args.placeholder : "Placeholder lorem ipsum");
+  }
+  if (args.value) {
+    data.attributes.setAttribute("value", args.value !== true ? args.value : "Value lorem ipsum");
+  }
+  data.attributes.setAttribute("type", args.type || "text");
+  // useEffect(() => { place-your-js-code-here }, [args]);
+  return template.render(data);
+};
 
 export default {
-  title: 'Atoms/Text field',
-  ...defaultPlay(),
-  render: (args) => {
-    Object.values(description)[0].use = args.type === 'search' ? '@atoms/text-field/a-text-field--search.html.twig' : '@atoms/text-field/a-text-field.html.twig';
-    const storyDefaultRender = defaultRenderSettings(args, description);
-    const { data, template } = storyDefaultRender;
-    if (args.id) {
-      data.attributes.setAttribute('id', args.id);
-    }
-    if (args.disabled) {
-      data.attributes.setAttribute('disabled', '');
-    }
-    if (args.required) {
-      data.attributes.setAttribute('required', '');
-    }
-    if (args.error) {
-      data.attributes.addClass('error');
-    }
-    if (args.placeholder) {
-      data.attributes.setAttribute('placeholder', args.placeholder !== true ? args.placeholder : 'Placeholder lorem ipsum');
-    }
-    if (args.value) {
-      data.attributes.setAttribute('value', args.value !== true ? args.value : 'Value lorem ipsum');
-    }
-    data.attributes.setAttribute('type', args.type || 'text');
-    return template.render(data);
-  },
+  title: "Atoms/Text field",
+  // parameters: { layout: 'fullscreen' },
   argTypes: {
-    ...argTypesLoader(description),
+    ...defArgTypes(description),
     type: {
-      name: 'Type',
-      options: [
-        'text',
-        'email',
-        'search',
-        'password',
-        'number',
-        'tel',
-        'date',
-        'time',
-      ],
+      name: "Type",
+      options: ["text", "email", "search", "password", "number", "tel", "date", "time"],
       control: {
-        type: 'radio',
+        type: "radio",
       },
     },
     placeholder: {
-      name: 'Placeholder',
+      name: "Placeholder",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     value: {
-      name: 'Value',
+      name: "Value",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     disabled: {
-      name: 'Disabled',
+      name: "Disabled",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     error: {
-      name: 'Error',
+      name: "Error",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
   },
 };
 
-export const Basic = {};
+export const Basic = {
+  render: (args = {}) => BasicRender(args),
+};

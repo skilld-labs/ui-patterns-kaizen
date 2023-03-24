@@ -1,0 +1,57 @@
+<div {{ attributes.addClass('t-page') }}>
+  {% set skip_link_content %}
+    <span class="t-page__skip-link-content">{{ 'Skip to main content'|t }}</span>
+  {% endset %}
+  {% include '@atoms/text/a-text.html.twig' with {
+    attributes: create_attribute().addClass('t-page__skip-link'),
+    href: '#main-content',
+    content: skip_link_content,
+  } only %}
+  <div class="t-page__header-height"></div>
+  <header class="t-page__header" role="banner">
+    {% if page.branding %}
+      <div class="t-page__branding">
+        {{ page.branding }}
+      </div>
+    {% endif %}
+    {% if page.main_navigation %}
+      <div class="t-page__main-navigation">
+        {{ page.main_navigation }}
+      </div>
+    {% endif %}
+    {% if page.user_actions %}
+      <div class="t-page__user-actions">
+        {{ page.user_actions }}
+      </div>
+    {% endif %}
+  </header>
+  <main id="main-content" class="t-page__content" role="main">
+    {% if page.system %}
+      <div class="t-page__system">
+        {{ page.system }}
+      </div>
+    {% endif %}
+    {% if page.breadcrumb %}
+      <div class="t-page__breadcrumb">
+        {{ page.breadcrumb }}
+      </div>
+    {% endif %}
+    {% if page.main_content %}
+      <div class="t-page__main-content">
+        {{ page.main_content }}
+      </div>
+    {% endif %}
+  </main>
+  <footer class="t-page__footer" role="contentinfo">
+    {% if page.copyright %}
+      <div class="t-page__copyright">
+        {{ page.copyright }}
+      </div>
+    {% endif %}
+    {% if page.secondary_navigation %}
+      <div class="t-page__secondary-navigation">
+        {{ page.secondary_navigation }}
+      </div>
+    {% endif %}
+  </footer>
+</div>

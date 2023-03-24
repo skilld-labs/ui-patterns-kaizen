@@ -4,26 +4,26 @@
  */
 
 (({ behaviors }, Splide) => {
-  behaviors.skilldHSlider = {
+  behaviors.skilldHelperSlider = {
     attach: (context) => {
       if (!Splide) {
         return;
       }
-      once('h-slider', '.h-slider', context).forEach((el) => {
-        const sliderEl = el.querySelector('.h-slider__slider');
+      once("h-slider", ".h-slider", context).forEach((el) => {
+        const sliderEl = el.querySelector(".h-slider__slider");
         if (sliderEl) {
-          if (el.classList.contains('h-slider--banner')) {
-            behaviors.skilldHSlider.bannerSlider(el, sliderEl);
+          if (el.classList.contains("h-slider--banner")) {
+            behaviors.skilldHelperSlider.bannerSlider(el, sliderEl);
           }
-          if (el.classList.contains('h-slider--cards')) {
-            behaviors.skilldHSlider.cardsSlider(el, sliderEl);
+          if (el.classList.contains("h-slider--cards")) {
+            behaviors.skilldHelperSlider.cardsSlider(el, sliderEl);
           }
         }
       });
     },
     bannerSlider: (el, sliderEl) => {
       const slider = new Splide(sliderEl, {
-        type: 'loop',
+        type: "loop",
         arrows: false,
         pagination: false,
       });
@@ -31,12 +31,12 @@
     },
     cardsSlider: (el, sliderEl) => {
       const slider = new Splide(sliderEl, {
-        type: 'loop',
+        type: "loop",
         arrows: false,
         pagination: false,
         perPage: 1,
         gap: 30,
-        mediaQuery: 'min',
+        mediaQuery: "min",
         breakpoints: {
           769: {
             perPage: 2,

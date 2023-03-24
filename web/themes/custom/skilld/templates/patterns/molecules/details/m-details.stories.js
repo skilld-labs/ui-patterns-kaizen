@@ -1,23 +1,28 @@
-import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_storybook/plugins/skilld';
-import { useEffect } from '@storybook/client-api';
-import DrupalAttribute from 'drupal-attribute';
-import { faker } from '@faker-js/faker';
-import description from './m-details.description.yml';
-import './m-details.src.css';
+import { defRender, defArgTypes } from "@skilld_storybook/plugins/skilld";
+import { useEffect } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
+import { faker } from "@faker-js/faker";
+import description from "./m-details.description.yml";
+import "./m-details.src.css";
+// import './m-details.src.js';
+
+const BasicRender = (args) => {
+  const { data, template } = defRender(args, description);
+  data.summary_attributes = new DrupalAttribute();
+  data.title = args.title || "Lorem ipsum";
+  data.children = args.children || faker.lorem.sentences();
+  // useEffect(() => { place-your-js-code-here }, [args]);
+  return template.render(data);
+};
 
 export default {
-  title: 'Molecules/Details',
-  ...defaultPlay(),
-  render: (args) => {
-    const { data, template } = defaultRenderSettings(args, description);
-    data.summary_attributes = new DrupalAttribute();
-    data.title = args.title || 'Lorem ipsum';
-    data.children = args.children || faker.lorem.sentences();
-    return template.render(data);
-  },
+  title: "Molecules/Details",
+  // parameters: { layout: 'fullscreen' },
   argTypes: {
-    ...argTypesLoader(description),
+    ...defArgTypes(description),
   },
 };
 
-export const Basic = {};
+export const Basic = {
+  render: (args = {}) => BasicRender(args),
+};

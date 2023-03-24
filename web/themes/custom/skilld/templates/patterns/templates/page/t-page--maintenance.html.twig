@@ -1,0 +1,20 @@
+<div class="t-page t-page--maintenance">
+  <main class="t-page__content" role="main">
+    {% if logo %}
+      <div>
+        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+          <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+        </a>
+      </div>
+    {% endif %}
+    {% if site_name %}
+      {% include '@atoms/text/a-text.html.twig' with {
+        attributes: create_attribute(),
+        content: site_name,
+        tag: 'h1',
+        type: 'a-text--h1',
+      } %}
+    {% endif %}
+    {{ page.content }}
+  </main>
+</div>

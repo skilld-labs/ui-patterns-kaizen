@@ -1,0 +1,17 @@
+.m-banner {
+  position: relative;
+
+  &__media {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: grid;
+    gap: 10px;
+  }
+}

@@ -4,82 +4,84 @@
  * @preserve
  */
 
-  .a-text-field {
+.a-text-field {
   position: relative;
 }
 
-  .a-text-field__icon {
-    width: 1rem;
-    height: 1rem;
-    fill: var(--color-black);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
+.a-text-field__icon {
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  fill: var(--color-black);
+}
 
-  .a-text-field__icon--start {
-      left: 1rem;
-    }
+.a-text-field__icon--start {
+  left: 1rem;
+}
 
-  .a-text-field__element {
-    width: 100%;
-    padding: 1rem;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-    border: 0.0625rem solid var(--color-grey);
-    color: var(--color-black);
-    background-color: transparent;
-    font: inherit;
-  }
+.a-text-field__element {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  color: var(--color-black);
+  border: 0.0625rem solid var(--color-grey);
+  background-color: transparent;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
-  .a-text-field__icon ~ .a-text-field__element {
-      padding-left: 3rem;
-    }
+.a-text-field__icon ~ .a-text-field__element {
+  padding-left: 3rem;
+}
 
-  .a-text-field__element:-ms-input-placeholder {
-      opacity: 1;
-      color: var(--color-dark-grey);
-    }
+.a-text-field__element:-ms-input-placeholder {
+  opacity: 1;
+  color: var(--color-dark-grey);
+}
 
-  .a-text-field__element::placeholder {
-      opacity: 1;
-      color: var(--color-dark-grey);
-    }
+.a-text-field__element::placeholder {
+  opacity: 1;
+  color: var(--color-dark-grey);
+}
 
-  .a-text-field__element:focus-visible {
-      border-color: var(--color-black);
-      outline: none;
-    }
+.a-text-field__element:focus-visible {
+  border-color: var(--color-black);
+  outline: none;
+}
 
-  .a-text-field__element[disabled],
-    .a-text-field__element.is-disabled {
-      cursor: not-allowed;
-      color: var(--color-grey-light);
-      border-color: currentColor;
-    }
+.a-text-field__element[disabled],
+.a-text-field__element.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-grey-light);
+  border-color: currentColor;
+}
 
-  .a-text-field__element[disabled]:-ms-input-placeholder, .a-text-field__element.is-disabled:-ms-input-placeholder {
-        color: currentColor;
-      }
+.a-text-field__element[disabled]:-ms-input-placeholder,
+.a-text-field__element.is-disabled:-ms-input-placeholder {
+  color: currentColor;
+}
 
-  .a-text-field__element[disabled]::placeholder, .a-text-field__element.is-disabled::placeholder {
-        color: currentColor;
-      }
+.a-text-field__element[disabled]::placeholder,
+.a-text-field__element.is-disabled::placeholder {
+  color: currentColor;
+}
 
-  .a-text-field__element.error {
-      color: var(--color-danger);
-      border-color: currentColor;
-    }
+.a-text-field__element.error {
+  color: var(--color-danger);
+  border-color: currentColor;
+}
 
-  .a-text-field__element.error:-ms-input-placeholder {
-        color: currentColor;
-      }
+.a-text-field__element.error:-ms-input-placeholder {
+  color: currentColor;
+}
 
-  .a-text-field__element.error::placeholder {
-        color: currentColor;
-      }
+.a-text-field__element.error::placeholder {
+  color: currentColor;
+}
 
 input[type="search" i]::-webkit-search-cancel-button {
   display: none;

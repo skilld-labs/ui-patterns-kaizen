@@ -7,13 +7,29 @@
   ]
 %}
 <div {{ attributes.addClass(classes) }}>
-  {% for item in items %}
-    {% if item_wrapper %}
-      <div class="h-grid__item">
+  {% if label or label_override %}
+    {% if label %}
+      {% set label_content = label %}
     {% endif %}
-    {{ item }}
-    {% if item_wrapper %}
-      </div>
+    {% if label_override %}
+      {% set label_content = label_override %}
     {% endif %}
-  {% endfor %}
+    {% include '@atoms/text/a-text.html.twig' with {
+      attributes: create_attribute().addClass('h-grid__title'),
+      tag: 'h2',
+      type: 'a-text--h2',
+      content: label_content,
+    } only %}
+  {% endif %}
+  <div class="h-grid__items">
+    {% for item in items %}
+      {% if item_wrapper %}
+        <div class="h-grid__item">
+      {% endif %}
+      {{ item }}
+      {% if item_wrapper %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

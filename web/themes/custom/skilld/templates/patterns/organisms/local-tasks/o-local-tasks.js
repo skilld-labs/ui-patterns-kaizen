@@ -1,42 +1,13 @@
-/**
- * @file
- * This is component script template.
- */
 (({ behaviors }) => {
-  behaviors.eshopgen_base_theme_storybook_o_local_tasks = {
-    attach: (context, settings) => {
-      const customConfig =
-        settings &&
-        settings.behaviors &&
-        settings.behaviors.eshopgen_base_theme_storybook_o_local_tasks &&
-        settings.behaviors.eshopgen_base_theme_storybook_o_local_tasks.entries
-          ? settings.behaviors.eshopgen_base_theme_storybook_o_local_tasks
-              .entries
-          : '';
-      const config = {
-        entries: [
-          {
-            className: 'o-local-tasks',
-          },
-          ...customConfig,
-        ],
-        processingName: 'o-local-tasks',
-      };
-
-      config.entries.forEach((entry) => {
-        once(config.processingName, `.${entry.className}`, context).forEach(
-          (el) => {
-            behaviors.eshopgen_base_theme_storybook_o_local_tasks.handler(
-              el,
-              entry,
-            );
-          },
-        );
+  behaviors.skilldOrganismLocalTasks = {
+    attach: (context) => {
+      once("o-local-tasks", ".o-local-tasks", context).forEach((el) => {
+        behaviors.skilldOrganismLocalTasks.handler(el);
       });
     },
-    handler: (el, entry) => {
+    handler: (el) => {
       // eslint-disable-next-line no-console
-      console.log(el, entry);
+      console.log(el);
     },
   };
 })(Drupal);

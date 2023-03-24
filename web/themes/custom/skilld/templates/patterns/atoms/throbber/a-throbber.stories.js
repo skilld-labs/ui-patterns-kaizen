@@ -1,20 +1,24 @@
-import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_storybook/plugins/skilld';
-import { useEffect } from '@storybook/client-api';
-import description from './a-throbber.description.yml';
-import './a-throbber.src.css';
-import './a-throbber.src.js';
+import { defRender, defArgTypes } from "@skilld_storybook/plugins/skilld";
+import { useEffect } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
+import description from "./a-throbber.description.yml";
+import "./a-throbber.src.css";
+// import './a-throbber.src.js';
+
+const BasicRender = (args) => {
+  const { data, template } = defRender(args, description);
+  // useEffect(() => { place-your-js-code-here }, [args]);
+  return template.render(data);
+};
 
 export default {
-  title: 'Atoms/Throbber',
-  ...defaultPlay(),
-  render: (args) => {
-    const storyDefaultRender = defaultRenderSettings(args, description);
-    const { data, template } = storyDefaultRender;
-    return template.render(data);
-  },
+  title: "Atoms/Throbber",
+  // parameters: { layout: 'fullscreen' },
   argTypes: {
-    ...argTypesLoader(description),
+    ...defArgTypes(description),
   },
 };
 
-export const Basic = {};
+export const Basic = {
+  render: (args = {}) => BasicRender(args),
+};

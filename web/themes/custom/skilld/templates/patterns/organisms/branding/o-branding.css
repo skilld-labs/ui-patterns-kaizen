@@ -3,43 +3,14 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-
-    .o-branding__link {
-    display: inline-flex;
-    align-items: center;
-    vertical-align: top;
-    text-decoration: none;
-    color: var(--color-default);
-  }
-
-    .o-branding__link > *:nth-child(n+2) {
-      position: relative;
-      margin-left: 0.9375rem;
-      padding-left: 0.9375rem;
-    }
-
-    .o-branding__link > *:nth-child(n+2)::before {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        height: 1rem;
-        content: "";
-        transform: translateY(-50%);
-        border-left: 0.0625rem solid var(--color-default);
-      }
-  .o-branding__site-name {
-    display: none;
-
-    @db m {
-      display: inline;
-    }
-  }
-  .o-branding__image {
-    width: auto;
-    max-width: none;
-    height: 2.1875rem;
-
-    @db l {
-      height: 2.5rem;
-    }
-  }
+.o-branding__link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  vertical-align: top;
+  text-decoration: none;
+  color: inherit;
+}
+.o-branding__image {
+  width: 6.25rem;
+}

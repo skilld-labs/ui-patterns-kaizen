@@ -1,57 +1,61 @@
-import { defaultRenderSettings, argTypesLoader, defaultPlay } from '@skilld_storybook/plugins/skilld';
-import { useEffect } from '@storybook/client-api';
-import description from './a-radio.description.yml';
-import './a-radio.src.css';
+import { defRender, defArgTypes } from "@skilld_storybook/plugins/skilld";
+import { useEffect } from "@storybook/client-api";
+import DrupalAttribute from "drupal-attribute";
+import description from "./a-radio.description.yml";
+import "./a-radio.src.css";
 // import './a-radio.src.js';
 
+const BasicRender = (args) => {
+  const { data, template } = defRender(args, description);
+  data.attributes.setAttribute("type", "radio");
+  if (args.id) {
+    data.attributes.setAttribute("id", args.id);
+  }
+  if (args.name) {
+    data.attributes.setAttribute("name", args.name);
+  }
+  if (args.disabled) {
+    data.attributes.setAttribute("disabled", "");
+  }
+  if (args.required) {
+    data.attributes.setAttribute("required", "");
+  }
+  if (args.error) {
+    data.attributes.addClass("error");
+  }
+  if (args.checked) {
+    data.attributes.setAttribute("checked", "");
+  }
+  // useEffect(() => { place-your-js-code-here }, [args]);
+  return template.render(data);
+};
+
 export default {
-  title: 'Atoms/Radio',
-  ...defaultPlay(),
-  render: (args) => {
-    const storyDefaultRender = defaultRenderSettings(args, description);
-    const { data, template } = storyDefaultRender;
-    data.attributes.setAttribute('type', 'radio');
-    if (args.id) {
-      data.attributes.setAttribute('id', args.id);
-    }
-    if (args.name) {
-      data.attributes.setAttribute('name', args.name);
-    }
-    if (args.disabled) {
-      data.attributes.setAttribute('disabled', '');
-    }
-    if (args.required) {
-      data.attributes.setAttribute('required', '');
-    }
-    if (args.error) {
-      data.attributes.addClass('error');
-    }
-    if (args.checked) {
-      data.attributes.setAttribute('checked', '');
-    }
-    return template.render(data);
-  },
+  title: "Atoms/Radio",
+  // parameters: { layout: 'fullscreen' },
   argTypes: {
-    ...argTypesLoader(description),
+    ...defArgTypes(description),
     disabled: {
-      name: 'Disabled',
+      name: "Disabled",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     checked: {
-      name: 'Checked',
+      name: "Checked",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     error: {
-      name: 'Error',
+      name: "Error",
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
   },
 };
 
-export const Basic = {};
+export const Basic = {
+  render: (args = {}) => BasicRender(args),
+};

@@ -27,14 +27,14 @@ const breakpointsLoaded = Object.keys(breakpoints).reduce(
 const plugins = [];
 
 // Stylelint and header only in production mode.
-if (process.env.NODE_ENV === 'production') {
-  plugins.push(
-    stylelint({
-      configFile: `${__dirname}/.stylelintrc`,
-      ignorePath: [`${__dirname}/.stylelintignore`],
-    }),
-  );
-}
+// if (process.env.NODE_ENV === 'production') {
+//   plugins.push(
+//     stylelint({
+//       configFile: `${__dirname}/.stylelintrc`,
+//       ignorePath: [`${__dirname}/.stylelintignore`],
+//     }),
+//   );
+// }
 
 export default {
   plugins: [
