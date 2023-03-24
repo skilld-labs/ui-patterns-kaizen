@@ -27,7 +27,7 @@
     "tabbable": true
   },
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["off"],
     "consistent-return": ["off"],
     "no-underscore-dangle": ["off"],
     "max-nested-callbacks": ["warn", 3],
