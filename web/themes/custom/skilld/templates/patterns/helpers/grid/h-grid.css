@@ -4,37 +4,40 @@
  * @preserve
  */
 
-.h-grid {
+  .h-grid {
   display: grid;
   gap: 1.5rem;
 }
 
-.h-grid__items {
-  display: grid;
-}
+  .h-grid__items {
+    display: grid;
+  }
 
-.h-grid--gap-16 .h-grid__items {
-  gap: 1rem;
-}
+  .h-grid--gap-16 .h-grid__items {
+      gap: 1rem;
+    }
 
-.h-grid--two-columns .h-grid__items {
-  grid-template-columns: repeat(2, 1fr);
-}
+  .h-grid--two-columns .h-grid__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-@media (min-width: 1025px) {
+  @media (min-width: 1025px) {
+
   .h-grid--three-columns .h-grid__items {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+        grid-template-columns: repeat(3, 1fr)
+    }
+      }
 
-@media (min-width: 769px) {
-  .h-grid--four-columns .h-grid__items {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+  @media (min-width: 769px) {
 
-@media (min-width: 1025px) {
   .h-grid--four-columns .h-grid__items {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+        grid-template-columns: repeat(2, 1fr)
+    }
+      }
+
+  @media (min-width: 1025px) {
+
+  .h-grid--four-columns .h-grid__items {
+        grid-template-columns: repeat(4, 1fr)
+    }
+      }

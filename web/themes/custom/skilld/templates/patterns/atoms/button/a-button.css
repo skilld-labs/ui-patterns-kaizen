@@ -4,7 +4,7 @@
  * @preserve
  */
 
-.a-button {
+  .a-button {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -28,58 +28,58 @@
   gap: 0.625rem;
 }
 
-.a-button:not([disabled]):hover,
-[container-as-link-built]:hover .a-button {
-  color: var(--color-white);
-  background-color: var(--color-black);
-}
+  .a-button:not([disabled]):hover,
+  [container-as-link-built]:hover .a-button {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
 
-.a-button[disabled],
-.a-button.is-disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+  .a-button[disabled],
+  .a-button.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
-.a-button--second {
-  color: var(--color-white);
-  background-color: var(--color-black);
-}
+  .a-button--second {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
 
-.a-button__icon {
-  flex-shrink: 0;
-  width: 1rem;
-  height: 1rem;
-  fill: currentColor;
-}
+  .a-button__icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+  }
 
-.a-button__ajax--start ~ .a-button__icon--start {
-  display: none;
-}
+  .a-button__ajax--start ~ .a-button__icon--start {
+        display: none;
+      }
 
-.a-button__ajax--end ~ .a-button__icon--end {
-  display: none;
-}
+  .a-button__ajax--end ~ .a-button__icon--end {
+        display: none;
+      }
 
-.a-button__ajax--full ~ .a-button__icon {
-  opacity: 0;
-}
+  .a-button__ajax--full ~ .a-button__icon {
+      opacity: 0;
+    }
 
-.a-button__ajax--full ~ .a-button__text {
-  opacity: 0;
-}
+  .a-button__ajax--full ~ .a-button__text {
+      opacity: 0;
+    }
 
-.a-button__ajax--start,
-.a-button__ajax--end {
-  animation: a-button-ajax-circle-animation var(--transition-duration-0-25) linear infinite;
-}
+  .a-button__ajax--start,
+    .a-button__ajax--end {
+      animation: a-button-ajax-circle-animation var(--transition-duration-0-25) linear infinite;
+    }
 
-.a-button__ajax--full {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: a-button-ajax-circle-full-animation var(--transition-duration-0-25) linear infinite;
-}
+  .a-button__ajax--full {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: a-button-ajax-circle-full-animation var(--transition-duration-0-25) linear infinite;
+    }
 
 @keyframes a-button-ajax-circle-animation {
   from {

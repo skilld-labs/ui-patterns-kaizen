@@ -3,12 +3,8 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-@media (min-width: 769px) {
+
   .ajax-progress {
-    height: 0.4375rem;
-  }
-}
-.ajax-progress {
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -18,23 +14,32 @@
   animation: ajax-progress-animate var(--transition-duration-1) var(--transition-timing-function-ease) infinite;
   pointer-events: none;
 }
-.ajax-progress__line {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  margin-inline: auto;
-  content: "";
-  background-color: var(--color-black);
-}
 
-@media (min-width: 769px) {
-  .ajax-progress__line {
-    width: 50%;
-  }
+  @media (min-width: 769px) {
+
+  .ajax-progress {
+    height: 0.4375rem
 }
+  }
+
+  .ajax-progress__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    margin-inline: auto;
+    content: "";
+    background-color: var(--color-black);
+  }
+
+  @media (min-width: 769px) {
+
+  .ajax-progress__line {
+      width: 50%
+  }
+    }
 
 @keyframes ajax-progress-animate {
   0% {

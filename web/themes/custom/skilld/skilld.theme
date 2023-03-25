@@ -17,8 +17,8 @@ function _skilld_get_svg_sprite_path() {
 /**
  * Hook_page_attachments().
  *
- * Prepares skilldSvgSpritePath variable to get
- * full path to svg sprite from js.
+ * Prepares skilld_svg_sprite, breakpoints in drupalSettings,
+ * also managing meta and favicons.
  */
 function skilld_page_attachments_alter(array &$attachments) {
   $drupal_breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('skilld');
@@ -101,9 +101,15 @@ function skilld_page_attachments_alter(array &$attachments) {
 /**
  * Hook_preprocess().
  *
- * Prepares skilldSvgSpritePath variable to get
- * full path to svg sprite from twig.
+ * Prepares skilld_svg_sprite variable.
  */
 function skilld_preprocess(&$variables, $hook) {
   $variables['skilld_svg_sprite'] = _skilld_get_svg_sprite_path();
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function skilld_preprocess_menu_local_task(&$variables) {
+  $variables['link']['#attributes']['class'][] = 'a-button';
 }

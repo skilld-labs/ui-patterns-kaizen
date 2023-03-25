@@ -1,0 +1,8 @@
+m_pager:
+  use: '@molecules/pager/m-pager.html.twig'
+  label: Molecules/Pager
+  libraries:
+    - a-icon:
+        css:
+          component:
+            a-icon.css: {}

@@ -1,6 +1,6 @@
 m_banner:
   use: '@molecules/banner/m-banner.html.twig'
-  label: Banner
+  label: Molecules/Banner
   fields:
     media:
       type: render

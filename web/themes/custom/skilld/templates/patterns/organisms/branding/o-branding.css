@@ -3,14 +3,14 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-.o-branding__link {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  vertical-align: top;
-  text-decoration: none;
-  color: inherit;
-}
-.o-branding__image {
-  width: 6.25rem;
-}
+  .o-branding__link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    vertical-align: top;
+    text-decoration: none;
+    color: inherit;
+  }
+  .o-branding__image {
+    width: 6.25rem;
+  }

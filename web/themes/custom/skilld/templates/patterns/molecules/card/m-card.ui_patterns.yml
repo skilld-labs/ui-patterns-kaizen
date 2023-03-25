@@ -1,6 +1,6 @@
 m_card:
   use: '@molecules/card/m-card.html.twig'
-  label: Card
+  label: Molecules/Card
   fields:
     image:
       type: render

@@ -12,7 +12,7 @@ import { Basic as LocalTasks } from "@skilld_components/organisms/local-tasks/o-
 import description from "./t-page.description.yml";
 import "./t-page.src.css";
 // import './t-page.src.js';
-import "./t-page--maintenance.src.css";
+import "./t-page-maintenance.src.css";
 
 const BasicRender = (args) => {
   const storyDefaultRender = defRender(args, description);

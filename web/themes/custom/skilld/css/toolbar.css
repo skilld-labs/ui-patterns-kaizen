@@ -6,12 +6,12 @@
 
 body[class*="toolbar"] {
   /* stylelint-disable-next-line unit-case */
-  --toolbar-height: 39px;
+  --toolbar-height: 2.4375rem;
 }
 
 body[class*="toolbar"].toolbar-tray-open:not(.toolbar-vertical) {
   /* stylelint-disable-next-line unit-case */
-  --toolbar-height: 79px;
+  --toolbar-height: 4.9375rem;
 }
 
 .toolbar-oriented .toolbar-bar {

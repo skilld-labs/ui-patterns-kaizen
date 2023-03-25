@@ -4,58 +4,58 @@
  * @preserve
  */
 
-.a-checkbox {
+  .a-checkbox {
   position: relative;
   width: 1rem;
   height: 1rem;
 }
 
-.a-checkbox__element {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  opacity: 0;
-  border: 0;
-  -webkit-appearance: none;
-  appearance: none;
-}
+  .a-checkbox__element {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
 
-.a-checkbox__element[disabled] {
-  cursor: not-allowed;
-}
+  .a-checkbox__element[disabled] {
+      cursor: not-allowed;
+    }
 
-.a-checkbox__icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  fill: var(--color-black);
-}
+  .a-checkbox__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-black);
+  }
 
-.a-checkbox__element:focus-visible ~ .a-checkbox__icon {
-  outline: var(--outline-size) solid var(--outline-color);
-  outline-offset: var(--outline-offset);
-}
+  .a-checkbox__element:focus-visible ~ .a-checkbox__icon {
+      outline: var(--outline-size) solid var(--outline-color);
+      outline-offset: var(--outline-offset);
+    }
 
-[disabled] ~ .a-checkbox__icon {
-  opacity: 0.5;
-}
+  [disabled] ~ .a-checkbox__icon {
+      opacity: 0.5;
+    }
 
-.a-checkbox__element.error ~ .a-checkbox__icon {
-  fill: var(--color-danger);
-}
+  .a-checkbox__element.error ~ .a-checkbox__icon {
+      fill: var(--color-danger);
+    }
 
-.a-checkbox__element:checked ~ .a-checkbox__icon--empty {
-  display: none;
-}
+  .a-checkbox__element:checked ~ .a-checkbox__icon--empty {
+        display: none;
+      }
 
-.a-checkbox__element:not(:checked) ~ .a-checkbox__icon--filled {
-  display: none;
-}
+  .a-checkbox__element:not(:checked) ~ .a-checkbox__icon--filled {
+        display: none;
+      }

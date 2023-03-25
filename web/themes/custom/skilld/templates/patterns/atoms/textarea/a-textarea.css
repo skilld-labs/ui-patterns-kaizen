@@ -4,60 +4,60 @@
  * @preserve
  */
 
-.a-textarea__element {
-  display: block;
-  width: 100%;
-  min-height: 10rem;
-  max-height: 20rem;
-  padding: 1rem;
-  resize: vertical;
-  cursor: pointer;
-  color: var(--color-black);
-  border: 0.0625rem solid var(--color-grey);
-  background-color: transparent;
-  font: inherit;
-  -webkit-appearance: none;
-  appearance: none;
-}
+    .a-textarea__element {
+    display: block;
+    width: 100%;
+    min-height: 10rem;
+    max-height: 20rem;
+    padding: 1rem;
+    resize: vertical;
+    cursor: pointer;
+    color: var(--color-black);
+    border: 0.0625rem solid var(--color-grey);
+    background-color: transparent;
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+  }
 
-.a-textarea__element:-ms-input-placeholder {
-  opacity: 1;
-  color: var(--color-dark-grey);
-}
+    .a-textarea__element:-ms-input-placeholder {
+      opacity: 1;
+      color: var(--color-dark-grey);
+    }
 
-.a-textarea__element::placeholder {
-  opacity: 1;
-  color: var(--color-dark-grey);
-}
+    .a-textarea__element::placeholder {
+      opacity: 1;
+      color: var(--color-dark-grey);
+    }
 
-.a-textarea__element:focus-visible {
-  border-color: var(--color-black);
-  outline: none;
-}
+    .a-textarea__element:focus-visible {
+      border-color: var(--color-black);
+      outline: none;
+    }
 
-.a-textarea__element[disabled] {
-  cursor: not-allowed;
-  color: var(--color-grey-light);
-  border-color: currentColor;
-}
+    .a-textarea__element[disabled] {
+      cursor: not-allowed;
+      color: var(--color-grey-light);
+      border-color: currentColor;
+    }
 
-.a-textarea__element[disabled]:-ms-input-placeholder {
-  color: currentColor;
-}
+    .a-textarea__element[disabled]:-ms-input-placeholder {
+        color: currentColor;
+      }
 
-.a-textarea__element[disabled]::placeholder {
-  color: currentColor;
-}
+    .a-textarea__element[disabled]::placeholder {
+        color: currentColor;
+      }
 
-.a-textarea__element.error {
-  color: var(--color-danger);
-  border-color: currentColor;
-}
+    .a-textarea__element.error {
+      color: var(--color-danger);
+      border-color: currentColor;
+    }
 
-.a-textarea__element.error:-ms-input-placeholder {
-  color: currentColor;
-}
+    .a-textarea__element.error:-ms-input-placeholder {
+        color: currentColor;
+      }
 
-.a-textarea__element.error::placeholder {
-  color: currentColor;
-}
+    .a-textarea__element.error::placeholder {
+        color: currentColor;
+      }
