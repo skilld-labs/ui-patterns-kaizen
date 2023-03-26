@@ -54,8 +54,7 @@
     "yaml": "^2.2.1"
   },
   "scripts": {
-    "build": "yarn build:theme & yarn build:components & yarn build:libraries",
-    "build:fix": "yarn build:theme & yarn build:components & yarn build:libraries && yarn lint:fix",
+    "build": "yarn build:theme & yarn build:components & yarn build:libraries && yarn lint:fix",
     "build:theme": "yarn build:theme:css && yarn build:theme:js",
     "build:theme:css": "yarn vite build --config='vite.theme-css.config.js'",
     "build:theme:js": "yarn vite build --config='vite.theme-js.config.js'",
