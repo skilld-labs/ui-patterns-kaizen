@@ -1,6 +1,6 @@
 h_grid:
   use: '@helpers/grid/h-grid.html.twig'
-  label: Helpers/Grid
+  label: Helpers / Grid
   fields:
     label:
       type: render
@@ -35,7 +35,7 @@ h_grid:
       type: textfield
       label: Add extra CSS classes for helpers grid separated by spaces.
   libraries:
-    - m-grid:
+    - h-grid:
         css:
           component:
-            m-grid.css: {}
+            h-grid.css: {}

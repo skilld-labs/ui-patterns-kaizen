@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldTemplatePage = {
     attach: (context) => {
-      once("t-page", ".t-page", context).forEach((el) => {
+      once('t-page', '.t-page', context).forEach((el) => {
         behaviors.skilldTemplatePage.handler(el);
       });
     },

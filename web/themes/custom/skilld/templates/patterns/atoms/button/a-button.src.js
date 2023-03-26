@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomButton = {
     attach: (context) => {
-      once("a-button", ".a-button", context).forEach((el) => {
+      once('a-button', '.a-button', context).forEach((el) => {
         behaviors.skilldAtomButton.handler(el);
       });
     },

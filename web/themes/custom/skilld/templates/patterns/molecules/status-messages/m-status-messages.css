@@ -4,7 +4,7 @@
  * @preserve
  */
 
-  .m-status-messages {
+.m-status-messages {
   --m-status-messages-background-color: var(--color-grey-light);
   --m-status-messages-text-color: var(--color-black);
   --outline-color: var(--m-status-messages-text-color);
@@ -16,37 +16,37 @@
   gap: 1rem;
 }
 
-  .m-status-messages--status {
-    --m-status-messages-background-color: var(--color-green);
-  }
+.m-status-messages--status {
+  --m-status-messages-background-color: var(--color-green);
+}
 
-  .m-status-messages--warning {
-    --m-status-messages-background-color: var(--color-yellow);
-  }
+.m-status-messages--warning {
+  --m-status-messages-background-color: var(--color-yellow);
+}
 
-  .m-status-messages--error {
-    --m-status-messages-background-color: var(--color-danger);
-  }
+.m-status-messages--error {
+  --m-status-messages-background-color: var(--color-danger);
+}
 
-  .m-status-messages__icon {
-    flex-shrink: 0;
-    width: 1rem;
-    height: 1rem;
-    fill: currentColor;
-  }
+.m-status-messages__icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
 
-  .m-status-messages__content {
-    flex-grow: 1;
-  }
+.m-status-messages__content {
+  flex-grow: 1;
+}
 
-  .m-status-messages__content a {
-      color: inherit;
-    }
+.m-status-messages__content a {
+  color: inherit;
+}
 
-  .m-status-messages__list {
-    display: grid;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    gap: 0.5rem;
-  }
+.m-status-messages__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
+}

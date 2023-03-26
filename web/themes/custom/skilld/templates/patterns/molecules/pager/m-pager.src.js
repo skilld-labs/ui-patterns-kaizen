@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculePager = {
     attach: (context) => {
-      once("m-pager", ".m-pager", context).forEach((el) => {
+      once('m-pager', '.m-pager', context).forEach((el) => {
         behaviors.skilldMoleculePager.handler(el);
       });
     },

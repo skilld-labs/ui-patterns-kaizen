@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldOrganismBreadcrumb = {
     attach: (context) => {
-      once("o-breadcrumb", ".o-breadcrumb", context).forEach((el) => {
+      once('o-breadcrumb', '.o-breadcrumb', context).forEach((el) => {
         behaviors.skilldOrganismBreadcrumb.handler(el);
       });
     },

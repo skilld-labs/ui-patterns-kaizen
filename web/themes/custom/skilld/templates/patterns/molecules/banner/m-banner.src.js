@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeBanner = {
     attach: (context) => {
-      once("m-banner", ".m-banner", context).forEach((el) => {
+      once('m-banner', '.m-banner', context).forEach((el) => {
         behaviors.skilldMoleculeBanner.handler(el);
       });
     },

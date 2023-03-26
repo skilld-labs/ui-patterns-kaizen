@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeCheckboxes = {
     attach: (context) => {
-      once("m-checkboxes", ".m-checkboxes", context).forEach((el) => {
+      once('m-checkboxes', '.m-checkboxes', context).forEach((el) => {
         behaviors.skilldMoleculeCheckboxes.handler(el);
       });
     },

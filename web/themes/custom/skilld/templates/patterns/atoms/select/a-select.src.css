@@ -45,7 +45,7 @@
     pointer-events: none;
     border-color: var(--color-black);
 
-    [data-once*="storybook-a-select"] > & {
+    [data-once*='storybook-a-select'] > & {
       display: none;
     }
 

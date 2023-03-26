@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldOrganismBranding = {
     attach: (context) => {
-      once("o-branding", ".o-branding", context).forEach((el) => {
+      once('o-branding', '.o-branding', context).forEach((el) => {
         behaviors.skilldOrganismBranding.handler(el);
       });
     },

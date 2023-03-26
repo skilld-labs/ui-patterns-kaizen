@@ -4,57 +4,57 @@
  * @preserve
  */
 
-  .m-details {
+.m-details {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-  .m-details__summary {
-    display: block;
-    padding: 0;
-    list-style: none;
-    cursor: pointer;
-    border: 0.0625rem solid var(--color-grey);
-    outline: none;
-  }
+.m-details__summary {
+  display: block;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+  border: 0.0625rem solid var(--color-grey);
+  outline: none;
+}
 
-  .m-details__summary:focus-visible,
-    [open] .m-details__summary {
-      border-color: var(--color-black);
-    }
+.m-details__summary:focus-visible,
+[open] .m-details__summary {
+  border-color: var(--color-black);
+}
 
-  .m-details__summary::-webkit-details-marker {
-      display: none;
-    }
+.m-details__summary::-webkit-details-marker {
+  display: none;
+}
 
-  .m-details__summary-span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    gap: 1rem;
-    color: var(--color-black);
-  }
+.m-details__summary-span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  color: var(--color-black);
+}
 
-  .m-details__icon {
-    flex-shrink: 0;
-    width: 0.75rem;
-    height: 0.75rem;
-    fill: currentColor;
-  }
+.m-details__icon {
+  flex-shrink: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: currentColor;
+}
 
-  .m-details[open] .m-details__icon {
-      transform: rotate(180deg);
-    }
+.m-details[open] .m-details__icon {
+  transform: rotate(180deg);
+}
 
-  .m-details[disabled] .m-details__icon {
-      display: none;
-    }
+.m-details[disabled] .m-details__icon {
+  display: none;
+}
 
-  .m-details__content {
-    box-sizing: border-box;
-    padding: 1rem;
-    border-width: 0 0.0625rem 0.0625rem;
-    border-style: solid;
-    border-color: var(--color-black);
-  }
+.m-details__content {
+  box-sizing: border-box;
+  padding: 1rem;
+  border-width: 0 0.0625rem 0.0625rem;
+  border-style: solid;
+  border-color: var(--color-black);
+}

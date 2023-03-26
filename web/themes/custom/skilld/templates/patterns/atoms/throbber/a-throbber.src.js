@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomThrobber = {
     attach: (context) => {
-      once("a-throbber", ".a-throbber", context).forEach((el) => {
+      once('a-throbber', '.a-throbber', context).forEach((el) => {
         behaviors.skilldAtomThrobber.handler(el);
       });
     },

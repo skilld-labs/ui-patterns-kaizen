@@ -19,12 +19,15 @@ base:
       templates/patterns/molecules/details/m-details.css: {}
       templates/patterns/molecules/fieldset/m-fieldset.css: {}
       templates/patterns/molecules/form-element/m-form-element.css: {}
-      templates/patterns/molecules/form-element-label/m-form-element-label.css: {}
+      templates/patterns/molecules/form-element-label/m-form-element-label.css:
+        {}
       templates/patterns/molecules/radios/m-radios.css: {}
+      templates/patterns/molecules/status-messages/m-status-messages.css: {}
       templates/patterns/organisms/branding/o-branding.css: {}
-      templates/patterns/organisms/page/t-page.css: {}
+      templates/patterns/templates/page/t-page.css: {}
   js:
     js/init.js: {}
+    templates/patterns/atoms/select/a-select.js: {}
   dependencies:
     - core/drupal
     - core/once

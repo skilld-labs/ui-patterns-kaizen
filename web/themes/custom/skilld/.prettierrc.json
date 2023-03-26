@@ -2,18 +2,5 @@
   "printWidth": 80,
   "semi": true,
   "singleQuote": true,
-  "trailingComma": "all",
-  "overrides": [
-    {
-      "files": [
-        "**/*.{css,js}",
-        "libraries/**/*.{css,js}",
-        "templates/patterns/**/*.{css,js}"
-      ],
-      "options": {
-        "singleQuote": false,
-        "printWidth": 1000
-      }
-    }
-  ]
+  "trailingComma": "all"
 }

@@ -14,7 +14,7 @@
 
     &:nth-child(n + 2)::before {
       padding-right: 8px;
-      content: "/";
+      content: '/';
     }
   }
 

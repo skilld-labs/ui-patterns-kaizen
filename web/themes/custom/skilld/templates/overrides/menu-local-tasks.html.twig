@@ -13,6 +13,7 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('skilld/o-local-tasks') }}
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
   {% include '@organisms/local-tasks/o-local-tasks.html.twig' with {

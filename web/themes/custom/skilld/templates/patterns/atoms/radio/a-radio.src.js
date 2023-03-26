@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomRadio = {
     attach: (context) => {
-      once("a-radio", ".a-radio", context).forEach((el) => {
+      once('a-radio', '.a-radio', context).forEach((el) => {
         behaviors.skilldAtomRadio.handler(el);
       });
     },

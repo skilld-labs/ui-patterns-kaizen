@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeStatusMessages = {
     attach: (context) => {
-      once("m-status-messages", ".m-status-messages", context).forEach((el) => {
+      once('m-status-messages', '.m-status-messages', context).forEach((el) => {
         behaviors.skilldMoleculeStatusMessages.handler(el);
       });
     },

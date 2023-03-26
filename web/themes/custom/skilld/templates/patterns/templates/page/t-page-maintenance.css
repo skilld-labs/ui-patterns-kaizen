@@ -4,7 +4,7 @@
  * @preserve
  */
 
-  .t-page--maintenance {
+.t-page--maintenance {
   --outline-color: var(--color-background-primary);
 
   display: flex;
@@ -15,12 +15,12 @@
   text-align: center;
 }
 
-  .t-page--maintenance .t-page__content {
-    display: grid;
-    gap: 1rem;
-    max-width: 26.25rem;
-  }
+.t-page--maintenance .t-page__content {
+  display: grid;
+  gap: 1rem;
+  max-width: 26.25rem;
+}
 
-  .t-page--maintenance img {
-    width: 9.375rem;
-  }
+.t-page--maintenance img {
+  width: 9.375rem;
+}

@@ -69,7 +69,8 @@
   &__ajax {
     &--start,
     &--end {
-      animation: a-button-ajax-circle-animation var(--transition-duration-0-25) linear infinite;
+      animation: a-button-ajax-circle-animation var(--transition-duration-0-25)
+        linear infinite;
     }
 
     &--full {
@@ -77,7 +78,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation: a-button-ajax-circle-full-animation var(--transition-duration-0-25) linear infinite;
+      animation: a-button-ajax-circle-full-animation
+        var(--transition-duration-0-25) linear infinite;
     }
   }
 }

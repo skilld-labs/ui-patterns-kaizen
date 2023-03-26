@@ -4,18 +4,18 @@
  * @preserve
  */
 
-  .m-banner {
+.m-banner {
   position: relative;
 }
 
-  .m-banner__media img {
-      width: 100%;
-    }
+.m-banner__media img {
+  width: 100%;
+}
 
-  .m-banner__content {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    display: grid;
-    gap: 0.625rem;
-  }
+.m-banner__content {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: grid;
+  gap: 0.625rem;
+}

@@ -1,1 +1,2 @@
-templates/patterns/**/*.stories.js
+*.stories.js
+*.inc

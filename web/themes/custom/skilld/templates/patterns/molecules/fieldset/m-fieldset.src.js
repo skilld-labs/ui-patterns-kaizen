@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeFieldset = {
     attach: (context) => {
-      once("m-fieldset", ".m-fieldset", context).forEach((el) => {
+      once('m-fieldset', '.m-fieldset', context).forEach((el) => {
         behaviors.skilldMoleculeFieldset.handler(el);
       });
     },

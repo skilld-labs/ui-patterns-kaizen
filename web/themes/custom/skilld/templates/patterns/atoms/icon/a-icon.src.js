@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomIcon = {
     attach: (context) => {
-      once("a-icon", ".a-icon", context).forEach((el) => {
+      once('a-icon', '.a-icon', context).forEach((el) => {
         behaviors.skilldAtomIcon.handler(el);
       });
     },

@@ -61,6 +61,6 @@
   }
 }
 
-input[type="search" i]::-webkit-search-cancel-button {
+input[type='search' i]::-webkit-search-cancel-button {
   display: none;
 }

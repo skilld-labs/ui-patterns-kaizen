@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeLocalTask = {
     attach: (context) => {
-      once("m-local-task", ".m-local-task", context).forEach((el) => {
+      once('m-local-task', '.m-local-task', context).forEach((el) => {
         behaviors.skilldMoleculeLocalTask.handler(el);
       });
     },

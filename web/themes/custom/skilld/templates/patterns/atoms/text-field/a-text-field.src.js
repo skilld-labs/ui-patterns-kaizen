@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomTextField = {
     attach: (context) => {
-      once("a-text-field", ".a-text-field", context).forEach((el) => {
+      once('a-text-field', '.a-text-field', context).forEach((el) => {
         behaviors.skilldAtomTextField.handler(el);
       });
     },

@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomTextarea = {
     attach: (context) => {
-      once("a-textarea", ".a-textarea", context).forEach((el) => {
+      once('a-textarea', '.a-textarea', context).forEach((el) => {
         behaviors.skilldAtomTextarea.handler(el);
       });
     },

@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeDetails = {
     attach: (context) => {
-      once("m-details", ".m-details", context).forEach((el) => {
+      once('m-details', '.m-details', context).forEach((el) => {
         behaviors.skilldMoleculeDetails.handler(el);
       });
     },

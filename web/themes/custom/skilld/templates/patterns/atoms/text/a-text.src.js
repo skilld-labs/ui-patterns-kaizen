@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomText = {
     attach: (context) => {
-      once("a-text", ".a-text", context).forEach((el) => {
+      once('a-text', '.a-text', context).forEach((el) => {
         behaviors.skilldAtomText.handler(el);
       });
     },

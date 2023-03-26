@@ -1,10 +1,10 @@
-import { useParameter } from "@storybook/client-api";
-import DrupalAttribute from "drupal-attribute";
-import skilld_svg_sprite from "../../images/sprite.svg";
+import { useParameter } from '@storybook/client-api';
+import DrupalAttribute from 'drupal-attribute';
+import skilld_svg_sprite from '../../images/sprite.svg';
 
 export const argsDecoder = (setting, selected) => {
   if (setting.options) {
-    if (typeof selected === "object") {
+    if (typeof selected === 'object') {
       return selected.map((value) => findValueInObject(setting.options, value));
     }
     return findValueInObject(setting.options, selected);
@@ -13,7 +13,7 @@ export const argsDecoder = (setting, selected) => {
 };
 
 export const componentRender = (src, args) => {
-  const Twig = useParameter("Twig");
+  const Twig = useParameter('Twig');
   const component = Object.values(src)[0];
 
   const refTemplate = Twig.twig({
@@ -27,9 +27,9 @@ export const componentRender = (src, args) => {
   };
 
   Object.entries(args).forEach(([argName, argValue]) => {
-    if (argName === "attributes") {
+    if (argName === 'attributes') {
       Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
-        if (attrName === "class") {
+        if (attrName === 'class') {
           templateOptions[argName].addClass(attrValue);
         } else {
           templateOptions[argName].setAttribute(attrName, attrValue);
@@ -37,7 +37,10 @@ export const componentRender = (src, args) => {
       });
     }
     if (component.settings && component.settings[argName]) {
-      templateOptions[argName] = argsDecoder(component.settings[argName], argValue);
+      templateOptions[argName] = argsDecoder(
+        component.settings[argName],
+        argValue,
+      );
     }
   });
 
@@ -81,7 +84,7 @@ export const defArgTypes = (src) => {
 
 export const defRender = (args, componentDescription) => {
   const component = Object.values(componentDescription)[0];
-  const template = useParameter("Twig").twig({
+  const template = useParameter('Twig').twig({
     ref: component.use,
     allowInlineIncludes: true,
   });
@@ -90,9 +93,9 @@ export const defRender = (args, componentDescription) => {
     skilld_svg_sprite,
   };
   Object.entries(args).forEach(([argName, argValue]) => {
-    if (argName === "attributes") {
+    if (argName === 'attributes') {
       Object.entries(args[argName]).forEach(([attrName, attrValue]) => {
-        if (attrName === "class") {
+        if (attrName === 'class') {
           data[argName].addClass(attrValue);
         } else {
           data[argName].setAttribute(attrName, attrValue);
@@ -133,12 +136,12 @@ export const storyGenerator = (componentSource) => {
 
 const transformDrupalControlToStorybook = (type) => {
   switch (type) {
-    case "radios":
-      return "radio";
-    case "checkboxes":
-      return "check";
-    case "textfield":
-      return "text";
+    case 'radios':
+      return 'radio';
+    case 'checkboxes':
+      return 'check';
+    case 'textfield':
+      return 'text';
   }
   return type;
 };

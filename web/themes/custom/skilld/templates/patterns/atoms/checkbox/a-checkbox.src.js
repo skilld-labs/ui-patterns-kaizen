@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldAtomCheckbox = {
     attach: (context) => {
-      once("a-checkbox", ".a-checkbox", context).forEach((el) => {
+      once('a-checkbox', '.a-checkbox', context).forEach((el) => {
         behaviors.skilldAtomCheckbox.handler(el);
       });
     },

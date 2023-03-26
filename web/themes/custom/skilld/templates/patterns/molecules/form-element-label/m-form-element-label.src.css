@@ -9,7 +9,7 @@
   &--required {
     &::after {
       margin-left: 0.3em;
-      content: "*";
+      content: '*';
     }
   }
 }

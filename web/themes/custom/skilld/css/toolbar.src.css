@@ -1,9 +1,9 @@
-body[class*="toolbar"] {
+body[class*='toolbar'] {
   /* stylelint-disable-next-line unit-case */
   --toolbar-height: 39px;
 }
 
-body[class*="toolbar"].toolbar-tray-open:not(.toolbar-vertical) {
+body[class*='toolbar'].toolbar-tray-open:not(.toolbar-vertical) {
   /* stylelint-disable-next-line unit-case */
   --toolbar-height: 79px;
 }

@@ -1,7 +1,7 @@
 (({ behaviors }) => {
   behaviors.skilldMoleculeFormElement = {
     attach: (context) => {
-      once("m-form-element", ".m-form-element", context).forEach((el) => {
+      once('m-form-element', '.m-form-element', context).forEach((el) => {
         behaviors.skilldMoleculeFormElement.handler(el);
       });
     },
