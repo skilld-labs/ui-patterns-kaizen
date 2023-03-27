@@ -1,0 +1,22 @@
+<div class="a-select">
+  {% apply spaceless %}
+    <select{{ attributes.addClass('a-select__element') }}>
+      {% for option in options %}
+        {% if option.type == 'optgroup' %}
+          <optgroup label="{{ option.label }}">
+            {% for sub_option in option.options %}
+              <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
+            {% endfor %}
+          </optgroup>
+        {% elseif option.type == 'option' %}
+          <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  {% endapply %}
+  {% include '@atoms/icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-select__chevron'),
+    icon: 'add',
+    kaizer_svg_sprite: kaizer_svg_sprite,
+  } only %}
+</div>

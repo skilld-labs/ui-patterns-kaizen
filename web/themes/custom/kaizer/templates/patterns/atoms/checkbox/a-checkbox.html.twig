@@ -1,0 +1,14 @@
+<div class="a-checkbox">
+  <input {{ attributes.addClass('a-checkbox__element') }}/>
+  {% include '@atoms/icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-checkbox__icon', 'a-checkbox__icon--empty'),
+    icon: 'checkbox-empty',
+    kaizer_svg_sprite: kaizer_svg_sprite,
+  } only %}
+  {% include '@atoms/icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-checkbox__icon', 'a-checkbox__icon--filled'),
+    icon: 'checkbox-filled',
+    kaizer_svg_sprite: kaizer_svg_sprite,
+  } only %}
+  {{- children }}
+</div>

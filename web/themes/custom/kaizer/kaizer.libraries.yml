@@ -1,0 +1,81 @@
+base:
+  css:
+    theme:
+      color/colors.css: {}
+    base:
+      css/styles.css: {}
+    component:
+      templates/patterns/atoms/button/a-button.css: {}
+      templates/patterns/atoms/checkbox/a-checkbox.css: {}
+      templates/patterns/atoms/icon/a-icon.css: {}
+      templates/patterns/atoms/image/a-responsive-image.css: {}
+      templates/patterns/atoms/radio/a-radio.css: {}
+      templates/patterns/atoms/select/a-select.css: {}
+      templates/patterns/atoms/text/a-text.css: {}
+      templates/patterns/atoms/text-field/a-text-field.css: {}
+      templates/patterns/atoms/textarea/a-textarea.css: {}
+      templates/patterns/atoms/throbber/a-throbber.css: {}
+      templates/patterns/molecules/checkboxes/m-checkboxes.css: {}
+      templates/patterns/molecules/details/m-details.css: {}
+      templates/patterns/molecules/fieldset/m-fieldset.css: {}
+      templates/patterns/molecules/form-element/m-form-element.css: {}
+      templates/patterns/molecules/form-element-label/m-form-element-label.css:
+        {}
+      templates/patterns/molecules/radios/m-radios.css: {}
+      templates/patterns/molecules/status-messages/m-status-messages.css: {}
+      templates/patterns/organisms/branding/o-branding.css: {}
+      templates/patterns/templates/page/t-page.css: {}
+  js:
+    js/init.js: {}
+    templates/patterns/atoms/select/a-select.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - kaizer/choices
+
+color.preview:
+  css:
+    theme:
+      color/preview.css: {}
+  js:
+    color/preview.js: {}
+  dependencies:
+    - color/drupal.color
+
+body-scroll-lock:
+  js:
+    libraries/body-scroll-lock/body-scroll-lock.js: {}
+
+choices:
+  js:
+    libraries/choices/choices.js: {}
+
+container-as-link:
+  css:
+    component:
+      libraries/container-as-link/container-as-link.css: {}
+  js:
+    libraries/container-as-link/container-as-link.js: {}
+
+splide:
+  css:
+    component:
+      libraries/splide/splide.css: {}
+  js:
+    libraries/splide/splide.js: {}
+
+toolbar:
+  css:
+    component:
+      css/toolbar.css: {}
+
+o-breadcrumb:
+  css:
+    component:
+      templates/patterns/organisms/breadcrumb/o-breadcrumb.css: {}
+
+o-local-tasks:
+  css:
+    component:
+      templates/patterns/molecules/local-task/m-local-task.css: {}
+      templates/patterns/organisms/local-tasks/o-local-tasks.css: {}

@@ -1,0 +1,8 @@
+<div class="a-text-field">
+  {% include '@atoms/icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-text-field__icon', 'a-text-field__icon--start'),
+    icon: 'search',
+    kaizer_svg_sprite: kaizer_svg_sprite,
+  } only %}
+  <input{{ attributes.addClass('a-text-field__element') }} />{{ children }}
+</div>

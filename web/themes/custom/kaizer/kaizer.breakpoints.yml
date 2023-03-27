@@ -1,0 +1,48 @@
+kaizer.xs:
+  label: xs
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.s:
+  label: s
+  mediaQuery: '(min-width: 481px)'
+  weight: 10
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.m:
+  label: m
+  mediaQuery: '(min-width: 769px)'
+  weight: 20
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.l:
+  label: l
+  mediaQuery: '(min-width: 1025px)'
+  weight: 30
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.xl:
+  label: xl
+  mediaQuery: '(min-width: 1441px)'
+  weight: 40
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.xxl:
+  label: xxl
+  mediaQuery: 'all and (min-width: 1921px)'
+  weight: 50
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x

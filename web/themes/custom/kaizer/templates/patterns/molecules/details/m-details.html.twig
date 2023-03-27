@@ -1,0 +1,31 @@
+<details{{ attributes.addClass('m-details') }}>
+  {%- if title -%}
+    {% set summary_classes = [
+      'm-details__summary',
+      required ? 'js-form-required form-required' : [],
+    ] %}
+    <summary {{ summary_attributes.addClass(summary_classes) }}>
+      <span class="m-details__summary-span">
+        {% include '@atoms/text/a-text.html.twig' with {
+          attributes: create_attribute().addClass('m-details__title'),
+          tag: 'span',
+          content: title,
+        } only %}
+        {% include '@atoms/icon/a-icon.html.twig' with {
+          attributes: create_attribute().addClass('m-details__icon'),
+          icon: 'add',
+          kaizer_svg_sprite: kaizer_svg_sprite,
+        } only %}
+      </span>
+    </summary>
+  {%- endif -%}
+  {% if errors %}
+    <div>
+      {{ errors }}
+    </div>
+  {% endif %}
+  {{ description }}
+  <div class="m-details__content">
+    {{ children }}
+  </div>
+</details>

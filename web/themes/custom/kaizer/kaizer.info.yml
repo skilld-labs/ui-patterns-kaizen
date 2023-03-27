@@ -1,0 +1,46 @@
+name: Kaizer
+type: theme
+description: 'Drupal base theme generator by Skilld'
+core_version_requirement: ^9 || ^10
+base theme: false
+starterkit: true
+version: VERSION
+dependencies:
+  - ui_patterns:ui_patterns
+  - ui_patterns_library:ui_patterns_library
+  - ui_patterns_field_formatters:ui_patterns_field_formatters
+  - ui_patterns_layouts:ui_patterns_layouts
+  - components:components
+
+regions:
+  branding: 'Branding'
+  main_navigation: 'Main navigation'
+  user_actions: 'User actions'
+  system: 'System'
+  breadcrumb: 'Breadcrumb'
+  main_content: 'Main content'
+  copyright: 'Copyright'
+  secondary_navigation: 'Secondary navigation'
+
+libraries:
+  - kaizer/base
+
+libraries-extend:
+  toolbar/toolbar:
+    - kaizer/toolbar
+
+libraries-override:
+  core/normalize: false
+
+components:
+  namespaces:
+    helpers:
+      - templates/patterns/helpers
+    atoms:
+      - templates/patterns/atoms
+    molecules:
+      - templates/patterns/molecules
+    organisms:
+      - templates/patterns/organisms
+    templates:
+      - templates/patterns/templates

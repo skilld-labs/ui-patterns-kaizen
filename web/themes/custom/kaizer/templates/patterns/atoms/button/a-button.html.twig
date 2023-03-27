@@ -1,0 +1,29 @@
+{% set classes = [
+  'a-button',
+  type and type != 'default' ? type : [],
+  extra_classes ? extra_classes : [],
+] %}
+{% if custom_content %}
+  {% set content = custom_content %}
+{% endif %}
+{% if href %}
+  {% set tag = 'a' %}
+  {% set attributes = attributes.setAttribute('href', href) %}
+{% endif %}
+<{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
+  {% if leading_icon and leading_icon != 'default' %}
+    {% include '@atoms/icon/a-icon.html.twig' with {
+      attributes: create_attribute().addClass('a-button__icon', 'a-button__icon--start'),
+      icon: leading_icon,
+      kaizer_svg_sprite: kaizer_svg_sprite,
+    } only %}
+  {% endif %}
+  <span class="a-button__text">{{ content }}</span>
+  {% if trailing_icon and trailing_icon != 'default' %}
+   {% include '@atoms/icon/a-icon.html.twig' with {
+     attributes: create_attribute().addClass('a-button__icon', 'a-button__icon--end'),
+     icon: trailing_icon,
+     kaizer_svg_sprite: kaizer_svg_sprite,
+   } only %}
+ {% endif %}
+</{{ tag|default('button') }}>
