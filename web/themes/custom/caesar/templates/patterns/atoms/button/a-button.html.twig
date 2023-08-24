@@ -7,4 +7,9 @@
 %}
 <{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
   {{ content }}
+  {% block icon %}
+    {% if icon %}
+      {{ icon }}
+    {% endif %}
+  {% endblock %}
 </{{ tag|default('button') }}>
