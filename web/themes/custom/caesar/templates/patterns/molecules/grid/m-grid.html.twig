@@ -11,3 +11,7 @@
     {{ item }}
   {% endfor %}
 </div>
+
+{% set vars = {attributes: create_attribute(), content: 'Button included'} %}
+{% include '@patterns/atoms/button/a-button.html.twig' with vars only %}
+

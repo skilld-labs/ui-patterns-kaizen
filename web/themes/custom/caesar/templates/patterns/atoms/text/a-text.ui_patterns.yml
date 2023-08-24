@@ -1,5 +1,5 @@
 a_text:
-  use: '@atoms/text/a-text.html.twig'
+  use: '@patterns/atoms/text/a-text.html.twig'
   label: Atoms/Text
   description: Text Component
   fields:

@@ -1,5 +1,5 @@
 o_slider:
-  use: '@organisms/slider/o-slider.html.twig'
+  use: '@patterns/organisms/slider/o-slider.html.twig'
   label: Organisms/Slider1(Js Module)
   description: This slider uses js modules
   fields:

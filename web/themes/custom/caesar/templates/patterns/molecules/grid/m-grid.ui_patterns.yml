@@ -1,5 +1,5 @@
 m_grid:
-  use: '@molecules/grid/m-grid.html.twig'
+  use: '@patterns/molecules/grid/m-grid.html.twig'
   label: Molecules/Grid
   description: Grid Component
   fields:

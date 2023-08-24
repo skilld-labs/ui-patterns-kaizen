@@ -5,6 +5,8 @@
  */
 
 :root {
+  --choco-1: #fce1bc;
+  --blue-10: #145591;
   --size-3: 1rem;
   --size-7: 2rem;
   --radius-2: 0.3125rem;
@@ -12,8 +14,8 @@
 }
 
 .a-button {
-  --a-button-bg: var(--color-light-accent);
-  --a-button-color: var(--color-light);
+  --a-button-bg: var(--choco-1);
+  --a-button-color: var(--blue-10);
 
   padding: var(--size-3) var(--size-7);
   cursor: pointer;
@@ -30,7 +32,7 @@
   line-height: 1;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .a-button {
     display: block;
   }

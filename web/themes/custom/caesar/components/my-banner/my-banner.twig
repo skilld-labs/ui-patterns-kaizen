@@ -1,0 +1,18 @@
+{# Prepare presentational attributes #}
+{% if image is not empty %}
+  <img src="{{ image }}"/>
+{% endif %}
+
+{# Markup for the component #}
+<div {{ attributes.addClass('my-banner') }}>
+  <div class="my-banner--header">
+    <h3>{{ heading }}</h3>
+    {% if ctaText is not empty %}
+      {% include '@sdc/my-button/my-button.twig' with { text: ctaText|default(''), href: ctaHref, target: ctaTarget|default('') } only %}
+    {% endif %}
+  </div>
+  <div class="my-banner--body">
+    {% block banner_body %}
+    {% endblock %}
+  </div>
+</div>

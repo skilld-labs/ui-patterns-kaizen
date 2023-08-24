@@ -1,50 +1,24 @@
-import '../color/colors.css';
 import '../css/styles.css';
 import caesarSvgSpritePath from '../images/sprite.svg';
 import breakpoints from '../caesar.breakpoints.yml';
 import Twig from 'twig';
-import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
-import DrupalAttributes from 'drupal-attribute';
 import once from '@drupal/once';
-window.once = once;
-addDrupalExtensions(Twig, {
-  // Optionally, set options to configure how the Drupal
-});
+
 const allTwigPatternTemplates = import.meta.glob(
-  '../templates/patterns/**/*.html.twig',
+  ['../templates/patterns/**/*.html.twig', '../components/**/*.twig'],
   { as: 'raw', import: 'default', eager: true },
 );
-
-import.meta.glob(['../libraries/**/*.css', '!../libraries/**/*.src.css'], { import: 'default', eager: true });
-const librariesJS = import.meta.glob(['../libraries/**/*.js', '!../libraries/**/*.src.js']);
-for (const path in librariesJS) {
-  librariesJS[path]();
-}
 
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
 // and get by reference in
 // render of caesar.js
 for (const [path, data] of Object.entries(allTwigPatternTemplates)) {
   Twig.twig({
-    attributes: new DrupalAttributes(),
-    id: path.replace('../templates/patterns/', '@'),
+    id: path
+      .replace('../components/', '@sdc/')
+      .replace('../templates/patterns/', '@patterns/'),
     data: data,
-    allowInlineIncludes: true,
   });
-}
-
-const uiPatterns = [];
-
-if (import.meta.env.VITE_ALLOW_UI_PATTERN_EXTENDS === 'TRUE') {
-  const allUiPatterns = import.meta.glob(
-    '../templates/patterns/**/*.ui_patterns.yml',
-    { import: 'default', eager: true },
-  );
-
-  for (const [path, data] of Object.entries(allUiPatterns)) {
-    const pattern = Object.keys(data)[0];
-    uiPatterns[pattern] = data[pattern];
-  }
 }
 
 const breakpointsList = Object.keys(breakpoints).reduce(
@@ -55,30 +29,20 @@ const breakpointsList = Object.keys(breakpoints).reduce(
   {},
 );
 
-
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-  // Maybe load only Twig.Template.Registry somehow here.
-  Twig: { ...Twig },
-  uiPatterns,
   breakpointsList,
 };
 
-// Drupal + drupalSettings
+// Drupal + drupalSettings + once
 
 window.Drupal = { behaviors: {} };
 window.drupalSettings = {
   caesar: {
     caesarSvgSpritePath,
-    breakpoints: breakpointsList,
+    // breakpoints: breakpointsList,
   },
 };
+window.once = once;
 
 ((Drupal, drupalSettings) => {
   // Simplified Drupal.t() function just to be able to use such constructions

@@ -1,5 +1,5 @@
 o_slider2:
-  use: '@organisms/slider2/o-slider2.html.twig'
+  use: '@patterns/organisms/slider2/o-slider2.html.twig'
   label: Organisms/Slider2(Full Bundle)
   description: This slider is fully bundled
   fields:

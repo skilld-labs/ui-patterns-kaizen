@@ -1,5 +1,5 @@
 o_slider5:
-  use: '@organisms/slider5/o-slider5.html.twig'
+  use: '@patterns/organisms/slider5/o-slider5.html.twig'
   label: Organisms/Slider5(Webcomponent!!!)
   description: This slider is Lit based webcomponent
   fields:

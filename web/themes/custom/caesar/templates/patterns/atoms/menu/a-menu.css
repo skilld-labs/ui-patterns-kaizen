@@ -19,7 +19,7 @@
   list-style: none;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .a-menu--main {
     grid-auto-flow: column;
   }

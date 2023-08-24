@@ -1,6 +1,6 @@
+import { basename, extname } from 'path';
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
-import { basename, extname } from 'path';
 import viteGlobals from './vite.globals-config';
 
 const input = sync('css/**/*.src.css', {
