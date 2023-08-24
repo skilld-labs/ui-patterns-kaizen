@@ -25,6 +25,7 @@ export const Fourth = {
   ...Basic,
   args: {
     modifier: 'a-button--fourth',
+    icon: 'test',
   },
   parameters: {
     backgrounds: { default: 'dark' },
